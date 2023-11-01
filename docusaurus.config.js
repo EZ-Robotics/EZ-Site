@@ -34,27 +34,6 @@ const config = {
     locales: ['en'],
   },
 
-  plugins: [
-    [
-      '@docusaurus/plugin-content-blog',
-      {
-        /**
-         * Required for any multi-instance plugin
-         */
-        id: 'second-blog',
-        /**
-         * URL route for the blog section of your site.
-         * *DO NOT* include a trailing slash.
-         */
-        routeBasePath: 'blog2',
-        /**
-         * Path to data on filesystem relative to site dir.
-         */
-        path: './blog2',
-      },
-    ],
-  ],
-
   presets: [
     [
       'classic',
@@ -69,7 +48,8 @@ const config = {
         },
         blog: {
           showReadingTime: true,
-          routeBasePath: 'blog', //CHANGE HERE
+          routeBasePath: '/projects', //CHANGE HERE
+          path: './projects',
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
@@ -94,8 +74,7 @@ const config = {
           src: 'img/logo.svg',
         },
         items: [
-          {to: '/blog', label: 'Projects', position: 'left'},
-          {to: '/blog2', label: 'Projects2', position: 'left'},
+          {to: '/projects', label: 'Projects', position: 'left'},
 
           {
             type: 'docSidebar',
