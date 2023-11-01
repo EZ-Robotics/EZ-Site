@@ -50,7 +50,7 @@ const config = {
         /**
          * Path to data on filesystem relative to site dir.
          */
-        // path: './blog2',
+        path: './blog2',
       },
     ],
   ],
@@ -69,7 +69,7 @@ const config = {
         },
         blog: {
           showReadingTime: true,
-          routeBasePath: 'projects', //CHANGE HERE
+          routeBasePath: 'blog', //CHANGE HERE
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
@@ -94,8 +94,8 @@ const config = {
           src: 'img/logo.svg',
         },
         items: [
-          {to: '/projects', label: 'Projects', position: 'left'},
-          {to: '/blog2', label: 'Projects 2', position: 'left'},
+          {to: '/blog', label: 'Projects', position: 'left'},
+          {to: '/blog2', label: 'Projects2', position: 'left'},
 
           {
             type: 'docSidebar',
