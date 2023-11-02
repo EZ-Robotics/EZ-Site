@@ -4,11 +4,20 @@
  * work well for content-centric websites.
  */
 
+ @font-face {
+  font-family: "SourceSans3";
+  src: url("/static/SourceSans3-Regular.ttf") format("ttf");
+  font-weight: 400;
+  font-style: oblique;
+}
+
 /* You can override the default Infima variables here. */
 :root {
+
   .footer--dark {
     --ifm-footer-background-color: #333333;
   }
+  
 
   --ifm-color-primary: #ad006b;
   --ifm-color-primary-dark: #9c0060;
