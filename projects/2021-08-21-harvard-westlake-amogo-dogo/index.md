@@ -1,7 +1,7 @@
 ---
 unlisted: true
 slug: harvard-westlake-amogo-dogo
-title: HARVARD-WESTLAKE- Amogo x Dogo
+title: Harvard-Westlake- Amogo x Dogo
 authors: [jess]
 tags: []
 ---

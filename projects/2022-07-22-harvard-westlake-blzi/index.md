@@ -1,7 +1,7 @@
 ---
 unlisted: true
 slug: harvard-westlake-blzi
-title: HARVARD-WESTLAKE- BLZI
+title: Harvard-Westlake- BLZI
 authors: [jess]
 tags: []
 ---
