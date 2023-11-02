@@ -7,7 +7,7 @@ tags: [vex, mentoring, tutorials, tipping point, mechanical, software, cad]
 
 Inspired by the [118 Everybot](https://www.118everybot.org/), Harvard-Westlake wanted to make simple, competitive designs for the VEX Robotics Competition Tipping Point.  
 
-Harvard-Westlake hosted a summer camp where ~12 students would come for a one week intensive of robotics where we wanted to condense an entire season into one week.  We split students into 4 groups, and had two groups make AMOGO and two groups make DOGO.  The goal of the summer camp is to teach students the importance of build quality and how it leads to consistency and longevity in every part of a robot.  
+Harvard-Westlake hosted three one week long summer camps where ~12 students would come for a one week intensive of robotics where we wanted to condense an entire season into one week.  We split students into 4 groups, and had two groups make AMOGO and two groups make DOGO.  The goal of the summer camp is to teach students the importance of build quality and how it leads to consistency and longevity in every part of a robot.  
 
 During this one week intensive, students learned build quality, the importance of squaring drives, and had a full day and a half of tournaments where over 20 matches were run.  Students learned to maintain their robots as screws would come loose, and learned to iterate flaws in the design in an attempt to make it more consistent. 
 
