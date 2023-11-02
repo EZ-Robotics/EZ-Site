@@ -47,9 +47,13 @@ const config = {
             'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
         },
         blog: {
+          blogSidebarCount: 'ALL',
+          postsPerPage: 10,
+          blogSidebarTitle: 'All My Projects',
           showReadingTime: true,
           routeBasePath: '/projects', //CHANGE HERE
           path: './projects',
+          
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
