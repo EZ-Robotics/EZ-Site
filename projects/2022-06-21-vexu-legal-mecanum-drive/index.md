@@ -1,4 +1,5 @@
 ---
+unlisted: true
 slug: vexu-legal-mecanum-drive
 title: VEXU Legal Mecanum Drive
 authors: [jess]

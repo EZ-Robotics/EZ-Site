@@ -1,4 +1,5 @@
 ---
+unlisted: true
 slug: purepursuit
 title: Pure Pursuit
 authors: [jess]

@@ -1,4 +1,5 @@
 ---
+unlisted: true
 slug: supernova-spectacular-awards
 title: Supernova Spectacular Awards
 authors: [jess]

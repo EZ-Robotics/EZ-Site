@@ -40,7 +40,9 @@ const config = {
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         docs: {
-          sidebarPath: './sidebars.js',
+          routeBasePath: '/ez-template', // url
+          path: './ez-template-docs', // file path
+          sidebarPath: './sidebars.js', 
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
@@ -51,13 +53,9 @@ const config = {
           postsPerPage: 10,
           blogSidebarTitle: 'All My Projects',
           showReadingTime: true,
-          routeBasePath: '/projects', //CHANGE HERE
-          path: './projects',
-          
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+          routeBasePath: '/projects', // url
+          path: './projects', // file path
+        
         },
         theme: {
           customCss: './src/css/custom.css',
@@ -84,7 +82,7 @@ const config = {
             type: 'docSidebar',
             sidebarId: 'tutorialSidebar',
             position: 'left',
-            label: 'Tutorial',
+            label: 'EZ-Template Docs',
           },
           {
             href: 'https://github.com/facebook/docusaurus',
@@ -100,8 +98,8 @@ const config = {
             title: 'Docs',
             items: [
               {
-                label: 'Tutorial',
-                to: '/docs/intro',
+                label: 'EZ-Template Docs',
+                to: '/ez-template',
               },
             ],
           },

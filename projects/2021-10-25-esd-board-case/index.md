@@ -1,4 +1,5 @@
 ---
+unlisted: true
 slug: esd-board-case
 title: Printable ESD Board Case
 authors: [jess]

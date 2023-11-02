@@ -1,4 +1,5 @@
 ---
+unlisted: true
 slug: squidward-squilliam
 title: Squidward x Squilliam
 authors: [jess]

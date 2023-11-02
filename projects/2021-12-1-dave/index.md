@@ -1,4 +1,5 @@
 ---
+unlisted: true
 slug: dave
 title: Dave
 authors: [jess]

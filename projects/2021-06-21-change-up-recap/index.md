@@ -1,4 +1,5 @@
 ---
+unlisted: true
 slug: change-up-recap
 title: Change Up Recap
 authors: [jess]

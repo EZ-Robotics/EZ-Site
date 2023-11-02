@@ -1,4 +1,5 @@
 ---
+unlisted: true
 slug: towertakeover-recap
 title: Tower Takeover Recap
 authors: [jess]

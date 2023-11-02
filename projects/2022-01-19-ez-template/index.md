@@ -1,4 +1,5 @@
 ---
+unlisted: true
 slug: about-ez-template
 title: EZ-Template
 authors: [jess]

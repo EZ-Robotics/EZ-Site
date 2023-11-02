@@ -1,4 +1,5 @@
 ---
+unlisted: true
 slug: mid
 title: EZ Mid
 authors: [jess]

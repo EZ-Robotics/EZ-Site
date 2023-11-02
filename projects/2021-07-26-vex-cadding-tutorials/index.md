@@ -1,4 +1,5 @@
 ---
+unlisted: true
 slug: vex-cadding-tutorials
 title: VEX CADing Tutorials
 authors: [jess]

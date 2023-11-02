@@ -1,4 +1,5 @@
 ---
+unlisted: true
 slug: starstruck-recap
 title: Starstruck Recap
 authors: [jess]

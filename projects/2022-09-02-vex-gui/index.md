@@ -1,4 +1,5 @@
 ---
+unlisted: true
 slug: about-ez-gui
 title: EZ GUI
 authors: [jess]

@@ -1,4 +1,5 @@
 ---
+unlisted: true
 slug: spraypaint-booth
 title: Spraypaint Booth
 authors: [jess]
