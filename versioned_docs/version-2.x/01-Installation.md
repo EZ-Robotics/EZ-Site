@@ -7,6 +7,7 @@ description: Simple plug-and-play PROS template that handles drive base function
 image: /img/better_logo.png
 preview: /img/better_logo.png
 ---
+ 
 
 Simple plug-and-play PROS template that handles drive base functions, autonomous selector, input curves and active brake with PTO support.
 

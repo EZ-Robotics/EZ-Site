@@ -4,7 +4,7 @@
 // There are various equivalent ways to declare your Docusaurus config.
 // See: https://docusaurus.io/docs/api/docusaurus-config
 
-import {themes as prismThemes} from 'prism-react-renderer';
+import { themes as prismThemes } from 'prism-react-renderer';
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -40,9 +40,15 @@ const config = {
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         docs: {
+          lastVersion: 'current',
+          versions: {
+            current: {
+              label: '3.0.0',
+            },
+          },
           routeBasePath: '/ez-template', // url
           path: './ez-template-docs', // file path
-          sidebarPath: './sidebars.js', 
+          sidebarPath: './sidebars.js',
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
@@ -53,9 +59,11 @@ const config = {
           postsPerPage: 10,
           blogSidebarTitle: 'All My Projects',
           showReadingTime: true,
+          readingTime: ({ content, frontMatter, defaultReadingTime }) =>
+            defaultReadingTime({ content, options: { wordsPerMinute: 300 } }),
           routeBasePath: '/projects', // url
           path: './projects', // file path
-        
+
         },
         theme: {
           customCss: './src/css/custom.css',
@@ -76,7 +84,13 @@ const config = {
           src: 'img/logo.svg',
         },
         items: [
-          {to: '/projects', label: 'Projects', position: 'left'},
+          {
+            type: 'docsVersionDropdown',
+            position: 'right',
+            dropdownItemsAfter: [{ to: '/versions', label: 'All versions' }],
+            dropdownActiveClassDisabled: true,
+          },
+          { to: '/projects', label: 'Projects', position: 'left' },
 
           {
             type: 'docSidebar',
