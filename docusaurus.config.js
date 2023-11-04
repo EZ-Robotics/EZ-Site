@@ -34,6 +34,20 @@ const config = {
     locales: ['en'],
   },
 
+  plugins: [
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'ez-gui-docs',
+        path: './ez-gui-docs',
+        routeBasePath: '/ez-gui',
+        sidebarPath: './sidebars-ez-gui.js',
+        editUrl:
+          'https://github.com/EZ-Robotics/EZ-Site/tree/main/',
+        // ... other options
+      },
+    ],
+  ],
   presets: [
     [
       'classic',
@@ -99,6 +113,16 @@ const config = {
             position: 'left',
             label: 'EZ-Template Docs',
           },
+
+          {
+            docsPluginId: 'ez-gui-docs',
+            type: 'docSidebar',
+            sidebarId: 'tutorialSidebar',
+            position: 'left',
+            label: 'EZ-GUI Docs',
+          },
+
+
           {
             href: 'https://github.com/facebook/docusaurus',
             label: 'GitHub',
