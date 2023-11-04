@@ -1,5 +1,4 @@
 ---
-unlisted: true
 slug: dd-3
 title: DD-3
 authors: [jess]
