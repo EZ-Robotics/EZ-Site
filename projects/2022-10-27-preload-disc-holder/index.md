@@ -2,7 +2,7 @@
 slug: preload-disc-holder
 title: Preload Disc Holder
 authors: [jess]
-tags: [vex, mechanical]
+tags: [vex, hardware]
 ---
 
 In the VEX game Spin Up, there are 11 discs that stay out of the field per side.  7 are match loads that can be loaded at any time during driver control, and 4 are preloads, 2 per robot.  To help people reset the fields easier, and to help competitors quickly know if they have the correct amount of discs, I made a printable preload holder.  Once the discs are flush with the stems of the print, the team has the correct amount of discs.  

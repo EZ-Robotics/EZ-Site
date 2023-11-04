@@ -2,7 +2,7 @@
 slug: esd-board-case
 title: Printable ESD Board Case
 authors: [jess]
-tags: [vex, mechanical, open source]
+tags: [vex, hardware, open source]
 ---
 
 [The exclusion of a TVS diode in the VEX V5 Brain](https://wiki.purduesigbots.com/vex-electronics/vex-electronics/vex-v5-brain/v5-electronics-observations) leads to ports frying when mechanisms on the robot are more prone to static.  This was a big problem for all teams in Tower Takeover but was almost never a problem for teams in Turning Point.  

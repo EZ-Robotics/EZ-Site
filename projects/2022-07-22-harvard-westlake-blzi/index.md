@@ -2,7 +2,7 @@
 slug: harvard-westlake-blz-i
 title: Harvard-Westlake- BLZ-i
 authors: [jess]
-tags: [vex, mentoring, tutorials, spin up, mechanical, software, cad]
+tags: [vex, mentoring, tutorials, spin up, hardware, software, cad]
 ---
 
 Inspired by the [118 Everybot](https://www.118everybot.org/), Harvard-Westlake wanted to make simple, competitive designs for the VEX Robotics Competition Spin Up.  

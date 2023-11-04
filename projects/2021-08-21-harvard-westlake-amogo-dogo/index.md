@@ -2,7 +2,7 @@
 slug: harvard-westlake-amogo-dogo
 title: Harvard-Westlake- AMOGO x DOGO
 authors: [jess]
-tags: [vex, mentoring, tutorials, tipping point, mechanical, software, cad]
+tags: [vex, mentoring, tutorials, tipping point, hardware, software, cad]
 ---
 
 Inspired by the [118 Everybot](https://www.118everybot.org/), Harvard-Westlake wanted to make simple, competitive designs for the VEX Robotics Competition Tipping Point.  
