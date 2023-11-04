@@ -1,5 +1,5 @@
 ---
-title: Introduction
+title: EZ-Template
 nav_order: 1
 slug: /
 description: Simple plug-and-play PROS template that handles drive base functions,

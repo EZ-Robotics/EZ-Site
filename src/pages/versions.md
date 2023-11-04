@@ -3,6 +3,7 @@ title: versions
 ---
 
 # 3.x
+v3.0.0
 
 # 2.x
 #### [v2.1.2 ](https://github.com/EZ-Robotics/EZ-Template/releases/tag/v2.1.2)
