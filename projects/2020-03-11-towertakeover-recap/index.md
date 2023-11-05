@@ -1,7 +1,7 @@
 ---
 unlisted: true
-slug: towertakeover-recap
-title: Tower Takeover Recap
+slug: goofy
+title: Tower Takeover - Goofy
 authors: [jess]
 tags: []
 ---
