@@ -1,13 +1,13 @@
 ---
-unlisted: true
 slug: change-up-recap
 title: Change Up Recap
 authors: [jess]
-tags: []
+tags: [vex, hardware, software, cad, change up]
 ---
 
 This is a summary of a project
+![](banner.jpg)
 
 <!--truncate-->
 
-This is more information
+Build / software log coming soon!
