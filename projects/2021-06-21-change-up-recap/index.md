@@ -5,7 +5,9 @@ authors: [jess]
 tags: [vex, hardware, software, cad, change up]
 ---
 
-Ooga Booga and Frank were the VEXU robots that my team built for Change Up.  [Photo album](https://photos.app.goo.gl/YkLtHVYeikCV3UZdA)
+Ooga Booga and Frank were the VEXU robots that my team built for Change Up.  
+
+https://photos.app.goo.gl/YkLtHVYeikCV3UZdA
 
 ![](banner.jpg)
 

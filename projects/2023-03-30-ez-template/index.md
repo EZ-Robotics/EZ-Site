@@ -7,17 +7,18 @@ tags: [vex, mentoring, tutorials, software, open source]
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-#### [EZ-Template](https://github.com/EZ-Robotics/EZ-Template) is a simple plug-and-play PROS template that handles drive base functions for VEX robots.  
+[EZ-Template](https://github.com/EZ-Robotics/EZ-Template) is a simple plug-and-play PROS template that handles drive base functions for VEX robots.  
 
+https://github.com/EZ-Robotics/EZ-Template
+
+<!--truncate-->
+
+## About
 Many students using VEXcode rely on the built-in Drivetrain class, but it often falls short in addressing the nuances of creating consistent autonomous routines, leading to frustration for new programmers. Issues like wheel slop and mechanical obstructions can be challenging to diagnose, causing students to lose interest in robotics.
 
 EZ-Template solves these problems by giving simple code that has been tested to work.  If something goes wrong, a student can try to tune the PID after fixing mechanical problems (which you can't do in VEXcode).  It eliminates one point of failure to keep students more interested in robotics.  
 
 This project taught me the importance of listening to user feedback and making adjustments accordingly.  I got feedback that users would prefer instructions in the code rather than figure it out from scratch in the docs, so I made sure every version was released with functions used in an example project.
-
-https://github.com/EZ-Robotics/EZ-Template
-
-<!--truncate-->
 
 ## [v1.x](https://github.com/EZ-Robotics/EZ-Template/tree/f4c287dc3cea8c95cdbbd47939ef41c1d5a2f749)
 ### About

@@ -5,7 +5,7 @@ authors: [jess]
 tags: []
 ---
 
-[Pure Pursuit](https://www.mathworks.com/help/nav/ug/pure-pursuit-controller.html) is a path tracking algorithm.  The robot follows a point on the path ahead of it, and continuously tries to chase it.  Click to read how I made mine!
+[Pure Pursuit](https://www.mathworks.com/help/nav/ug/pure-pursuit-controller.html) is a path tracking algorithm that chases a "carrot on a stick".  
 
 (this picture should maybe be a gif instead?)  
 ![](banner.png)

@@ -5,7 +5,7 @@ authors: [jess]
 tags: [vex, software, open source, starstruck]
 ---
 
-Rerun is a program I made to make autonomous routines quickly on the fly.  It lets you record a drivers movement and play them back during autonomous.  It isn't as consistent as traditional autonomous code, but it allows for strategic and quick autonomous routines to be made at a tournament on the spot.  
+Rerun allows you to record robot movements and play them back during autonomous.
 
 https://github.com/Unionjackjz1/ROBO-DANNY/blob/master/RerunFunctions.c  
 ![](banner.gif)
