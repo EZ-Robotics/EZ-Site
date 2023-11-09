@@ -2,7 +2,7 @@
 slug: pure-pursuit
 title: Pure Pursuit and Position Tracking
 authors: [jess]
-tags: []
+tags: [vex, software, wip]
 ---
 
 [Pure Pursuit](https://www.mathworks.com/help/nav/ug/pure-pursuit-controller.html) is a path tracking algorithm that chases a "carrot on a stick".  

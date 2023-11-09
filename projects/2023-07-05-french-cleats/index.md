@@ -1,9 +1,8 @@
 ---
-unlisted: true
 slug: french-cleats
 title: French Cleats
 authors: [jess]
-tags: []
+tags: [hardware, cad, wip]
 ---
 
 This is a summary of a project

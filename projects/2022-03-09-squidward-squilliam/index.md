@@ -1,13 +1,13 @@
 ---
-unlisted: true
 slug: squidward-squilliam
 title: Squidward x Squilliam
 authors: [jess]
-tags: []
+tags: [vex, hardware, software, open source, tipping point, mentoring]
 ---
 
-This is a summary of a project
+Squidward and Squilliam are very simple Tipping Point robots used to showcase build quality and scrimmage with students. 
+![](banner.jpg)
 
 <!--truncate-->
 
-This is more information
+Build / software log coming soon!

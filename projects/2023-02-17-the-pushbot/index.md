@@ -1,13 +1,14 @@
 ---
-unlisted: true
 slug: the-pushbot
 title: The Pushbot
 authors: [jess]
-tags: []
+tags: [vex, hardware, software, cad]
 ---
 
-This is a summary of a project
+This is a simple robot I made to demonstrate how strategy can get backed into a robots design.
+
+![](banner.jpg)
 
 <!--truncate-->
 
-This is more information
+Build log coming soon!

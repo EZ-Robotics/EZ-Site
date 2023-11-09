@@ -2,7 +2,7 @@
 slug: vexcode-tutorials
 title: VEXcode Tutorials
 authors: [jess]
-tags: [vex, mentoring, tutorials, software, open source]
+tags: [vex, mentoring, tutorials, software, open source, wip]
 ---
 
 After I saw the success of the CAD tutorials, I decided to do the same for code.  I made click-by-click tutorials on code concepts to enable students to ask specific questions instead of "How do I code the robot?".   

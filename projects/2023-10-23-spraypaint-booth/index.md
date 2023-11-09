@@ -1,9 +1,8 @@
 ---
-unlisted: true
 slug: spraypaint-booth
 title: Spraypaint Booth
 authors: [jess]
-tags: []
+tags: [hardware, cad, electrical, wip]
 ---
 
 This is a summary of a project

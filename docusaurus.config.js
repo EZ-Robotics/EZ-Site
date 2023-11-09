@@ -4,7 +4,10 @@
 // There are various equivalent ways to declare your Docusaurus config.
 // See: https://docusaurus.io/docs/api/docusaurus-config
 
-import { themes as prismThemes } from 'prism-react-renderer';
+// import { themes as prismThemes } from 'prism-react-renderer';
+
+import darkCode from './src/utils/codeDark.ts';
+import lightCode from './src/utils/codeLight.ts';
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -176,8 +179,8 @@ const config = {
         copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
       },
       prism: {
-        theme: prismThemes.vsLight,
-        darkTheme: prismThemes.vsDark,
+        theme: lightCode, 
+        darkTheme: darkCode,
       },
     }),
 };
