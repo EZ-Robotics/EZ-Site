@@ -21,3 +21,55 @@
   align-items: center;
   justify-content: center;
 }
+
+.hero {
+  background-color: var(--ifm-background-color);
+  padding: 10px;
+}
+
+.heroInner {
+  margin: 0 auto;
+  max-width: 1100px;
+  padding: 0 20px;
+}
+
+.heroProjectTagline {
+  color: #fff;
+  font-size: 92px;
+  padding-bottom: 20px;
+  margin: 0;
+  padding-top: 0px;
+}
+
+.heroTitleTextHtml b {
+  color: var(--ifm-color-primary);
+  
+}
+
+@media only screen and (max-width: 768px) {
+  .hero {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .heroInner {
+    padding: 0;
+  }
+
+  .heroProjectTagline {
+    font-size: 36px;
+    text-align: center;
+  }
+
+  .indexCtas {
+    justify-content: center;
+  }
+
+  .indexCtas a {
+    margin: 20px 36px;
+  }
+
+  .indexCtasGitHubButton {
+    display: none;
+  }
+}

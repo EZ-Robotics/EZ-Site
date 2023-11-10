@@ -6,7 +6,7 @@ const baseTheme = themes.oneDark;
 export default {
     plain: {
         color: '#F2F2F2',
-        backgroundColor: '#3D3D3D',
+        backgroundColor: '#2a2a2a',
       },
       styles: [
         ...baseTheme.styles,

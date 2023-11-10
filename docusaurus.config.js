@@ -127,7 +127,7 @@ const config = {
 
 
           {
-            href: 'https://github.com/facebook/docusaurus',
+            href: 'https://github.com/EZ-Robotics',
             label: 'GitHub',
             position: 'right',
           },
@@ -146,7 +146,7 @@ const config = {
             ],
           },
           {
-            title: 'Community',
+            title: 'Community', 
             items: [
               {
                 label: 'Stack Overflow',

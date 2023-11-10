@@ -60,7 +60,7 @@ const FeatureList = [
   },
 ];
 
-function Feature({ Svg, title, description, link }) {
+function Feature({ Svg, title, description, link, isCentered }) {
   return (
     <div className={clsx('col col--4')}>
       <div className="text--center">
@@ -82,6 +82,25 @@ export default function HomepageFeatures() {
   return (
     <section className={styles.features}>
       <div className="container">
+        <div className={`row ${styles.centeredRow}`}>
+          {FeatureList.map((props, idx) => (
+            <Feature
+              key={idx}
+              {...props}
+              isCentered={idx >= 3} 
+            />
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/*
+export default function HomepageFeatures() {
+  return (
+    <section className={styles.features}>
+      <div className="container">
         <div className="row">
           {FeatureList.map((props, idx) => (
             <Feature key={idx} {...props} />
@@ -91,7 +110,7 @@ export default function HomepageFeatures() {
     </section>
   );
 }
-
+*/
 /*
 export default function ImagesPage() {
   return (
