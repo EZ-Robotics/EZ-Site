@@ -105,9 +105,11 @@ const config = {
           {
             type: 'docsVersionDropdown',
             position: 'right',
-            dropdownItemsAfter: [{ to: '/versions', label: 'All versions' }],
+            dropdownItemsAfter: [{ to: '/versions', label: 'Versions' }],
             dropdownActiveClassDisabled: true,
           },
+          { to: '/about', label: 'About', position: 'right' },
+
           { to: '/projects', label: 'Projects', position: 'left' },
 
           {
@@ -176,7 +178,7 @@ const config = {
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+        copyright: `Copyright © ${new Date().getFullYear()} roboticsisez. Built with Docusaurus.`,
       },
       prism: {
         theme: lightCode, 

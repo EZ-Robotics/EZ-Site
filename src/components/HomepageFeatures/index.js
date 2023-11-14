@@ -39,7 +39,7 @@ const FeatureList = [
     ),
   },
   {
-    title: 'Powered by React',
+    title: 'EZ-Template',
     Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
     description: (
       <>
@@ -49,8 +49,8 @@ const FeatureList = [
     ),
   },
   {
-    title: 'Powered by React',
-    Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
+    title: 'EZ-GUI',
+    Svg: require('@site/static/img/logo.svg').default,
     description: (
       <>
         Extend or customize your website layout by reusing React. Docusaurus can
@@ -87,7 +87,7 @@ export default function HomepageFeatures() {
             <Feature
               key={idx}
               {...props}
-              isCentered={idx >= 3} 
+              isCentered={idx >= 3}
             />
           ))}
         </div>

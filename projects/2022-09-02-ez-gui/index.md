@@ -5,7 +5,7 @@ authors: [jess]
 tags: [vex, open source, software, wip]
 ---
 
-[EZ-GUI](https://github.com/EZ-Robotics/EZ-GUI) is a simple to use library that intuitively keeps track of motor temperatures and allows users to select autonomous routines. 
+[EZ-GUI](https://github.com/EZ-Robotics/EZ-GUI) is a simple to use VEX V5 screen GUI that intuitively keeps track of motor temperatures and allows users to select autonomous routines. 
 
 ![](banner.png)
 
