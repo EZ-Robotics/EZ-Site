@@ -1,4 +1,5 @@
 ---
+draft: true
 slug: gort
 title: In the Zone - Gort
 authors: [jess]

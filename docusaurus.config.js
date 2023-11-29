@@ -37,41 +37,13 @@ const config = {
     locales: ['en'],
   },
 
-  plugins: [
-    [
-      '@docusaurus/plugin-content-docs',
-      {
-        id: 'ez-gui-docs',
-        path: './ez-gui-docs',
-        routeBasePath: '/ez-gui',
-        sidebarPath: './sidebars-ez-gui.js',
-        editUrl:
-          'https://github.com/EZ-Robotics/EZ-Site/tree/main/',
-        // ... other options
-      },
-    ],
-  ],
   presets: [
     [
       'classic',
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
-        docs: {
-          sidebarCollapsed: false,
-          lastVersion: 'current',
-          versions: {
-            current: {
-              label: '3.0.0',
-            },
-          },
-          routeBasePath: '/ez-template', // url
-          path: './ez-template-docs', // file path
-          sidebarPath: './sidebars.js',
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/EZ-Robotics/EZ-Site/tree/main/',
-        },
+        docs: false,
+
         blog: {
           blogSidebarCount: 'ALL',
           postsPerPage: 10,
@@ -91,42 +63,24 @@ const config = {
   ],
 
   themeConfig:
+
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
+      colorMode: {
+        defaultMode: 'dark',
+        disableSwitch: true,
+        respectPrefersColorScheme: false,
+      },
+
       // Replace with your project's social card
       image: 'img/docusaurus-social-card.jpg',
       navbar: {
         title: 'robotics is ez',
-        logo: {
-          alt: 'My Site Logo',
-          src: 'img/logo.svg',
-        },
         items: [
-          {
-            type: 'docsVersionDropdown',
-            position: 'right',
-            dropdownItemsAfter: [{ to: '/versions', label: 'Versions' }],
-            dropdownActiveClassDisabled: true,
-          },
           { to: '/about', label: 'About', position: 'right' },
-
           { to: '/projects', label: 'Projects', position: 'left' },
-
-          {
-            type: 'docSidebar',
-            sidebarId: 'tutorialSidebar',
-            position: 'left',
-            label: 'EZ-Template Docs',
-          },
-
-          {
-            docsPluginId: 'ez-gui-docs',
-            type: 'docSidebar',
-            sidebarId: 'tutorialSidebar',
-            position: 'left',
-            label: 'EZ-GUI Docs',
-          },
-
+          { to: 'https://ez-robotics.github.io/EZ-Template/', label: 'EZ-Template Docs', position: 'left' },
+          // { to: 'https://ez-robotics.github.io/EZ-GUI/', label: 'EZ-GUI Docs', position: 'left' },
 
           {
             href: 'https://github.com/EZ-Robotics',
@@ -139,49 +93,53 @@ const config = {
         style: 'dark',
         links: [
           {
-            title: 'Docs',
+            title: 'Documentation',
             items: [
               {
-                label: 'EZ-Template Docs',
-                to: '/ez-template',
+                label: 'EZ-Template',
+                to: 'https://ez-robotics.github.io/EZ-Template/',
               },
+              /*{
+                label: 'EZ-GUI',
+                to: 'https://ez-robotics.github.io/EZ-GUI/',
+              },*/
             ],
           },
           {
-            title: 'Community', 
+            title: 'Community',
             items: [
-              {
-                label: 'Stack Overflow',
-                href: 'https://stackoverflow.com/questions/tagged/docusaurus',
-              },
-              {
+              /*{
                 label: 'Discord',
                 href: 'https://discordapp.com/invite/docusaurus',
-              },
+              },*/
               {
-                label: 'Twitter',
-                href: 'https://twitter.com/docusaurus',
+                label: 'Instagram',
+                href: 'https://www.instagram.com/roboticsisez',
               },
+              /*{
+                label: 'Help',
+                href: '/support',
+              },*/
             ],
           },
           {
             title: 'More',
             items: [
               {
-                label: 'Projects',
-                to: '/projects',
+                label: 'About Me',
+                href: '/about',
               },
               {
                 label: 'GitHub',
-                href: 'https://github.com/facebook/docusaurus',
+                href: 'https://github.com/EZ-Robotics',
               },
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} roboticsisez. Built with Docusaurus.`,
+        copyright: `Copyright © ${new Date().getFullYear()} robotics is ez - built with docusaurus`,
       },
       prism: {
-        theme: lightCode, 
+        theme: lightCode,
         darkTheme: darkCode,
       },
     }),

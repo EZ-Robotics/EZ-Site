@@ -1,4 +1,5 @@
 ---
+draft: true
 slug: ez-goofy
 title: EZ - Goofy
 authors: [jess]

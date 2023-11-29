@@ -1,4 +1,5 @@
 ---
+draft: true
 slug: geoffrey
 title: In the Zone - Geoffrey
 authors: [jess]

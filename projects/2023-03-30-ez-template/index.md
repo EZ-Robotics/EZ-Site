@@ -12,7 +12,7 @@ import TabItem from '@theme/TabItem';
 https://github.com/EZ-Robotics/EZ-Template
 
 <!--truncate-->
-
+---
 ## About
 Many students using VEXcode rely on the built-in Drivetrain class, but it often falls short in addressing the nuances of creating consistent autonomous routines, leading to frustration for new programmers. Issues like wheel slop and mechanical obstructions can be challenging to diagnose, causing students to lose interest in robotics.
 
@@ -57,25 +57,30 @@ This was a complete rewrite of EZ-Template taking advantage of [PROS templates](
 My biggest problem with v1.x and v2.x of EZ-Template is they are *too* easy.  EZ-Template comes with PID and exit condition constants that I tuned for some of my robots.  They were working pretty well within my similar robots, but I assumed everyone would have to tune their own PID because of variances in their robots to mine.  Over the course of a few seasons, this assumption has been proven very wrong.  The average team has to do little to no tuning to get consistent results, and that isn't my goal with EZ-Template.  The next version of EZ-Template will need to find a way to solve this.
 
 ## v3.x
+:::note
+
+EZ-Template v3 is not released yet, there is documentation for the most recent unreleased major version [here](https://ez-robotics.github.io/EZ-Template/next)
+
+:::
 ### About
 This version needs to solve the pre-tuned PID values.  The obvious solution to the problem is to not ship EZ-Template with pre-tuned constants but leave everything else the same.  My problem with this is teams will know to copy/paste old constants, and my problem isn't solved. 
 
 EZ-Template has a base unit of "ticks".  One tick means different things depending on the gear ratio of the drive, wheel size, motor cartridge, and what encoder they are using.  This means if a team wanted to switch from using the motor's built-in encoders to tracking wheels, they would have to completely retune everything. 
 
-This version of EZ-Template will solve this problem by using a base unit of inches.  No matter what sensor the user has, the code will always use inches.  This adds clarity for users by giving numbers units and stops v2 constants from working in v3.  
+This version of EZ-Template will solve this problem by using a base unit of inches.  No matter what sensor the user has, the code will always use inches.  This adds clarity for users by giving units and stops forward/reverse v2 constants from working in v3.  
 <Tabs
   groupId="ex1"
   defaultValue="v2"
   values={[
-    { label: 'v3.x',  value: 'v3', },
     { label: 'v2.x',  value: 'v2', },
+    { label: 'v3.x',  value: 'v3', },
   ]
 }>
 
 <TabItem value="v2">
 
 ```cpp
-  chassis.set_drive_pid(24, DRIVE_SPEED, true);
+  chassis.set_drive_pid(24, DRIVE_SPEED);
   chassis.wait_drive();
 
   chassis.set_turn_pid(45, TURN_SPEED);
@@ -88,11 +93,11 @@ This version of EZ-Template will solve this problem by using a base unit of inch
 <TabItem value="v3">
 
 ```cpp
-  chassis.set_drive_pid(24_in, DRIVE_SPEED, true);
-  chassis.wait_drive();
+  chassis.pid_drive_set(24_in, DRIVE_SPEED);
+  chassis.pid_wait();
 
-  chassis.set_turn_pid(45_deg, TURN_SPEED);
-  chassis.wait_drive();
+  chassis.pid_turn_set(45_deg, TURN_SPEED);
+  chassis.pid_wait();
 ```
 
 
@@ -100,8 +105,13 @@ This version of EZ-Template will solve this problem by using a base unit of inch
 </TabItem>
 </Tabs>
 
+3.x of EZ-Template will also include a complete redo of all function names.  Function names previously were made by what made the most sense to me.  Need to set the drive to move using PID?  `.set_drive_pid`.  This makes sense in english, but while I was working with [LVGL](https://lvgl.io/) I realized the benefit of naming in order of what you're looking for.  So now it'd be `.pid_drive_set`.  If you're looking to see everything you can do with PID on the drive, if you type `.pid_drive_` autocomplete will show you everything.  This makes autocomplete a more more useful tool when you don't know everything you can do in the library.
+
+
+
 
 ### Features
+- renamed functions
 - a relative turn function so it's not always absolute
 - a relative swing function so it's not always absolute
 - add piston and pistongroup class

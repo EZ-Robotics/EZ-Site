@@ -1,5 +1,5 @@
 ---
-slug: change-up-robots
+slug: vex-change-up
 title: Ooga Booga & Frank
 authors: [jess]
 tags: [vex, hardware, software, cad, change up]

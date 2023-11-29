@@ -1,5 +1,5 @@
 ---
-unlisted: true
+draft: true
 slug: captain-r3x
 title: Captain R3X
 authors: [jess]
@@ -10,4 +10,6 @@ This is a summary of a project
 
 <!--truncate-->
 
-This is more information
+## Design
+
+needs design ideas.  nerf guns, smooth movements, treating each arm as a single mechanism, speaker, height changes, see through visor, motor/esc choices, multiple personality, microphone, claws, putting it in a car, legends con and designing the new droid
