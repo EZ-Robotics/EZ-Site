@@ -7,13 +7,13 @@ tags: [vex, hardware, software, in the zone]
 
 At this point, we were qualified for the State Championship. We now had 3 months of no stress to build up a robot for States, and somehow my team and I built 8 robots in this time frame and only 1 worked which was Gort.  This is a recap of the 7 robots that didn't end up working and why we decided to scrap it.  
 
-Showcasing failure is just as important as showcasing successes.  Between Geoffrey and Gort there was a significant amount of failure, but the amount I learned from this process was invaluable.  Without learning how much of a mistake it was building so many robots and not spending any time tuning I wouldn't have succeeded in any future projects here.
+I believe showcasing failure is just as important as showcasing successes.  Between Geoffrey and Gort there was a significant amount of failure, but the amount I learned from this process was invaluable.  Without learning how much of a mistake it was building so many robots and not spending any time tuning I wouldn't have succeeded in any future projects here.
 
 The rest of this blog post is the definition of "try it and see". 
 ![](banner.gif)
 
 <!--truncate-->
-
+---
 ## Robot #1: The Schlucas 
 *this robot existed for 13 days*
 
@@ -74,12 +74,12 @@ This robot will grab cones and drop them ~2ft onto the mobile goal.  If you're a
 ## Robot #6: "Tube" v2
 *this "robot" existed for 4 days*  
 
-After the great success the robot had at the tournament, we decided to make another version.  Luckily, this is as far as we got.
+After the *great* success the robot had at the tournament, we decided to make another version.  Luckily, this is as far as we got.
 ![](6.banner.JPG)
 
 ## Robot #7: Finally a Normal Robot.  but smaller...
 *this robot existed for 15 days*  
 
-This robot was a step in the right direction.  This had all of the traits of a "meta-design" that the entire community was iterating on and pushing forward, except everything was smaller than ours.  The clearance between the top and bottom four bars was almost 0 and they would scrape constantly, the a few intakes we tried didn't fit because of how far the mobile goal was sticking out of the robot, and we had a pneumatic leak that we couldn't find. 
+This robot was a step in the right direction.  This had all of the traits of a "meta-design" that the entire community was iterating on and pushing forward, except everything was smaller on ours.  The clearance between the top and bottom four bars was almost 0 and they would scrape constantly, the a few intakes we tried didn't fit because of how far the mobile goal was sticking out of the robot, and we had strange pneumatic leaks that we couldn't find. 
 
  ![](7.banner.JPG)

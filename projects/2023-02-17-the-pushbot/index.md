@@ -1,5 +1,4 @@
 ---
-draft: true
 slug: the-pushbot
 title: The Pushbot
 authors: [jess]

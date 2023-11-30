@@ -34,7 +34,7 @@ The goal of EZ-Template shifted over time. This started out as my [codebase on m
 - basic autonomous selector
 
 ### Issues
-The code for this version was less than ideal.  The [main file was ~500 lines](https://github.com/EZ-Robotics/EZ-Template/blob/f4c287dc3cea8c95cdbbd47939ef41c1d5a2f749/src/EZ-Template/auton_drive_functions.cpp), with no real structure to anything.  The code worked, and because this was originally intended for only me to use I felt this was fine.  As more people used it, more errors were and it was clunky for users to update the library.  
+The code for this version was less than ideal.  The [main file was ~500 lines](https://github.com/EZ-Robotics/EZ-Template/blob/f4c287dc3cea8c95cdbbd47939ef41c1d5a2f749/src/EZ-Template/auton_drive_functions.cpp), with no real structure to anything.  The code worked, and because this was originally intended for only me to use I felt this was fine.  As more people used it, more errors were caught and it was clunky for users to update the library.  
 
 The code needed to be cleaned and it had to be easier for users to update the library.
 
@@ -59,15 +59,15 @@ My biggest problem with v1.x and v2.x of EZ-Template is they are *too* easy.  EZ
 ## v3.x
 :::note
 
-EZ-Template v3 is not released yet, there is documentation for the most recent unreleased major version [here](https://ez-robotics.github.io/EZ-Template/next)
+EZ-Template v3 is not released yet, there is incomplete documentation for it [here](https://ez-robotics.github.io/EZ-Template/next)
 
 :::
 ### About
-This version needs to solve the pre-tuned PID values.  The obvious solution to the problem is to not ship EZ-Template with pre-tuned constants but leave everything else the same.  My problem with this is teams will know to copy/paste old constants, and my problem isn't solved. 
+This version needs to solve the pre-tuned PID values.  The obvious solution to the problem is to not ship EZ-Template with pre-tuned constants but leave everything else the same.  Teams will know to copy/paste old constants, and my problem isn't solved. 
 
-EZ-Template has a base unit of "ticks".  One tick means different things depending on the gear ratio of the drive, wheel size, motor cartridge, and what encoder they are using.  This means if a team wanted to switch from using the motor's built-in encoders to tracking wheels, they would have to completely retune everything. 
+EZ-Template uses a base unit of "ticks".  One tick means different things depending on the gear ratio of the drive, wheel size, motor cartridge, and what encoder they are using.  This means if a team wanted to switch from using the motor's built-in encoders to tracking wheels, they would have to completely retune everything. 
 
-This version of EZ-Template will solve this problem by using a base unit of inches.  No matter what sensor the user has, the code will always use inches.  This adds clarity for users by giving units and stops forward/reverse v2 constants from working in v3.  
+This version of EZ-Template will solve this problem by using a base unit of inches.  No matter what sensor the user has, the code will always use inches.  This adds clarity for users by giving units, makes it so users can switch from built in encoders to tracking wheels and keep the same constants, and it stops forward/reverse v2 constants from working in v3.  
 <Tabs
   groupId="ex1"
   defaultValue="v2"
@@ -106,9 +106,6 @@ This version of EZ-Template will solve this problem by using a base unit of inch
 </Tabs>
 
 3.x of EZ-Template will also include a complete redo of all function names.  Function names previously were made by what made the most sense to me.  Need to set the drive to move using PID?  `.set_drive_pid`.  This makes sense in english, but while I was working with [LVGL](https://lvgl.io/) I realized the benefit of naming in order of what you're looking for.  So now it'd be `.pid_drive_set`.  If you're looking to see everything you can do with PID on the drive, if you type `.pid_drive_` autocomplete will show you everything.  This makes autocomplete a more more useful tool when you don't know everything you can do in the library.
-
-
-
 
 ### Features
 - renamed functions
