@@ -80,6 +80,6 @@ After the *great* success the robot had at the tournament, we decided to make an
 ## Robot #7: Finally a Normal Robot.  but smaller...
 *this robot existed for 15 days*  
 
-This robot was a step in the right direction.  This had all of the traits of a "meta-design" that the entire community was iterating on and pushing forward, except everything was smaller on ours.  The clearance between the top and bottom four bars was almost 0 and they would scrape constantly, the a few intakes we tried didn't fit because of how far the mobile goal was sticking out of the robot, and we had strange pneumatic leaks that we couldn't find. 
+This robot was a step in the right direction.  This had all of the traits of a "meta-design" that the entire community was iterating on and pushing forward, except everything was smaller on ours.  The clearance between the top and bottom four bars was almost 0 and they would scrape constantly, the few intakes we tried didn't fit because of how far the mobile goal was sticking out of the robot, and we had strange pneumatic leaks that we couldn't find. 
 
  ![](7.banner.JPG)

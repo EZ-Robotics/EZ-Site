@@ -5,7 +5,7 @@ authors: [jess]
 tags: [vex, software, wip]
 ---
 
-[Pure Pursuit](https://www.mathworks.com/help/nav/ug/pure-pursuit-controller.html) is a path tracking algorithm that enables a robot to chase a "carrot on a stick".  
+[Pure Pursuit](https://www.mathworks.com/help/nav/ug/pure-pursuit-controller.html) is a path-tracking algorithm that enables a robot to chase a "carrot on a stick".  
 
 ![](banner.png)
 
@@ -15,16 +15,16 @@ tags: [vex, software, wip]
 Pure Pursuit is a tracking algorithm that allows a robot to follow a given path by following a point some distance ahead like a carrot on a stick.  It requires some way of knowing where your current position is and a generated path.
 
 ## Position Tracking
-Position tracking is a piece of code that given 2 or 3 encoders you can extrapolate the X, Y and angle of the robot.
+Position tracking is a piece of code that given 2 or 3 encoders you can extrapolate the X, Y, and angle of the robot.
 
-This is explained far batter by others, and here are resources that I used:  
+This is explained far better by others, and here are the resources that I used:  
 [5225A Tracking Documentation](https://wiki.purduesigbots.com/software/odometry)  
 [QUEEN Video Explanation](https://www.youtube.com/watch?v=_T6KHywSP58)
 
-This code relies on the speed that sensors update at, because it figures out the change in position over the time it takes for sensors to update, and adds that change to a current global value.  
+This code relies on the speed at which sensors update, because it figures out the change in position over the time it takes for sensors to update, and adds that change to a current global value.  
 
 `LEFT_OFFSET` and `RIGHT_OFFSET` are the "track width".  This is the width between the tracking wheels on the robot,  I have them split into 2 variables because technically they do not need to be the same number.  
-`CENTER_OFFSET` is the distance from a perpendicular tracking wheel to the turning center of the robot.  This number can actually be anything, but the nicest way is for this to align with the robots turning center.  This can be tuned by turning the robot in place and adjusting this number until the XY stops rotating around the robot. 
+`CENTER_OFFSET` is the distance from a perpendicular tracking wheel to the turning center of the robot.  This number can actually be anything, but the nicest way is for this to align with the robot's turning center.  This can be tuned by turning the robot in place and adjusting this number until the XY stops rotating around the robot. 
 ```cpp
 void tracking_task() {
   double l_current = 0, r_current = 0;
@@ -81,15 +81,15 @@ void tracking_task() {
 }
 ```
 ## Mecanum Drive
-Mecanum wheels allow the robot to move forward / backwards and side to side.  These wheels get their own section here because they are effectively a cheat code for getting this code to work.  Because they can strafe, any error that's accumulated along the way can be accounted for.  With a drivetrain that cannot strafe, if you aren't following the path as exactly as you can, it becomes extremely difficult to account for it later.  This is why I chose this drive first, it allows me to go through all of this code without the problems that a typical drivetrain would give me. 
+Mecanum wheels allow the robot to move forward / backward and side to side.  These wheels get their own section here because they are effectively a cheat code for getting this code to work.  Because they can strafe, any error that's accumulated along the way can be accounted for.  With a drivetrain that cannot strafe, if you aren't following the path as exactly as you can, it becomes extremely difficult to account for it later.  This is why I chose this drive first, it allows me to go through all of this code without the problems that a typical drivetrain would give me. 
 ![](mecan_cad.png)
 
 ### Point to Point
-To get the robot to move to a new target point, I need to calculate the amount the robot needs to move in the X direction, the amount the robot needs to move in the Y direction, and the amount the robot needs to move in turning. 
+To get the robot to move to a new target point, I need to calculate the amount the robot needs to move in the X direction, the amount the robot needs to move in the Y direction, and the amount the robot needs to move in turn. 
 
 The direction the robot moves will change depending on the desired end angle. Some trigonometry is done to figure out the relative directions the robot needs to go, as while the robot turns the motor powers will all change.
 
-The final thing to do is scale everything down.  If X output and Y output both exceed the maximum power that can be sent to the motors, even if one is magnitudes larger then the other, the robot will end up going straight.  We solve for this by scaling everything down to the larger number.
+The final thing to do is scale everything down.  If X output and Y output both exceed the maximum power that can be sent to the motors, even if one is magnitudes larger than the other, the robot will end up going straight.  We solve this by scaling everything down to a larger number.
 <iframe width="560" height="315" src="https://www.youtube.com/embed/ZbMDKJ0zA3o?si=T7nrteA03m6vQWDE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 ```cpp
@@ -132,9 +132,9 @@ void point_to_point() {
 }
 ```
 
-Mecanum drives that use the VRC wheels are slower when strafing then in forward / backward.  Because of this, I knew I'd want a mode where the robot will go straight for most of the motion and then turn at the end to face the desired angle. 
+Mecanum drives that use the VRC wheels are slower when strafing than in forward / backward.  Because of this, I knew I'd want a mode where the robot would go straight for most of the motion and then turn at the end to face the desired angle. 
 
-This piece of code was added to the above function.  It modifies the target angle depending on how far away the robot is from the target position.  If it's more then 12" away, the robot will go faster and face the target position.  Once the robot is within 12" of the target it'll start to rotate to the desired angle. 
+This piece of code was added to the above function.  It modifies the target angle depending on how far away the robot is from the target position.  If it's more than 12" away, the robot will go faster and face the target position.  Once the robot is within 12" of the target it'll start to rotate to the desired angle. 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/pIiadWcYlac?si=JW_q3pCaxF9RjtR2" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 ```cpp
@@ -158,7 +158,7 @@ This piece of code was added to the above function.  It modifies the target angl
     a_target = absolute_angle_to_point(target.x, target.y) + add;
   }
 
-  // Compute angle PID and find shortest path to angle
+  // Compute angle PID and find the shortest path to the angle
   aPID.set_target(relative_angle_to_point(a_target));
   aPID.compute(0);
 ```
@@ -191,12 +191,12 @@ void pure_pursuit() {
 }
 ```
 
-I cleaned up how the "turn type" is handled.  There's now 3 turn types:  
+I cleaned up how the "turn type" is handled.  There are now 3 turn types:  
 `FAST_MOVE` where the robot faces the target position and within 12" will move to the final angle
 `LOOK_AT_TARGET` where the robot doesn't care about the end angle, and will always look at the target
-`HOLD_ANGLE` where the robot will just hold it's angle
+`HOLD_ANGLE` where the robot will just hold its angle
 
-I had to add `LOOK_AT_TARGET` because the distance away the current target is was less then 12", and the robot would always hold angle even if I didn't want it to.  This lets me to use `FAST_MOVE` as intended, and have all of my injected points follow `LOOK_AT_TARGET`.  
+I had to add `LOOK_AT_TARGET` because the distance away from the current target was less than 12", and the robot would always hold an angle even if I didn't want it to.  This lets me use `FAST_MOVE` as intended, and have all of my injected points follow `LOOK_AT_TARGET`.  
 <iframe width="560" height="315" src="https://www.youtube.com/embed/aUpCYLBIhE0?si=LELL8e9J1XWCjrY3" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 ```cpp
@@ -205,7 +205,7 @@ I had to add `LOOK_AT_TARGET` because the distance away the current target is wa
 
   // Set angle target
   switch (current_turn_type) {
-    // Looks at target until final distance then goes to final angle
+    // Looks at the target until final distance then goes to the final angle
     case FAST_MOVE_FWD:
     case FAST_MOVE_REV:
       if (fabs(distance_to_point(target, current)) < TURN_FAST_MOVE) {

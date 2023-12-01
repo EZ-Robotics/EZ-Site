@@ -5,7 +5,7 @@ authors: [jess]
 tags: [software, vex, wip]
 ---
 
-Adaptive PID is a modification of PID that scales constants based on the robots tested velocity curve.
+Adaptive PID is a modification of PID that scales constants based on the robot's tested velocity curve.
 
 ![](banner.png)
 
@@ -14,22 +14,21 @@ Adaptive PID is a modification of PID that scales constants based on the robots 
 ## About
 When a robot is moving it generates momentum.  PID is extremely consistent when the momentum of the system is constant.  
 
-When tuning constants for moving, I always notice that after ~2' of movement the robot is extremely consistent.  In the closer distances the constants aren't quite right, because the momentum is different to when it's going full speed.  This is an even larger problem with turns, as the robot never reaches a constant momentum.  
+When tuning constants for moving, I always notice that after ~2' of movement the robot is extremely consistent.  In the closer distances, the constants aren't quite right, because the momentum is different from when it's going full speed.  This is an even larger problem with turns, as the robot never reaches a constant momentum.  
 
-A solution I want to avoid is tuning PID constants for multiple turn amounts and interpolating between them.  I haven't tested this, but I'm extremely confident this would be the best solution.  I do not like how much time this takes to setup and tune for each new robot.  My goal is to find a lazier solution that gets almost all of the way there. 
+A solution I want to avoid is tuning PID constants for multiple turn amounts and interpolating between them.  I haven't tested this, but I'm extremely confident this would be the best solution.  I do not like how much time this takes to set up and tune for each new robot.  My goal is to find a lazier solution that gets almost all of the way there. 
 
 ## EZ-Templates Implemented Solution
 I had this problem when I was a competitor, and my solution was to:
 - not run turns as fast as I could, at ~70% power
-- slow down the robot within some band of target 
+- slow down the robot within some band of the target 
 
-This allowed me to have 1 tuned constant and the robot would slow down early for larger movements making everything more similar then without this.  It isn't a perfect solution though, it has all of the same problems as not having it but less.  
+This allowed me to have 1 tuned constant and the robot would slow down early for larger movements making everything more similar than without this.  It isn't a perfect solution though, it has all of the same problems as not having it but less.  
 
 ## Detecting When Speed Drops
-The first thing I tried was to find 2 parameters.  What was the max power being sent to the motors and for how long.  I'd keep track of all of this during the turn, and when the power started to go down I recognize that as my stopping point.  Now I have these two numbers and I use them to modify all of my PID constants.  
+The first thing I tried was to find 2 parameters: what was the max power being sent to the motors and for how long?  I'd keep track of all of this during the turn, and when the power started to go down I recognized that as my stopping point.  Now I have these two numbers and I use them to modify all of my PID constants.  
 
 This would sometimes look promising but overall it felt like I needed to tune how much pull/push the two parameters gave to the PID constants for different distances, which defeats the purpose of what I'm trying to do. 
-(video here)
 ```cpp
 void time_full_speed() {
   default_constants();
@@ -89,21 +88,19 @@ void turning_test() {
 ```
 
 ## Moving Target with Motion Profiling
-I took my motion profile test I made for Captain R3X and implemented it here.  This works in the same way it would with a servo, where it sets new target positions for the PID to reach and the rate of change of new targets is being controlled.  This seemed promising, but because I'm not controlling velocity this wasn't working too well.  The robot would move nicely until the end of the motion where the robot would reach it's target and stop, then go to the next target, etc.  The robot was stuttering through the end of the motion.  
-(video here)
+I took the motion profile test I made for Captain R3X and implemented it here.  This works in the same way it would with a servo, where it sets new target positions for the PID to reach and the rate of change of new targets is being controlled.  This seemed promising, but because I'm not controlling velocity this wasn't working too well.  The robot would move nicely until the end of the motion where the robot would reach its target and stop, then go to the next target, etc.  The robot was stuttering through the end of the motion.  
 
 ## Acceleration Test
-I keep thinking back to [TrueSpeed](https://www.vexforum.com/t/24cs-motor-control-value-remapping/23959/1), a fix for VEX's motor controllers that weren't linear.  The values were remapped and normalized giving a linear output through a LUT (look up table).
+I keep thinking back to [TrueSpeed](https://www.vexforum.com/t/24cs-motor-control-value-remapping/23959/1), a fix for VEX's motor controllers that weren't linear.  The values were remapped and normalized giving a linear output through a LUT (look-up table).
 
 I tried something similar.  I told the robot to go at some speed and read the rate of change of the IMU.  After some target degree was passed I stopped reading velocity.  This was done for 17 different target values, running each test 6 times, 3 left and 3 right.  
-(video here)
 
-All of that gave me this graph.  X axis is the target we were reading to, and Y axis is the average velocity in the time it took to get there. 
+All of that gave me this graph.  The x-axis is the target we were reading to, and the y-axis is the average velocity in the time it took to get there. 
 ![](banner.png)
 
-To use this graph I scaled the Y axis down to 1 by dividing everything by the largest tested Y point.  That left me with many points I can draw lines through and find new conversion rates for untested turn amounts.  I took my conversion rate and I change my constants by that.  And... it worked!
+To use this graph I scaled the Y axis down to 1 by dividing everything by the largest tested Y point.  That left me with many points I can draw lines through and find new conversion rates for untested turn amounts.  I took my conversion rate and I changed my constants by that.  And... it worked!
 
-In this test, the first set of turns is standard EZ-Template.  The second set of turns is using the modified constants. 
+In this test, the first set of turns is the standard EZ-Template.  The second set of turns is using the modified constants. 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/qdRAPPe5oj8?si=n4ZuJxHNptZo0IWk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 ```cpp
@@ -128,7 +125,7 @@ std::vector<std::vector<double>> scaling = {
 };
 
 double get_scale(double target) {
-  // Find a point that is larger then target
+  // Find a point that is larger than then target
   double initial_error = target - chassis.turnPID.target_get();
   initial_error = fabs(initial_error);
   int i = 0;
@@ -138,14 +135,14 @@ double get_scale(double target) {
     i++;
   }
 
-  // If target is equal to or larger then our largest tested point, return 1.0
+  // If target is equal to or larger than our largest tested point, return 1.0
   if (i == scaling.size())
     return 1.0;
-  // If target is equal to or smaller then our smallest tested point, return the smallest conversion
+  // If target is equal to or smaller than our smallest tested point, return the smallest conversion
   else if (initial_error == scaling[i][0])
     return scaling[i][1];
 
-  // Draw lines between each pointn
+  // Draw lines between each point
   double m = (scaling[i][1] - scaling[i - 1][1]) / (scaling[i][0] - scaling[i - 1][0]);  // (y2-y1) / (x2-x1)
   double b = scaling[i][1] - (m * scaling[i][0]);                                        // b = y - mx
   double y = (m * initial_error) + b;                                                    // y = mx + b
@@ -168,4 +165,4 @@ void smooth-turn(okapi::QAngle p_target, int speed) {
 }
 ```
 
-In the tests for the data that was collected, the speed that the robot was going at is constant.  A potential improvement is to allow multiple tests with multiple speeds, and make a 3D graph to find new scaling values.  At some point this defeats the purpose of being easier then the alternative though. 
+In the tests for the data that was collected, the speed that the robot was going at is constant.  A potential improvement is to allow multiple tests with multiple speeds and make a 3D graph to find new scaling values.  At some point, this defeats the purpose of being easier than the alternative though. 

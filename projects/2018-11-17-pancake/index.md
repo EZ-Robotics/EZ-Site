@@ -17,9 +17,9 @@ This robot was started over the summer and was decommissioned in December.  This
 
 My contributions as team captain went to every aspect of the robot.  I wrote software for driving autonomously using PID, regulating flywheel velocity with a custom velocity controller, and adding automation while operating to make it easier on the driver.  I designed stable and low-slop lift joints, a ball indexer that uses no motors, and a flip-out aligner to score caps.
 
-In VEX teams can create engineering notebooks and can win awards based on those notebooks and an interview process.  This is the notebook, and effectively build/softtware log, that our team made for this robot.   
+In VEX teams can create engineering notebooks and can win awards based on those notebooks and an interview process.  This is the notebook, our build/software log, that we made for this robot.   
 https://docs.google.com/document/d/1YsQF98x46rvx_f4sj1xKEUWLEZXy9S-LXohFsXjMl4s/edit?usp=sharing
 ![](banner.jpg)
 
-I made CAD of the robot during the pandemic.
+I made a CAD of the robot during the pandemic.
 ![](pancake_cad.png)

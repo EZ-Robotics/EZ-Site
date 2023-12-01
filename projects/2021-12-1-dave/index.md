@@ -10,7 +10,7 @@ Dave was a little robot that I made quickly for testing software.  Everything on
 
 <!--truncate-->
 
-I started out with a double roller omni wheel assembly that had a gear baked into the print.
+I started out with a double roller omni-wheel assembly that had a gear baked into the print.
 <img
   src={require("./wheel1.JPG").default}
   alt="Example banner"
@@ -32,12 +32,12 @@ I wanted all of the gearing to be enclosed in the drive so I needed smaller idle
 ![](innergears2.png)
 ![](innergears1.png)
 
-The motor fronts were integrated into the drive, and the gearing was done!  All that was left was to make an electronics holder, a simple sheet to hold everything, and make sure there's cutouts for tracking wheels.
+The motor fronts were integrated into the drive, and the gearing was done!  All that was left was to make an electronics holder, a simple sheet to hold everything, and make sure there were cutouts for tracking wheels.
 ![](fullcad1.png)
 ![](fullcad2.png)
 
-Assembly was very smooth.  Inserts got pressed into the wheels and they spun on round standoffs.  Everything else spun on screws.  
+The assembly was very smooth.  Inserts got pressed into the wheels and they spun on round standoffs.  Everything else spun on screws.  
 ![](notdone.jpg)
 
-And when assembly was all done, looks just like the CAD!  The robot helped me program for about 6 months, but I had other more realistic robots to use for software testing then.  T
+And when assembly was all done, it looked just like the CAD!  The robot helped me program for about 6 months, but I had other more realistic robots to use for software testing then.  T
 ![](outdoor.jpg)

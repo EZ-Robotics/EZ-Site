@@ -7,7 +7,7 @@ tags: [vex, mentoring, tutorials, software, open source, wip]
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-[EZ-Template](https://github.com/EZ-Robotics/EZ-Template) is a simple plug-and-play PROS template that handles drive base functions for VEX robots.  
+[EZ-Template](https://github.com/EZ-Robotics/EZ-Template) is a simple plug-and-play PROS template that handles drive-base functions for VEX robots.  
 
 https://github.com/EZ-Robotics/EZ-Template
 
@@ -15,6 +15,12 @@ https://github.com/EZ-Robotics/EZ-Template
 
 <!--truncate-->
 ---
+:::note
+
+EZ-Template has its own website for documentation [here](https://ez-robotics.github.io/EZ-Template/).
+
+:::
+
 ## About
 Many students using VEXcode rely on the built-in Drivetrain class, but it often falls short in addressing the nuances of creating consistent autonomous routines, leading to frustration for new programmers. Issues like wheel slop and mechanical obstructions can be challenging to diagnose, causing students to lose interest in robotics.
 
@@ -27,7 +33,7 @@ This project taught me the importance of listening to user feedback and making a
 The goal of EZ-Template shifted over time. This started out as my [codebase on my Tower Takeover robot](https://github.com/EZ-Robotics/EZ-GOOFY), and as I progressed through Change Up I got increasingly annoyed at how convoluted it was to give the code all the information it needed.  I made a brand new project and copied over all of my drive base code, and had a [single configuration file](https://github.com/EZ-Robotics/EZ-Template/blob/f4c287dc3cea8c95cdbbd47939ef41c1d5a2f749/include/EZ-Template/setup.hpp).  
 
 ### Features
-- simple to set up project
+- simple to set up a project
 - drive, turn, and swing turn PID 
 - speed ramp-up for driving
 - asynchronous PID with blocking functions until settled and until a specific position has come
@@ -69,7 +75,7 @@ This version needs to solve the pre-tuned PID values.  The obvious solution to t
 
 EZ-Template uses a base unit of "ticks".  One tick means different things depending on the gear ratio of the drive, wheel size, motor cartridge, and what encoder they are using.  This means if a team wanted to switch from using the motor's built-in encoders to tracking wheels, they would have to completely retune everything. 
 
-This version of EZ-Template will solve this problem by using a base unit of inches.  No matter what sensor the user has, the code will always use inches.  This adds clarity for users by giving units, makes it so users can switch from built in encoders to tracking wheels and keep the same constants, and it stops forward/reverse v2 constants from working in v3.  
+This version of EZ-Template will solve this problem by using a base unit of inches.  No matter what sensor the user has, the code will always use inches.  This adds clarity for users by giving units, makes it so users can switch from built-in encoders to tracking wheels and keep the same constants, and stops forward/reverse v2 constants from working in v3.  
 <Tabs
   groupId="ex1"
   defaultValue="v2"
@@ -107,7 +113,7 @@ This version of EZ-Template will solve this problem by using a base unit of inch
 </TabItem>
 </Tabs>
 
-3.x of EZ-Template will also include a complete redo of all function names.  Function names previously were made by what made the most sense to me.  Need to set the drive to move using PID?  `.set_drive_pid`.  This makes sense in english, but while I was working with [LVGL](https://lvgl.io/) I realized the benefit of naming in order of what you're looking for.  So now it'd be `.pid_drive_set`.  If you're looking to see everything you can do with PID on the drive, if you type `.pid_drive_` autocomplete will show you everything.  This makes autocomplete a more more useful tool when you don't know everything you can do in the library.
+3.x of EZ-Template will also include a complete redo of all function names.  Function names previously were made by what made the most sense to me.  Need to set the drive to move using PID?  `.set_drive_pid`.  This makes sense in English, but while I was working with [LVGL](https://lvgl.io/) I realized the benefit of naming in order of what you're looking for.  So now it'd be `.pid_drive_set`.  If you're looking to see everything you can do with PID on the drive, if you type `.pid_drive_` autocomplete will show you everything.  This makes autocomplete a more more useful tool when you don't know everything you can do in the library.
 
 ### Features
 - renamed functions

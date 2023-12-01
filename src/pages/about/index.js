@@ -47,7 +47,7 @@ function HomepageFeatures() {
           dangerouslySetInnerHTML={{
             __html: translate({
               message:
-                "<br>My name is Jess, I am currently a VEX robotics coach for Supernova Robotics at the Science Academy Stem Magnet in North Hollywood. I'm passionate about the synergy that comes from the integration of software and hardware. Apart from my involvement with Supernova, I undertake various projects, such as constructing droids and making tools. <br> <br>Check out [projects](link) if you're interested in the many other things I do!<br>",
+                `<br>My name is Jess, I am currently a VEX robotics coach for Supernova Robotics at the Science Academy Stem Magnet in North Hollywood. I'm passionate about the synergy that comes from the integration of software and hardware. Apart from my involvement with Supernova, I undertake various projects, such as constructing droids and making tools. <br> <br>Check out my projects page if you're interested in the many other things I do!<br>`,
               description:
                 'Home page hero title, can contain simple html tags',
             }),

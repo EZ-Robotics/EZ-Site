@@ -11,6 +11,11 @@
   width: 200px;
 }
 
+.featureImage {
+  height: 225px; 
+  width: auto;
+}
+
 .centeredRow {
   display: flex;
   justify-content: center;

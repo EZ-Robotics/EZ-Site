@@ -46,7 +46,7 @@ const config = {
 
         blog: {
           blogSidebarCount: 'ALL',
-          postsPerPage: 10,
+          postsPerPage: 7,
           blogSidebarTitle: 'All My Projects',
           showReadingTime: true,
           readingTime: ({ content, frontMatter, defaultReadingTime }) =>

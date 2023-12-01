@@ -7,65 +7,71 @@ const FeatureList = [
   {
     title: 'DD-3',
     link: '/projects/dd-3',
-    Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
+    image: require('@site/static/img/dd3.jpg').default,
     description: (
-
       <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
+        DD-3 is a Star Wars inspired fully functional droid. Built with personality in mind, DD-3 uses automation to give servos life and make DD-3 into a convincing character. 
       </>
     ),
   },
   {
-    title: 'Pure-Pursuit',
-    link: '/projects/pure-pursuit',
-    Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
+    title: 'The Pushbot',
+    link: '/projects/the-pushbot',
+    image: require('@site/static/img/final_cad.png').default,
     description: (
       <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
+        The Pushbot is a simple robot I made to demonstrate how strategy can get backed into a robots design for the VRC game Spin Up.
       </>
     ),
   },
   {
     title: 'Supernova Spectacular Awards',
     link: '/projects/supernova-spectacular-awards',
-    Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
+    image: require('@site/static/img/excellence.JPG').default,
     description: (
       <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
+        For Supernova Spectacular 2022, I designed and made 19 custom awards to give out during the event. 
+      </>
+    ),
+  },
+  {
+    title: 'Adaptive PID',
+    link: '/projects/adaptive-pid',
+    image: require('@site/static/img/adaptive_pid.png').default,
+    description: (
+      <>
+        Adaptive PID is a modification of PID that scales constants based on the robots tested velocity curve.
       </>
     ),
   },
   {
     title: 'EZ-Template',
-    Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
+    link: '/projects/about-ez-template',
+    image: require('@site/static/img/ez-template.jpg').default,
     description: (
       <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
+        EZ-Template is a simple plug-and-play PROS template that handles drive base functions for VEX robots. 
       </>
     ),
   },
   {
-    title: 'EZ-GUI',
-    Svg: require('@site/static/img/logo.svg').default,
+    title: 'Pure Pursuit',
+    link: '/projects/pure-pursuit',
+    image: require('@site/static/img/pure_pursuit.gif').default,
     description: (
       <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
+        Pure Pursuit is a path tracking algorithm that enables a robot to chase a "carrot on a stick".  
       </>
     ),
   },
 ];
 
-function Feature({ Svg, title, description, link, isCentered }) {
+function Feature({ image, title, description, link, isCentered }) {
   return (
     <div className={clsx('col col--4')}>
       <div className="text--center">
         <Link to={link} target="_blank" rel="noreferrer">
-          <Svg className={styles.featureSvg} role="img" />
+          <img src={image} alt={title} className={styles.featureImage} />
         </Link>
       </div>
       <div className="text--center padding-horiz--md">
@@ -84,40 +90,10 @@ export default function HomepageFeatures() {
       <div className="container">
         <div className={`row ${styles.centeredRow}`}>
           {FeatureList.map((props, idx) => (
-            <Feature
-              key={idx}
-              {...props}
-              isCentered={idx >= 3}
-            />
+            <Feature key={idx} {...props} isCentered={idx >= 3} />
           ))}
         </div>
       </div>
     </section>
   );
 }
-
-/*
-export default function HomepageFeatures() {
-  return (
-    <section className={styles.features}>
-      <div className="container">
-        <div className="row">
-          {FeatureList.map((props, idx) => (
-            <Feature key={idx} {...props} />
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
-*/
-/*
-export default function ImagesPage() {
-  return (
-    <div>
-      <Link to="/nature" target="_blank" rel="noreferrer">
-        <img src="/photos/tree-1.png" alt="Nature"></img>
-      </Link>
-    </div>
-  );
-}*/
