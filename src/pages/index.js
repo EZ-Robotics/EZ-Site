@@ -48,8 +48,8 @@ export default function Home() {
   const {siteConfig} = useDocusaurusContext();
   return (
     <Layout
-      title={`robotics is ez`}
-      description="robots">
+      /*title={`robotics is ez`}
+      description="robots"*/>
       <HeroBanner />
       <main>
         <HomepageFeatures />
