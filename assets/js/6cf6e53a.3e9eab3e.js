@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkmy_website=self.webpackChunkmy_website||[]).push([[21],{7726:e=>{e.exports=JSON.parse('{"permalink":"/EZ-Site/projects/tags/turning-point","page":1,"postsPerPage":7,"totalPages":1,"totalCount":2,"blogDescription":"Blog","blogTitle":"Blog"}')}}]);

@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkmy_website=self.webpackChunkmy_website||[]).push([[8394],{8063:e=>{e.exports=JSON.parse('{"label":"hardware","permalink":"/projects/tags/hardware","allTagsPath":"/projects/tags","count":17,"unlisted":false}')}}]);

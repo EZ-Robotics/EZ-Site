@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkmy_website=self.webpackChunkmy_website||[]).push([[474],{29:e=>{e.exports=JSON.parse('{"permalink":"/EZ-Site/projects/tags/hardware/page/2","page":2,"postsPerPage":7,"totalPages":3,"totalCount":17,"previousPage":"/EZ-Site/projects/tags/hardware","nextPage":"/EZ-Site/projects/tags/hardware/page/3","blogDescription":"Blog","blogTitle":"Blog"}')}}]);

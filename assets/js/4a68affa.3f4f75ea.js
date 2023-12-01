@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkmy_website=self.webpackChunkmy_website||[]).push([[9689],{9235:e=>{e.exports=JSON.parse('{"label":"open source","permalink":"/EZ-Site/projects/tags/open-source","allTagsPath":"/EZ-Site/projects/tags","count":7,"unlisted":false}')}}]);

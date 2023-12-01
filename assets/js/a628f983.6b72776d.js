@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkmy_website=self.webpackChunkmy_website||[]).push([[2443],{1412:e=>{e.exports=JSON.parse('{"permalink":"/EZ-Site/projects/tags/software/page/3","page":3,"postsPerPage":7,"totalPages":3,"totalCount":18,"previousPage":"/EZ-Site/projects/tags/software/page/2","blogDescription":"Blog","blogTitle":"Blog"}')}}]);

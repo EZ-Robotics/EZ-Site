@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkmy_website=self.webpackChunkmy_website||[]).push([[9258],{1473:s=>{s.exports=JSON.parse('{"label":"starstruck","permalink":"/EZ-Site/projects/tags/starstruck","allTagsPath":"/EZ-Site/projects/tags","count":1,"unlisted":false}')}}]);
