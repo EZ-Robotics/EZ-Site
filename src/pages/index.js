@@ -49,7 +49,7 @@ export default function Home() {
   return (
     <Layout
       title={`robotics is ez`}
-      description="Description will go into a meta tag in <head />">
+      description="robots">
       <HeroBanner />
       <main>
         <HomepageFeatures />

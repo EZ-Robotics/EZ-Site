@@ -11,14 +11,14 @@ import lightCode from './src/utils/codeLight.ts';
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'ez robotics',
-  tagline: 'robotics is ez',
+  title: 'robotics is ez',
+  tagline: '',
   favicon: 'img/favicon.ico',
 
-  url: 'https://ez-robotics.github.io',
+  url: 'https://www.roboticsisez.com',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: '/EZ-Site/',
+  baseUrl: '/',
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
@@ -72,7 +72,7 @@ const config = {
       },
 
       // Replace with your project's social card
-      image: 'img/docusaurus-social-card.jpg',
+      image: 'img/social-card.png',
       navbar: {
         title: 'robotics is ez',
         items: [
