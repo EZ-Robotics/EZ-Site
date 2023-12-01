@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkmy_website=self.webpackChunkmy_website||[]).push([[5366],{2913:e=>{e.exports=JSON.parse('{"label":"vex","permalink":"/EZ-Site/projects/tags/vex","allTagsPath":"/EZ-Site/projects/tags","count":19,"unlisted":false}')}}]);

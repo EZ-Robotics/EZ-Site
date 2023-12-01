@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkmy_website=self.webpackChunkmy_website||[]).push([[1990],{28:s=>{s.exports=JSON.parse('{"label":"star wars","permalink":"/EZ-Site/projects/tags/star-wars","allTagsPath":"/EZ-Site/projects/tags","count":1,"unlisted":false}')}}]);

@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkmy_website=self.webpackChunkmy_website||[]).push([[7073],{7115:e=>{e.exports=JSON.parse('{"permalink":"/EZ-Site/projects/tags/wip","page":1,"postsPerPage":7,"totalPages":2,"totalCount":8,"nextPage":"/EZ-Site/projects/tags/wip/page/2","blogDescription":"Blog","blogTitle":"Blog"}')}}]);

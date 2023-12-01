@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkmy_website=self.webpackChunkmy_website||[]).push([[7376],{5195:e=>{e.exports=JSON.parse('{"label":"google sheets","permalink":"/projects/tags/google-sheets","allTagsPath":"/projects/tags","count":1,"unlisted":false}')}}]);

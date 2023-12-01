@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkmy_website=self.webpackChunkmy_website||[]).push([[7369],{2886:e=>{e.exports=JSON.parse('{"label":"change up","permalink":"/EZ-Site/projects/tags/change-up","allTagsPath":"/EZ-Site/projects/tags","count":1,"unlisted":false}')}}]);

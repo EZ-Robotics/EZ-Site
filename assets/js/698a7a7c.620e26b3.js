@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkmy_website=self.webpackChunkmy_website||[]).push([[7638],{4437:e=>{e.exports=JSON.parse('{"permalink":"/projects/tags/vex/page/3","page":3,"postsPerPage":7,"totalPages":3,"totalCount":19,"previousPage":"/projects/tags/vex/page/2","blogDescription":"Blog","blogTitle":"Blog"}')}}]);

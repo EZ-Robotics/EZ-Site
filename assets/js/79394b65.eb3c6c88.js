@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkmy_website=self.webpackChunkmy_website||[]).push([[3703],{9894:e=>{e.exports=JSON.parse('{"label":"nerf","permalink":"/projects/tags/nerf","allTagsPath":"/projects/tags","count":2,"unlisted":false}')}}]);

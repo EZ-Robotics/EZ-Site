@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkmy_website=self.webpackChunkmy_website||[]).push([[1386],{4965:e=>{e.exports=JSON.parse('{"permalink":"/projects/tags/google-sheets","page":1,"postsPerPage":7,"totalPages":1,"totalCount":1,"blogDescription":"Blog","blogTitle":"Blog"}')}}]);

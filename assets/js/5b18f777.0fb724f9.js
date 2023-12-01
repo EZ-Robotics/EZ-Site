@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkmy_website=self.webpackChunkmy_website||[]).push([[6195],{1518:e=>{e.exports=JSON.parse('{"permalink":"/projects/tags/starstruck","page":1,"postsPerPage":7,"totalPages":1,"totalCount":1,"blogDescription":"Blog","blogTitle":"Blog"}')}}]);

@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkmy_website=self.webpackChunkmy_website||[]).push([[6460],{4049:e=>{e.exports=JSON.parse('{"permalink":"/EZ-Site/projects/tags/cad","page":1,"postsPerPage":7,"totalPages":2,"totalCount":12,"nextPage":"/EZ-Site/projects/tags/cad/page/2","blogDescription":"Blog","blogTitle":"Blog"}')}}]);
