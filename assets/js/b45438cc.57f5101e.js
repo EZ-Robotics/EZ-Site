@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkmy_website=self.webpackChunkmy_website||[]).push([[1317],{5287:s=>{s.exports=JSON.parse('{"label":"spin up","permalink":"/projects/tags/spin-up","allTagsPath":"/projects/tags","count":1,"unlisted":false}')}}]);

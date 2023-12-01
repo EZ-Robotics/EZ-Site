@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkmy_website=self.webpackChunkmy_website||[]).push([[9346],{7353:e=>{e.exports=JSON.parse('{"label":"tipping point","permalink":"/projects/tags/tipping-point","allTagsPath":"/projects/tags","count":1,"unlisted":false}')}}]);
