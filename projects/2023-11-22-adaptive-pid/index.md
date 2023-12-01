@@ -102,6 +102,10 @@ All of that gave me this graph.  X axis is the target we were reading to, and Y 
 ![](banner.png)
 
 To use this graph I scaled the Y axis down to 1 by dividing everything by the largest tested Y point.  That left me with many points I can draw lines through and find new conversion rates for untested turn amounts.  I took my conversion rate and I change my constants by that.  And... it worked!
+
+In this test, the first set of turns is standard EZ-Template.  The second set of turns is using the modified constants. 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/qdRAPPe5oj8?si=n4ZuJxHNptZo0IWk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
 ```cpp
 std::vector<std::vector<double>> scaling = {
     {0, 0},
@@ -163,6 +167,5 @@ void smooth-turn(okapi::QAngle p_target, int speed) {
   chassis.pid_turn_set(p_target, speed);
 }
 ```
-(put a video here)
 
-In the test, the speed that the robot was going at is constant.  A potential improvement is to allow multiple tests with multiple speeds, and make a 3D graph to find new scaling values.  At some point this defeats the purpose of being easier then the alternative though. 
+In the tests for the data that was collected, the speed that the robot was going at is constant.  A potential improvement is to allow multiple tests with multiple speeds, and make a 3D graph to find new scaling values.  At some point this defeats the purpose of being easier then the alternative though. 

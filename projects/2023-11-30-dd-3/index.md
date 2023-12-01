@@ -7,9 +7,6 @@ tags: [hardware, software, cad, electrical, star wars, wip]
 
 DD-3 is a Star Wars inspired fully functional droid. Built with personality in mind, DD-3 uses automation to give servos life and make DD-3 into a convincing character. 
 
-Photo Album  
-Code
-
 Build log, from the start.  Click `Read More`!
 
 ![](./banner.jpg)
@@ -17,7 +14,11 @@ Build log, from the start.  Click `Read More`!
 <!--truncate-->
 ---
 ## D-O
-initial design.  look at mantis, badley v1 and v2
+:::note
+
+This section is WIP
+
+:::
 
 ---  
 ## Open Sauce 2023
@@ -30,39 +31,15 @@ I also ran into the R2 Builders booth and had a discussion with [CuriousMarc](ht
 I started looking into drawings of droids and stumbled across this which feels so perfect.  It has the D-O tire but adds arms, and the body looks like an R2 but the head is a BB-8.  It seems perfect, and this became my reference photo for simplifying the project.
 ![](opensauce2023/dd3_sketch.png)
 
+---
 ## Long Beach Comic Con 2023
 I saw there was a convention on September 2 and 3 and decided to sign up.  This would be my deadline for getting the robot presentable.
 
-- decide if i liked dimensions of the drawing
-- figure out how to support it
-- wheels need covers
-- holes drilled for that
-- fix squaring
-- test leg+wheel put on
-- aluminum hubs for powered gears, sanding those down, hole drilled in body for set screw
-- pivots for head on lazy suzan
-- servo mount for it
-- ring gear
-- motor mount
-- aluminum tape instead of painters tape (finally)
-- wiring everything up
-- magnetic little cover plate so wheel can be put on/off
-- start of body designing, proportions look weird
-- new cad and fixed proportions look good
-- leg started off as a single piece so i can pull dimensions from it to split it up
-- leg coming together
-- body tire cover
-- painting the leg
-- removable head with magnets
-- receding hairline
-- "eyebrow" moving
-- filling the head with durhams rock hard putty
-- video of stuff moving
-- designing the case
-- final picture
-electronics blew... teensy 5v problem, switching to arduino post comicon and redoing all electronics 
+:::note
 
-final pictures/videos/thoughts
+This section is WIP
+
+:::
 
 ---  
 ## OC Maker Faire 2023
@@ -309,9 +286,6 @@ The body cracked a little at some weaker points in the design.  There isn't much
 I filled the parts that did scratch with some yellow paint, and filled the vent with a lighter gray on the inside and gold around.  I like idea of yellow exposing itself when the black scratches. 
 ![](lacomicon2023/body_after.jpg)
 
-I did this for spots on the leg that scratches too, and everything is repaired now!
-+++++++++++++++++++picture++++++++++++++++++
-
 ### Wiring Head Servos to the Body
 I tried to find a place to plug the servos into the servo board but the pins on the servo board are completely inaccessibly.  The opposite side of the blue board needs to be reached.
 ![](lacomicon2023/PXL_20231122_222634312.jpg)
@@ -324,7 +298,5 @@ The only solution I could come up with is to remove the servo board, desolder so
 
 Then it's just wiring everything together and labeling all the wires.
 +++++++++++picture of it all wired+++++++++++++++++
-
-### Head Ring Gear Clicking
 
 ### Automated Animations 

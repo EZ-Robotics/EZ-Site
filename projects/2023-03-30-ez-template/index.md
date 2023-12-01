@@ -11,6 +11,8 @@ import TabItem from '@theme/TabItem';
 
 https://github.com/EZ-Robotics/EZ-Template
 
+![](banner.jpg)
+
 <!--truncate-->
 ---
 ## About
