@@ -43,7 +43,7 @@ This section is WIP
 
 ---  
 ## OC Maker Faire 2023
-Goal: October 21 2023 
+Goal: October 21, 2023 
 ### Plans
 With everything I learned talking to the other droid builders at Long Beach Comic Con, I decided to sand back paint on every part and redo them. The highest priority for me was to go to the next con with the robot working.  Here's my priority list:
 - redoing the wiring, double check everything, adding speakers
@@ -197,7 +197,7 @@ I finished up the pelican case and added spots for the batteries and the control
 I wanted to bring it to work again to make sure everything was still working, and good thing I did.  I was having a strange issue where the switch wasn't working again, but this time everything seemed like it was plugged in.  At this point there had been 2 problems with the switch, so after work, I reprogrammed the switch to be on the controller instead.  I brought it back to work the next day and everything was working perfectly. I added safety so that when the switch goes from disabled to enabled, nothing turns on for 3 seconds.
 
 ### At the Event
-![](banner.jpg)
+![](ocmakerfair2023/dd_walter.jpg)
 <iframe width="560" height="315" src="https://www.youtube.com/embed/QHBAFHdF71U?si=WKsknEyCu6PMA-Uy" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 ![](lacomicon2023/r2_bully.jpg)
 
@@ -237,10 +237,6 @@ This needs a little less sensitivity to moving.  Currently, if the controller is
     int x = cur_x - last_x;
     int y = cur_y - last_y;
 
-    // Give wiggle room for noise
-    // x = abs(x) <= 1 ? 0 : x;
-    // y = abs(y) <= 1 ? 0 : y;
-
     last_x = cur_x;
     last_y = cur_y;
 
@@ -264,6 +260,35 @@ This needs a little less sensitivity to moving.  Currently, if the controller is
     return;
   }
 ```
+
+I did this by adding a buffer to the velocity to the code above, where if it's less then 1 it'll treat it like 0. 
+```cpp
+    // Give wiggle room for noise
+    x = abs(x) <= 1 ? 0 : x;
+    y = abs(y) <= 1 ? 0 : y;
+```
+
+The data from the gyro seemed noisy when I would move quickly still, so I added an SMA filter to the gyro readings.  This was extremely sensitive before, and now all works as I expect it to. 
+```cpp
+  // SMA filter for the gyros in the controller
+  if (gyro_x_vector.size() >= gyro_x_vector.max_size())
+    gyro_x_vector.remove(0);
+
+  if (gyro_y_vector.size() >= gyro_y_vector.max_size())
+    gyro_y_vector.remove(0);
+
+  gyro_x_vector.push_back(joystick_channel_raw(GYRO_X));
+  gyro_y_vector.push_back(joystick_channel_raw(GYRO_Y));
+
+  // int xx = 0, yy = 0;
+  int max = gyro_x_vector.size();
+  for (int i = 0; i < max; i++) {
+    gyro_x_output += gyro_x_vector[i];
+    gyro_y_output += gyro_y_vector[i];
+  }
+  gyro_x_output /= max;
+  gyro_y_output /= max;
+  ```
 
 ### Fixing the Fall
 First, everything comes apart...
@@ -300,4 +325,17 @@ The only solution I could come up with was to remove the servo board, desolder s
 Then it's just wiring everything together and labeling all the wires.
 ![](lacomicon2023/head_wired.jpg)
 
-### Automated Animations 
+### At the Event
+<iframe width="560" height="315" src="https://www.youtube.com/embed/BFHmbZconYs?si=m7Rbp61tfYlYZbbu" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+![](lacomicon2023/dd-3.jpg)
+![](lacomicon2023/group_photo.jpg)  
+![](lacomicon2023/bob_gurr.jpg)
+![](lacomicon2023/roxy.jpg)
+![](lacomicon2023/dd_and_grogu.jpg)
+![](lacomicon2023/walle_out.jpg)
+![](lacomicon2023/gil_and_grogu.jpg)
+![](lacomicon2023/gross_grogu_dd.jpg)
+![](lacomicon2023/trooper_dd.jpg)
+![](lacomicon2023/rusty.jpg)
+![](lacomicon2023/dd_gil_grogu.jpg)
