@@ -33,13 +33,111 @@ I started looking into drawings of droids and stumbled across this which feels s
 
 ---
 ## Long Beach Comic Con 2023
-I saw there was a convention on September 2 and 3 and decided to sign up.  This would be my deadline for getting the robot presentable.
-
 :::note
 
 This section is WIP
 
 :::
+Goal: September 2-3, 2023
+
+### Plans
+I saw there was a convention on September 2 and 3 and decided to sign up.  This would be my deadline for getting the robot functional.  I'd like to recreate the image the best I can. 
+
+A big requirement is for this robot to have personality.  Nothing matches the personality of WALL-E, but I'd like to do as much as I can to give this personality.  Something great about Chopper is the head tilt.  It adds so many characters and it is something I'll be implementing in this robot. 
+
+### Design and Assembly
+The first thing I needed to do was check the dimensions.  I can't easily modify the width of the robot, so I need to make sure the width of the body looks about correct. I took some construction paper to see how I felt about it, and the dimensions I liked were the same as the scaled dimensions from the reference image.  Moving forward I'll just grab dimensions from the reference image. 
+![](lbcomicon2023/paper_body.jpg)
+
+The main challenge with this is figuring out how to have a structure above the wheels that gets covered by the body.  I decided to build a T inside the robot where the edges of the T will sit above the wheel.  I replaced the servo mounts with a shoe-horn-like piece that has a 1/2" aluminum angle gets mounted to. 
+![](lbcomicon2023/printed_structure.jpg)
+![](lbcomicon2023/structure_with_alu.jpg)
+
+The legs needed to get mounted diagonally and needed a mount at the end of this T structure.  How this piece is designed changes how the T exactly gets made so I decided to design this first.  This has captive nuts and sits inside of the 1/2" angle.  I also needed to make sure there was space at the corners for the body to sit, which distances the length of the arms on the T.
+![](lbcomicon2023/leg_mount.png)
+![](lbcomicon2023/leg_mount_in_body.png)
+
+Through this, I also realized that any decorative cover that goes over the wheel is affected by this.  There is a limit to the thickness of it based on the leg mount shown above because there is a slight overhang on the leg mount to the wheel.  I made a test wheel cap to make sure clearance is all good. 
+![](lbcomicon2023/first_wheel_cap.png)
+
+I got a little too into it and ended up designing a wheel cap more and I printed it to see it.  This will become the first part I play with finishing and making it look like it's not 3D printed. 
+![](lbcomicon2023/first_printed_wheel_cap.jpg)
+
+I got both servo mounts replaced with the new horseshoe pieces and got all 4 pieces of angle on.  I have screws going through in multiple axes and have standoffs going between everything to make sure it stays square. 
+![](lbcomicon2023/4_posts.jpg)
+
+Because of the orientation of the angle, I had to flip the leg mounts upside down to what I originally wanted.  When comparing how the new dimensions lined up with the reference image, it all looked the same.  So this was ok and I left it. 
+![](lbcomicon2023/tee.jpg)
+
+Working on this with 1 wheel became increasingly annoying as more weight was added higher up.  I would need legs on this if I wanted to easily continue work on it, so I needed to figure out how the legs were going to be made.  I sanity-checked the angle of the legs and this feels correct. 
+![](lbcomicon2023/leg_feel_check.jpg)
+
+The legs are 1/2" aluminum c-channel that I cut out the center of to have the wheel sit.  This wheel is temporary as I come up with a better aesthetically fitting design, but works for testing functionality and stopping this from falling over.
+![](lbcomicon2023/first_leg_assem.jpg)
+
+I was on/off sanding and painting the wheel hubs.  I very quickly learned how important and annoying sanding is.  I ended up with something that I felt was good, and I'd be doing this much more over the course of this project and would get better at this.
+![](lbcomicon2023/early_sanding_wheel.jpg)
+![](lbcomicon2023/later_sanding_wheel.jpg)
+
+The wheel hub caps have holes for 4-40 screws to thread into, but the wheels do not have holes for this.  I printed a jig so I could drill these holes out in the wheel, I didn't feel like this was worth reprinting the entire wheel for. 
+![](lbcomicon2023/hub_jig.jpg)
+![](lbcomicon2023/wheel_and_hub.jpg)
+
+An issue on D-O was the gear being press-fitted on to the motor shaft eventually stripped.  I found aluminum hubs on Amazon and decided to make a gear to interface with this. I needed to drill a hole in the body so the set screw was accessible.
+![](lbcomicon2023/metal_hub.jpg)
+![](lbcomicon2023/through_hole_for_set_screw.jpg)
+
+The metal hub was a little larger than the smallest point on my gear so I used my "lathe" (drill + belt sander) to make it smaller.  I checked the diameter frequently with calipers. 
+![](lbcomicon2023/lathe_hub.jpg)
+![](lbcomicon2023/metal_hub_on_gear.jpg)
+![](lbcomicon2023/gear_meshing_with_wheel.jpg)
+
+Thank you to Zach Pinkerton for leaving this review on this [lazy susan](https://a.co/d/1QRSCqb)!  I have no idea if this is the best one or not, but the review is enough for me.
+![](lbcomicon2023/lazy_susan_review.png)
+
+I printed mounts for the lazy susan with space for bushings, and printed brackets to hold a screw that the entire lazy susan pivots off of.  
+<iframe width="560" height="315" src="https://www.youtube.com/embed/M7PbQq6D48E?si=YfEPyxlpbQgVRYaE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>  
+  
+I made a mount for the servo and cut out a linkage from 1/8" polycarbonate to connect the servo horn to the lazy susan.  
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Oa7mW7nhXUE?si=9-WQb64j8WYOxDbx" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>  
+
+To make the head spin I designed a ring gear similar to how the wheels work.  I'll use an N20 motor to make the head spin. 
+![](lbcomicon2023/ring_gear.jpg)
+
+I designed a press-fit mount for the motor that has a set screw to hold the motor in place.  This mounts to the part of the lazy susan that is stationary.
+![](lbcomicon2023/head_spin_motor_mount.png)  
+![](lbcomicon2023/motor_mount_printed.jpg)
+
+I didn't want to buy more aluminum hubs and I feel the head won't be under an intense amount of force, so I've come up with a strange solution.  Using a VEX shaft collar with a 1/4" screw, I can make geometry in the gear to fit around this.  Then I can clamp the shaft collar to the motor and the gear will clamp around the shaft collar.  This is surprisingly stable, and I imagine this will only work in small scale very low-torque situations like this. 
+![](lbcomicon2023/gear_with_shaft_collar.png)
+![](lbcomicon2023/spin_gear_almost_mounted.jpg)  
+![](lbcomicon2023/spin_gear_mounted.jpg)
+
+I (finally) switched out the painter's tape for "adhesive shim" aka aluminum tape. The bearings now press fit over the shafts. 
+![](lbcomicon2023/aluminum_tape.jpg)
+
+I tried to assemble the robot and realized that I cannot assemble the wheels with the hub caps, they block where screws need to go to keep the wheel from falling off the shaft.  I split the design into 2 parts and have the inner part mounted with magnets.  This also makes it significantly easier to get the color split between the two parts. 
+![](lbcomicon2023/possible_wheel_hub_caps.jpg)
+![](lbcomicon2023/black_and_green_hub_caps.jpg)
+
+I made this test body to check how the dimensions felt on the actual robot, and I wasn't happy with it.  I felt like everything needed to come down farther. 
+![](lbcomicon2023/first_body.jpg)
+![](lbcomicon2023/first_body_annotated.jpg)
+
+I added these new dimensions and added pockets for vents and a decorative front plate.  The dimensions for this ended up feeling perfect.  
+![](lbcomicon2023/new_body_cad.png)
+![](lbcomicon2023/new_body.jpg)
+
+I tried a new wheel design using a VEX flex wheel but I'm really not happy with it, instead, I'll try using an o-ring. 
+![](lbcomicon2023/3inch_wheel_test.jpg)
+
+leg
+center body
+head
+electronics 
+blowing teensy
+blowing arduino
+
 
 ---  
 ## OC Maker Faire 2023
@@ -196,14 +294,14 @@ I finished up the pelican case and added spots for the batteries and the control
 
 I wanted to bring it to work again to make sure everything was still working, and good thing I did.  I was having a strange issue where the switch wasn't working again, but this time everything seemed like it was plugged in.  At this point there had been 2 problems with the switch, so after work, I reprogrammed the switch to be on the controller instead.  I brought it back to work the next day and everything was working perfectly. I added safety so that when the switch goes from disabled to enabled, nothing turns on for 3 seconds.
 
-### At the Event
+### At OC Maker Faire 2023
 ![](ocmakerfair2023/dd_walter.jpg)
 <iframe width="560" height="315" src="https://www.youtube.com/embed/QHBAFHdF71U?si=WKsknEyCu6PMA-Uy" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 ![](lacomicon2023/r2_bully.jpg)
 
 ---  
 ## LA Comic Con 2023
-Goal: December 2, 2023
+Goal: December 2-3, 2023
 ### Plans
 There is a lot I'd like to change to the robot, but I can only give it so much time.  This is the priority list for changes I'd like to make, and we'll get to as many as we can:
 - use gyros in the controller to decide when the controller is set down and disable the robot if it's set down for too long
@@ -325,7 +423,7 @@ The only solution I could come up with was to remove the servo board, desolder s
 Then it's just wiring everything together and labeling all the wires.
 ![](lacomicon2023/head_wired.jpg)
 
-### At the Event
+### At LA Comic Con 2023
 <iframe width="560" height="315" src="https://www.youtube.com/embed/BFHmbZconYs?si=m7Rbp61tfYlYZbbu" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 ![](lacomicon2023/dd-3.jpg)
