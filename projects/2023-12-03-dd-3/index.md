@@ -13,12 +13,99 @@ Build log, from the start.  Click `Read More`!
 
 <!--truncate-->
 ---
-## D-O
-:::note
+## D-O 
+After rewatching Star Wars, I thought D-O was adorable and wanted to make my own.  I've seen the community people who make Star Wars robots before and I've considered building an R2-D2 previously so this isn't a new idea.  
 
-This section is WIP
+### Design
+I found this video series by Matt Denton that showcases him designing, assembling, and troubleshooting D-O.  To me, the interesting part of this project would be designing the parts, software, and aesthetics.  I'm not bothered if my result ends up looking just like D-O or not.  
+<iframe width="560" height="315" src="https://www.youtube.com/embed/zplirkxl6iM?si=CmTjpj-HwYrTr-gj" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
-:::
+Matt has larger 3D printers than I have, I have a Prusa Mini which has a 7" bed.  So I'm restricted to the wheel being 7" in diameter. 
+
+The big design challenge with this robot is the linkages that go across the entire body.  I liked the idea of having a large hollow center shaft that has axels running across to stabilize it, and the drive shaft is wide enough to have 2 axels running across.  The problem with this is finding a bearing large enough.
+![](d-o/first_cad.png)
+
+I found a ball bearing with 85mm OD, but after putting it in CAD it's clear how massive and heavy this bearing will be.  The pink pieces hold bushings that will hold the axles that run across the robot to power the head. 
+![](d-o/first_cad_with_ball_bearing.png)
+
+Finally, I found [this](https://www.mcmaster.com/6656K227/) ball bearing which has the same ID but a much more sane OD. 
+
+I added a ring gear to the wheel and the placement for the powered gear.  This will go 260rpm on a 7" wheel, with 1806 2300kv brushless motor on 4s with a 19:1 gearbox from Robot Matter. I also found a 7" square o-ring that I can use as a tire.  
+![](d-o/wheels_tires_gears.png)
+
+Playing with aesthetics, I liked the way an inverted center tire looked instead of the squishy tire that Matt Denton used. 
+![](d-o/inverted_center_tire.png)
+![](d-o/chassis_no_wheels.png)
+
+A cantilevered mechanism like the head on D-O felt wrong to me, so I wanted to design it to be not cantilevered.  I made some geometry for the linkage and copied it to both sides.  I also angled the linkages in because it looked way too wide when it was straight up. I'm doing the linkage the same way it's done on D-O, where one is a crankshaft and one directly powers the linkage, to give control over tilt and height.
+![](d-o/head_linkage.png)
+![](d-o/angle.png)
+
+The linkages need a way to be powered and that would have to happen between the wheels.  I placed a servo in the CAD here and it looks like it'll fit nicely. 
+![](d-o/servo_in_body.png)
+
+There isn't nice geometry to mount something off of, so I figured the best shot I'd have is to wrap around the center shaft and the support for it.  
+![](d-o/ms_paint_servo_mount.png)
+![](d-o/servo_mount_cad_real.png)
+![](d-o/servo_mount_cad_clear_poly.png)
+
+To get the aluminum rods to spin, my first idea was to use a portion of a gear.  I very quickly stopped liking this idea because of how much material needs to get cut out of the main drive shaft.
+![](d-o/gear_open.png)
+![](d-o/gear_closed.png)
+
+I played with a linkage instead and was very happy with the amount of material I'd have to remove. 
+![](d-o/linkage_open.png)
+![](d-o/linkage_closed.png)
+
+I designed the linkage for real and made the piece that clamps onto the aluminum rod.  The hole that needs to be drilled is only 1/2".
+![](d-o/linkage_real_open.png)
+![](d-o/linkage_real_closed.png)
+
+Figuring out how to fit batteries was weirdly challenging.  I knew they needed to go to the bottom because this robot needed to self-balance.  In this image, the 3 rectangles are batteries.  I'd have to find batteries that fit in the pocketing of the wheel. 
+![](d-o/batteries1.png)
+
+I also have to figure out a way to fit the batteries inside of the chassis.  What I came up with was to cut out a chunk of the chassis, and have another printed piece that slides into it.  This makes the main chassis significantly easier to print and lets me iterate battery holder geometry separate from the chassis. 
+![](d-o/hole_in_chassis.png)
+![](d-o/battery_compartment_in_chassis.png)
+
+I fit a pca9685 servo board, a teensy, and an x8r receiver inside. 
+![](d-o/electronics_and_hardware.png)
+
+### Assembly
+I ordered everything I needed and the McMaster order came in first along with the Amazon order.  I have everything I need to get started now except for the drive motors.  I want to wait to print the main chassis until I get the drive motors in so I can do some tolerance tests on them before wasting a bunch of filament.
+![](d-o/parts.jpg)
+
+I thought there was a chance the 45mm ID bearing would fit nicely over the 1.75" OD polycarbonate tube I'm using, but they had a very noticeable amount of slop.  I'll have to put aluminum tape over the shaft to fix this. 
+![](d-o/bearing_slop.jpg)
+
+6 months later, the motors came in!  I do my tolerance tests on the motor and I'm able to quickly get things printed.  The battery holder fits nicely in the chassis. 
+![](d-o/first_chassis.jpg)
+![](d-o/chassis_and_wheels.jpg)
+
+I wired the battery to the ESC and plugged it into the x8r and got the motors to spin.  At this point, I realized how overkill my motors are for the size of this setup...
+<iframe width="560" height="315" src="https://www.youtube.com/embed/VCpQBMrnqF8?si=_AMB_sxgBq27oif1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>  
+
+I hooked everything up to the receiver with no code running just to drive it around and see how it felt to drive.  
+<iframe width="560" height="315" src="https://www.youtube.com/embed/VZo2JVg1lBQ?si=7DwsGdgTZDLhcfuS" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+The shaft isn't attached properly in those tests, so I need to drill holes in the tube to get everything mounted. 
+![](d-o/jig_for_drilling.jpg)
+
+I used the holes I just drilled to index another jig.
+![](d-o/jig2.jpg)
+
+Mounting the shaft to the body was simple, and the servos could now be screwed in too. 
+![](d-o/shaft_in_body.jpg)
+![](d-o/servos_in_body.jpg)
+
+I got the outputs from the x8r hooked into the teensy and I pulled my PID class I made for EZ-Template.  I found a library to interpret the mpu6050 and got some PID running to make sure I could get it running.
+<iframe width="560" height="315" src="https://www.youtube.com/embed/M39WKuFIYLQ?si=QsvU4toI6oTNccvN" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+Changing the battery with the old holder required taking the wheel off which was incredibly annoying.  I realized I could make the fake wheel removable and insert wheels along the front of the robot instead of the side.  I started making a new battery holder out of some 1/16" polycarbonate I had. 
+![](d-o/new_battery_mount.jpg)
+![](d-o/finished_battery_holder.jpg)
+
+I won't show the picture here, but after I started testing PID on the robot fully assembled, the robot wouldn't turn off and in my attempt to turn it off my finger got caught in the gear.  It ate a good chunk of skin off of my finger.  I decided to take a little break before coming back to it, and need to think of some safeties to make sure something like that never happens again.
 
 ---  
 ## Open Sauce 2023
@@ -27,6 +114,7 @@ I didn't work on this project for ~3 weeks after it ate my finger.  The next tim
 At Open Sauce I saw some self-balancing robots that used the same mpu6050 that I was trying to balance with which gave me more confidence that I could pull off what I was trying to pull off.  
 
 I also ran into the R2 Builders booth and discussed it with [CuriousMarc](https://www.curiousmarc.com/home).  I remember watching his YouTube videos back in ~2016, it was very cool to meet him.  He let me look inside the droid and we spoke for a bit.  He told me to start simple before jumping into a larger project like an R2. I realized then I had to simplify this project to get it done and making the entire project rely on something I wasn't 100% sure would work as well as I hoped was concerning. 
+![](opensauce2023/marc.jpg)
 
 I started looking into drawings of droids and stumbled across this which feels so perfect.  It has the D-O tire but adds arms, and the body looks like an R2 but the head is a BB-8.  It seems perfect, and this became my reference photo for simplifying the project.
 ![](opensauce2023/dd3_sketch.png)
