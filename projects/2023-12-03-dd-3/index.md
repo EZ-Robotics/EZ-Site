@@ -169,12 +169,15 @@ The eyebrows are connected to a linkage to move them in and out slightly, and th
 ![](lbcomicon2023/haed_mechanics.jpg)
 ![](lbcomicon2023/head_unpainted.jpg)
 
-To fill the crevis in the bottom of the bowl, I used durhams putty.  This is a very cheap powder, which is ~$3, and the powder gets added to water.  I can control the viscosity of it by changing the ratio of powder to water, and then I can fill in the area with this.  It's very sandable, and does cure to be "rock hard". 
+To fill the crevice in the bottom of the bowl, I used durhams putty.  This is a very cheap powder, which is ~$3, and the powder gets added to water.  I can control the viscosity of it by changing the ratio of powder to water, and then I can fill in the area with this.  It's very sandable, and does cure to be "rock hard". 
 ![](lbcomicon2023/durhams.jpg)
 
 I got the head primed and painted and got the rest of the structure painted. 
 ![](lbcomicon2023/head_painted.jpg)
 ![](lbcomicon2023/head_on_robot.jpg)
+
+I finished painting the robot and the robot looks good!
+![](lbcomicon2023/completed_robot.jpg)
 
 ### Electronics 
 To get serial, power, and ground to the head I'm going to use a slip ring.  The slip ring is mounted in the center of the stationary part of the lazy susan. 
