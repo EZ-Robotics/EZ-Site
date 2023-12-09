@@ -33,17 +33,14 @@ I started looking into drawings of droids and stumbled across this which feels s
 
 ---
 ## Long Beach Comic Con 2023
-:::note
-
-This section is WIP
-
-:::
 Goal: September 2-3, 2023
 
 ### Plans
 I saw there was a convention on September 2 and 3 and decided to sign up.  This would be my deadline for getting the robot functional.  I'd like to recreate the image the best I can. 
 
 A big requirement is for this robot to have personality.  Nothing matches the personality of WALL-E, but I'd like to do as much as I can to give this personality.  Something great about Chopper is the head tilt.  It adds so many characters and it is something I'll be implementing in this robot. 
+
+The electronics plan is to use a Teensy 3.2 in the body and the head and communicate over serial between the two.
 
 ### Design and Assembly
 The first thing I needed to do was check the dimensions.  I can't easily modify the width of the robot, so I need to make sure the width of the body looks about correct. I took some construction paper to see how I felt about it, and the dimensions I liked were the same as the scaled dimensions from the reference image.  Moving forward I'll just grab dimensions from the reference image. 
@@ -83,7 +80,7 @@ The wheel hub caps have holes for 4-40 screws to thread into, but the wheels do 
 ![](lbcomicon2023/hub_jig.jpg)
 ![](lbcomicon2023/wheel_and_hub.jpg)
 
-An issue on D-O was the gear being press-fitted on to the motor shaft eventually stripped.  I found aluminum hubs on Amazon and decided to make a gear to interface with this. I needed to drill a hole in the body so the set screw was accessible.
+An issue on D-O was the gear being press-fitted onto the motor shaft eventually stripped.  I found aluminum hubs on Amazon and decided to make a gear to interface with this. I needed to drill a hole in the body so the set screw was accessible.
 ![](lbcomicon2023/metal_hub.jpg)
 ![](lbcomicon2023/through_hole_for_set_screw.jpg)
 
@@ -120,9 +117,12 @@ I tried to assemble the robot and realized that I cannot assemble the wheels wit
 ![](lbcomicon2023/possible_wheel_hub_caps.jpg)
 ![](lbcomicon2023/black_and_green_hub_caps.jpg)
 
-I made this test body to check how the dimensions felt on the actual robot, and I wasn't happy with it.  I felt like everything needed to come down farther. 
+I made this test body to check how the dimensions felt on the actual robot, and I wasn't happy with it.  I felt like everything needed to come down farther.  
 ![](lbcomicon2023/first_body.jpg)
 ![](lbcomicon2023/first_body_annotated.jpg)
+
+Something I did get right on this design is the lip underneath the body.  This allows me to figure out what to put there, and it doesn't limit me mechanically to anything while I continue to work on this. 
+![](lbcomicon2023/under_body_cad.png)
 
 I added these new dimensions and added pockets for vents and a decorative front plate.  The dimensions for this ended up feeling perfect.  
 ![](lbcomicon2023/new_body_cad.png)
@@ -131,13 +131,71 @@ I added these new dimensions and added pockets for vents and a decorative front 
 I tried a new wheel design using a VEX flex wheel but I'm really not happy with it, instead, I'll try using an o-ring. 
 ![](lbcomicon2023/3inch_wheel_test.jpg)
 
-leg
-center body
-head
-electronics 
-blowing teensy
-blowing arduino
+I designed a new wheel that I think looks better and uses an o-ring instead of a VEX flex wheel.  I also made the leg design, but this won't be the final version.  My Prusa Mini is small and I cannot fit this entire leg on the printer.  I'll need to split it up into multiple pieces.  Designing each part of this leg from scratch while trying to figure out how to get it all to fit seems like a nightmare.  So instead I've designed the leg as a single part, and once I'm happy with it I'll pull the dimensions for the separated pieces. 
+![](lbcomicon2023/test_leg_front.png)
+![](lbcomicon2023/test_leg_back.png)
 
+I wasn't too happy with the back of the leg, I felt it needed more of the hook shape around the wheel.  Once I added that I was pretty happy with the way it looked. 
+![](lbcomicon2023/test_leg_back_annotated.png)
+![](lbcomicon2023/test_leg_back_real.png)
+
+I wanted some mechanical interlocking between the pieces on the leg, so I have these chamfers that make sure these two parts are indexed together. 
+![](lbcomicon2023/interlocking_geometry.png)
+
+All of the parts come together like this.  I changed the shape of the top portion of the leg because more space was needed to cover the keps nuts that hold the metal in place. 
+![](lbcomicon2023/final_leg_uncolored_front.png)
+![](lbcomicon2023/final_leg_uncolored_back.png)
+
+I decided to have separate parts that are painted a different color that attaches to the leg.  
+![](lbcomicon2023/final_leg_colored.png)
+
+The electronics need covering.  I had the idea to make a piece that flexes around the body and clicks into place over the main printed chassis.  This part is printed and ideally will flex around the chassis.
+![](lbcomicon2023/center_tire_cad.png)
+
+The center tire idea worked!  The legs are also all coming together and working as I expected. 
+![](lbcomicon2023/robot_center_tire_legs.jpg)
+![](lbcomicon2023/leg_side.jpg)
+
+For the head, I want it to be mounted with magnets.  For that, I need the head to index with the lazy susan.  I made 3D printed cones to mount to the lazy susan, and have receiving ends of that on a plate that the head will get mounted to. 
+<iframe width="315" height="560" src="https://www.youtube.com/embed/GL3CSzSX-kg?si=yHeT-2k5VA5J-A22" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>  
+
+I started painting the legs while I designed and worked on the head.  The head is a $0.50 bowl that I got from Target.  I wasn't sure if it would work or not, but the dimensions looked about right so I picked it up.  I liked the dimensions so I went ahead with using it.  I also kind of liked the idea of using this wall greens medicine cap as the eye.
+![](lbcomicon2023/head_and_leg_paint.jpg)
+
+I CADed the bowl and added some decoration around it.  I have the eye around a ball joint I'm going to 3D print and a cover around the eye.  I also made "eyebrows" that are going to move in and out to give the robot more expression.  I tried adding a top part that is colored, but the robot looks like it has a receding hairline, so I won't be going forward with that. 
+![](lbcomicon2023/receding_hairline.png)
+
+The eyebrows are connected to a linkage to move them in and out slightly, and the eye has an X and Y servo that will move it in both axes.
+![](lbcomicon2023/haed_mechanics.jpg)
+![](lbcomicon2023/head_unpainted.jpg)
+
+To fill the crevis in the bottom of the bowl, I used durhams putty.  This is a very cheap powder, which is ~$3, and the powder gets added to water.  I can control the viscosity of it by changing the ratio of powder to water, and then I can fill in the area with this.  It's very sandable, and does cure to be "rock hard". 
+![](lbcomicon2023/durhams.jpg)
+
+I got the head primed and painted and got the rest of the structure painted. 
+![](lbcomicon2023/head_painted.jpg)
+![](lbcomicon2023/head_on_robot.jpg)
+
+### Electronics 
+To get serial, power, and ground to the head I'm going to use a slip ring.  The slip ring is mounted in the center of the stationary part of the lazy susan. 
+![](lbcomicon2023/slip_ring.jpg)  
+
+I wired everything up and started to get the head to work!  I'm communicating with serial to the Teensy in the head and I'm able to control all of the servos in the head. 
+<iframe width="315" height="560"
+src="https://youtube.com/embed/myDEqXWcs1M?si=WTrMGEtHHyj75Lg0"
+title="YouTube video player"
+frameborder="0"
+allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+allowfullscreen></iframe>
+
+Eventually after testing some more, the robot stopped responding to anything.  I figured out that I fried the Teensy in the head and the body.  After asking Kiana Dumdumaya why this would happen, we looked through the specs of the Teensy and saw that it only supports 3.3v IO when I'm using 5v IO and downstepping a 4s lipo to 5v for the electronics.  We decided to switch over to an Arduino Nano Every.  I tried to get that working before the event but for some reason, I ended up frying the Arduino in the body too when I was testing.  I didn't want to rush this and waste a bunch of money, so I decided to wait until I could work with Kiana to get all of the electronics working and redo everything with her.  I'd go to the convention with a completed visual robot and incomplete electronics. 
+
+### At Long Beach Comic Con 2023
+I learned an absolute ton at this event.  I felt bad showing up with a robot that didn't work, but the amount of support and advice I received to get this robot working was significantly more than I had anticipated.  I was so focused on talking to everyone that I didn't take as many pictures as I would have liked. 
+![](lbcomicon2023/r2_roxy.jpg)
+![](lbcomicon2023/little_dude.jpg)
+![](lbcomicon2023/group_robot.jpg)
+![](lbcomicon2023/roxy_max.jpg)
 
 ---  
 ## OC Maker Faire 2023
