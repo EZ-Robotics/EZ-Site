@@ -125,11 +125,13 @@
 <p>The eyebrows are connected to a linkage to move them in and out slightly, and the eye has an X and Y servo that will move it in both axes.
 <img loading="lazy" src="https://www.roboticsisez.com/assets/images/haed_mechanics-d1eda97f8dc7f495069701ef4143bece.jpg" width="4032" height="3024" class="img_ev3q">
 <img loading="lazy" src="https://www.roboticsisez.com/assets/images/head_unpainted-c63c330cbed30ee0c901a375569f0b0e.jpg" width="4032" height="3024" class="img_ev3q"></p>
-<p>To fill the crevis in the bottom of the bowl, I used durhams putty.  This is a very cheap powder, which is ~$3, and the powder gets added to water.  I can control the viscosity of it by changing the ratio of powder to water, and then I can fill in the area with this.  It's very sandable, and does cure to be "rock hard".
+<p>To fill the crevice in the bottom of the bowl, I used durhams putty.  This is a very cheap powder, which is ~$3, and the powder gets added to water.  I can control the viscosity of it by changing the ratio of powder to water, and then I can fill in the area with this.  It's very sandable, and does cure to be "rock hard".
 <img loading="lazy" src="https://www.roboticsisez.com/assets/images/durhams-25c9953c8c4b3c55ed2504e21adb1e4a.jpg" width="4032" height="3024" class="img_ev3q"></p>
 <p>I got the head primed and painted and got the rest of the structure painted.
 <img loading="lazy" src="https://www.roboticsisez.com/assets/images/head_painted-231a2df450e51f557467f2f8698f0297.jpg" width="4032" height="3024" class="img_ev3q">
 <img loading="lazy" src="https://www.roboticsisez.com/assets/images/head_on_robot-37b71ea89c4286c842e3fcaa56f3f9c8.jpg" width="3024" height="3209" class="img_ev3q"></p>
+<p>I finished painting the robot and the robot looks good!
+<img loading="lazy" src="https://www.roboticsisez.com/assets/images/completed_robot-7a67208728d61c61e288f638dfd5db43.jpg" width="3024" height="4032" class="img_ev3q"></p>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="electronics">Electronics<a href="https://www.roboticsisez.com/projects/dd-3#electronics" class="hash-link" aria-label="Direct link to Electronics" title="Direct link to Electronics">​</a></h3>
 <p>To get serial, power, and ground to the head I'm going to use a slip ring.  The slip ring is mounted in the center of the stationary part of the lazy susan.
 <img loading="lazy" src="https://www.roboticsisez.com/assets/images/slip_ring-c30b05bc8039084238f7a85dc4350ad6.jpg" width="4032" height="3024" class="img_ev3q"></p>
