@@ -101,7 +101,12 @@ All of that gave me this graph.  The x-axis is the target we were reading to, an
 To use this graph I scaled the Y axis down to 1 by dividing everything by the largest tested Y point.  That left me with many points I can draw lines through and find new conversion rates for untested turn amounts.  I took my conversion rate and I changed my constants by that.  And... it worked!
 
 In this test, the first set of turns is the standard EZ-Template.  The second set of turns is using the modified constants. 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/qdRAPPe5oj8?si=n4ZuJxHNptZo0IWk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<iframe width="315" height="560"
+src="https://youtube.com/embed/qdRAPPe5oj8?si=n4ZuJxHNptZo0IWk"
+title="YouTube video player"
+frameborder="0"
+allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+allowfullscreen></iframe>
 
 ```cpp
 std::vector<std::vector<double>> scaling = {

@@ -2,6 +2,7 @@
 slug: about-ez-template
 title: EZ-Template
 authors: [jess]
+image: banner.jpg
 tags: [vex, mentoring, tutorials, software, open source, wip]
 ---
 import Tabs from '@theme/Tabs';

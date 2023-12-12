@@ -2,6 +2,7 @@
 slug: dd-3
 title: DD-3
 authors: [jess]
+image: banner.png
 tags: [hardware, software, cad, electrical, star wars, wip]
 ---
 

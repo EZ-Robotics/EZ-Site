@@ -2,12 +2,13 @@
 slug: the-pushbot
 title: The Pushbot
 authors: [jess]
+image: banner.png
 tags: [vex, hardware, software, cad]
 ---
 
-The Pushbot is a simple robot I made to demonstrate how strategy can get backed into a robot's design for the VRC game Spin Up.
+The Pushbot is a simple robot I made to demonstrate how strategy can get baked into a robot's design for the VRC game Spin Up.
 
-![](final_cad.png)
+![](banner.png)
 
 <!--truncate-->
 ---
@@ -107,7 +108,7 @@ I added pivoting pieces of plastic to the side of the robot to stop opponents fr
 ![](anti_wedge.jpg)
 
 The wedge is mounted to lift up opponents a bit when pushing them, which makes this robot functional!
-![](banner.jpg)
+![](bot_on_table.jpg)
 
 Later I made the traction wheel and got that mounted.
 ![](mounted_traction.jpg)
@@ -128,7 +129,6 @@ And with a real linkage made for the last vertical, this lift can rise to a heig
 ![](lift_with_real_linkages.jpg)
 
 I made printed hooks that held onto arms and stopped them from coming out.  When the lift was raised, these arms would extend outwards.  This extra width would allow me to make an expansion blocker that is much wider than I otherwise could.
-https://youtu.be/AdtnW2aCjzA?si=CMxP5raOcw8IP5xM
 <iframe width="315" height="560"
 src="https://youtube.com/embed/AdtnW2aCjzA"
 title="YouTube video player"

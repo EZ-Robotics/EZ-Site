@@ -2,6 +2,7 @@
 slug: preload-disc-holder
 title: Preload Disc Holder
 authors: [jess]
+image: banner.png
 tags: [vex, hardware]
 ---
 
