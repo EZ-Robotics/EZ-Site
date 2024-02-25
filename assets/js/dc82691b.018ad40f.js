@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkmy_website=self.webpackChunkmy_website||[]).push([[9146],{17130:e=>{e.exports=JSON.parse('{"label":"in the zone","permalink":"/projects/tags/in-the-zone","allTagsPath":"/projects/tags","count":3,"unlisted":false}')}}]);

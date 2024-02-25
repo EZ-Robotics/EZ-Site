@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkmy_website=self.webpackChunkmy_website||[]).push([[9454],{30952:e=>{e.exports=JSON.parse('{"permalink":"/projects/tags/spin-up","page":1,"postsPerPage":7,"totalPages":1,"totalCount":2,"blogDescription":"Blog","blogTitle":"Blog"}')}}]);

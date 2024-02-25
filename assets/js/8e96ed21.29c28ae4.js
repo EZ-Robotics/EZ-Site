@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkmy_website=self.webpackChunkmy_website||[]).push([[3545],{6953:e=>{e.exports=JSON.parse('{"permalink":"/projects/tags/cad","page":1,"postsPerPage":7,"totalPages":2,"totalCount":12,"nextPage":"/projects/tags/cad/page/2","blogDescription":"Blog","blogTitle":"Blog"}')}}]);
