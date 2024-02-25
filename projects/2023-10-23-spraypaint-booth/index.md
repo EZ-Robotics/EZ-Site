@@ -2,7 +2,6 @@
 slug: spraypaint-booth
 title: Spraypaint Booth
 authors: [jess]
-image: banner.png
 tags: [hardware, cad, electrical, wip]
 ---
 

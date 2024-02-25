@@ -5,9 +5,7 @@ authors: [jess]
 tags: [vex, mentoring, tutorials, software, open source, wip]
 ---
 
-After I saw the success of the CAD tutorials, I decided to do the same for code.  I made click-by-click tutorials on code concepts to enable students to ask specific questions instead of "How do I code the robot?".   
-
-https://github.com/EZ-Robotics/VEXcode-Tutorials
+After I saw the success of the CAD tutorials, I decided to do the same for code.  I made [click-by-click tutorials](https://github.com/EZ-Robotics/VEXcode-Tutorials) on code concepts to enable students to ask specific questions instead of "How do I code the robot?".   
 
 <!--truncate-->
 

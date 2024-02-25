@@ -5,9 +5,8 @@ authors: [jess]
 tags: [vex, software, open source, starstruck]
 ---
 
-Rerun allows you to record robot movements and play them back during autonomous.
+[Rerun](https://github.com/Unionjackjz1/ROBO-DANNY/blob/master/RerunFunctions.c  ) allows you to record robot movements and play them back during autonomous.
 
-https://github.com/Unionjackjz1/ROBO-DANNY/blob/master/RerunFunctions.c  
 ![](banner.gif)
 
 <!--truncate-->

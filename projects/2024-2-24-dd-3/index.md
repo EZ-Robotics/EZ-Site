@@ -2,7 +2,6 @@
 slug: dd-3
 title: DD-3
 authors: [jess]
-image: banner.png
 tags: [hardware, software, cad, electrical, star wars, wip]
 ---
 
@@ -161,7 +160,7 @@ Working on this with 1 wheel became increasingly annoying as more weight was add
 The legs are 1/2" aluminum c-channel that I cut out the center of to have the wheel sit.  This wheel is temporary as I come up with a better aesthetically fitting design, but works for testing functionality and stopping this from falling over.
 ![](lbcomicon2023/first_leg_assem.jpg)
 
-I was on/off sanding and painting the wheel hubs.  I very quickly learned how important and annoying sanding is.  I ended up with something that I felt was good, and I'd be doing this much more over the course of this project and would get better at this.
+I was on/off sanding and painting the wheel hubs.  I very quickly learned how important and annoying sanding is.  I ended up with something that I felt was good, and I'd be doing this much more throughout this project and would get better at this.
 ![](lbcomicon2023/early_sanding_wheel.jpg)
 ![](lbcomicon2023/later_sanding_wheel.jpg)
 
@@ -245,7 +244,7 @@ The center tire idea worked!  The legs are also all coming together and working 
 ![](lbcomicon2023/robot_center_tire_legs.jpg)
 ![](lbcomicon2023/leg_side.jpg)
 
-For the head, I want it to be mounted with magnets.  For that, I need the head to index with the lazy susan.  I made 3D printed cones to mount to the lazy susan, and have receiving ends of that on a plate that the head will get mounted to. 
+For the head, I want it to be mounted with magnets.  For that, I need the head to index with the lazy susan.  I made 3D printed cones to mount to the lazy susan, and have the receiving ends of that on a plate that the head will get mounted to. 
 <iframe width="315" height="560" src="https://www.youtube.com/embed/GL3CSzSX-kg?si=yHeT-2k5VA5J-A22" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>  
 
 I started painting the legs while I designed and worked on the head.  The head is a $0.50 bowl that I got from Target.  I wasn't sure if it would work or not, but the dimensions looked about right so I picked it up.  I liked the dimensions so I went ahead with using it.  I also kind of liked the idea of using this wall greens medicine cap as the eye.
@@ -509,7 +508,7 @@ This needs a little less sensitivity to moving.  Currently, if the controller is
   }
 ```
 
-I did this by adding a buffer to the velocity to the code above, where if it's less then 1 it'll treat it like 0. 
+I did this by adding a buffer to the velocity of the code above, where if it's less than 1 it'll treat it like 0. 
 ```cpp
     // Give wiggle room for noise
     x = abs(x) <= 1 ? 0 : x;
@@ -587,3 +586,17 @@ Then it's just wiring everything together and labeling all the wires.
 ![](lacomicon2023/trooper_dd.jpg)
 ![](lacomicon2023/rusty.jpg)
 ![](lacomicon2023/dd_gil_grogu.jpg)
+
+---
+## Next Con?
+Goal: ?
+
+### Plans
+I'd like to completely redesign the head entirely.  As I mentioned previously, indexing anything on a bowl has proven challenging.  I can design it all to be 3D printed and have some hole pattern on the inside so I can design mounts for servos, speakers, etc.  I can make the actual shell that you look at as independent panels, and that will help add detail and break up the perfectly smooth surface that the bowl has currently.  
+
+To give the head more expression I'd like to change the head tilt to a delta linkage as shown in the video below.  
+<iframe width="560" height="315" src="https://www.youtube.com/embed/aXTe7icWDPM?si=si2PP7KV2IxK4Gou" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+The ring gear should be changed out for a wheel that gets spring loaded into the head.  This will keep the robot safe from kids pulling on it.  But with this, I'll need to add a sensor to the head to track rotation so I can animate positions and run PID through it.  
+
+**And of course, the robot needs speakers and LEDS!**

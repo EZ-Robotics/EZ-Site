@@ -2,14 +2,10 @@
 slug: preload-disc-holder
 title: Preload Disc Holder
 authors: [jess]
-image: banner.png
 tags: [vex, hardware]
 ---
 
-I made disc holders to help run Spin Up tournaments more efficiently.
-
-https://www.printables.com/model/329950-vex-spin-up-preload-holder
-
+I made [disc holders](https://www.printables.com/model/329950-vex-spin-up-preload-holder) to help run Spin Up tournaments more efficiently.
 
 ![](banner.jpg)
 

@@ -2,15 +2,12 @@
 slug: about-ez-template
 title: EZ-Template
 authors: [jess]
-image: banner.jpg
 tags: [vex, mentoring, tutorials, software, open source, wip]
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-[EZ-Template](https://github.com/EZ-Robotics/EZ-Template) is a simple plug-and-play PROS template that handles drive-base functions for VEX robots.  
-
-https://github.com/EZ-Robotics/EZ-Template
+[EZ-Template](https://ez-robotics.github.io/EZ-Template/) is a simple plug-and-play PROS template that handles drive-base functions for VEX robots.  
 
 ![](banner.jpg)
 
@@ -23,7 +20,7 @@ EZ-Template has its own website for documentation [here](https://ez-robotics.git
 :::
 
 ## About
-Many students using VEXcode rely on the built-in Drivetrain class, but it often falls short in addressing the nuances of creating consistent autonomous routines, leading to frustration for new programmers. Issues like wheel slop and mechanical obstructions can be challenging to diagnose, causing students to lose interest in robotics.
+Many students using VEXcode rely on the built-in [Drivetrain class](https://www.youtube.com/watch?v=JGGtvVNTGJw), but it often falls short in addressing the nuances of creating consistent autonomous routines, leading to frustration for new programmers. Issues like wheel slop and mechanical obstructions can be challenging to diagnose, causing students to lose interest in robotics.
 
 EZ-Template solves these problems by giving simple code that has been tested to work.  If something goes wrong, a student can try to tune the PID after fixing mechanical problems (which you can't do in VEXcode).  It eliminates one point of failure to keep students more interested in robotics.  
 
@@ -31,7 +28,7 @@ This project taught me the importance of listening to user feedback and making a
 
 ## [v1.x](https://github.com/EZ-Robotics/EZ-Template/tree/f4c287dc3cea8c95cdbbd47939ef41c1d5a2f749)
 ### About
-The goal of EZ-Template shifted over time. This started out as my [codebase on my Tower Takeover robot](https://github.com/EZ-Robotics/EZ-GOOFY), and as I progressed through Change Up I got increasingly annoyed at how convoluted it was to give the code all the information it needed.  I made a brand new project and copied over all of my drive base code, and had a [single configuration file](https://github.com/EZ-Robotics/EZ-Template/blob/f4c287dc3cea8c95cdbbd47939ef41c1d5a2f749/include/EZ-Template/setup.hpp).  
+The goal of EZ-Template shifted over time. This started as my [codebase on my Tower Takeover robot](https://github.com/EZ-Robotics/EZ-GOOFY), and as I progressed through Change Up I got increasingly annoyed at how convoluted it was to give the code all the information it needed.  I made a brand new project and copied over all of my drive base code, and had a [single configuration file](https://github.com/EZ-Robotics/EZ-Template/blob/f4c287dc3cea8c95cdbbd47939ef41c1d5a2f749/include/EZ-Template/setup.hpp).  
 
 ### Features
 - simple to set up a project
@@ -63,14 +60,9 @@ This was a complete rewrite of EZ-Template taking advantage of [PROS templates](
 - classed away autonomous selector that is easier to use
 
 ### Issues
-My biggest problem with v1.x and v2.x of EZ-Template is they are *too* easy.  EZ-Template comes with PID and exit condition constants that I tuned for some of my robots.  They were working pretty well within my similar robots, but I assumed everyone would have to tune their own PID because of variances in their robots to mine.  Over the course of a few seasons, this assumption has been proven very wrong.  The average team has to do little to no tuning to get consistent results, and that isn't my goal with EZ-Template.  The next version of EZ-Template will need to find a way to solve this.
+My biggest problem with v1.x and v2.x of EZ-Template is they are *too* easy.  EZ-Template comes with PID and exit condition constants that I tuned for some of my robots.  They were working pretty well within my similar robots, but I assumed everyone would have to tune their own PID because of variances in their robots to mine.  Throughout a few seasons, this assumption has been proven very wrong.  The average team has to do little to no tuning to get consistent results, and that isn't my goal with EZ-Template.  The next version of EZ-Template will need to find a way to solve this.
 
-## v3.x
-:::note
-
-EZ-Template v3 is not released yet, there is incomplete documentation for it [here](https://ez-robotics.github.io/EZ-Template/next)
-
-:::
+## [v3.x](https://github.com/EZ-Robotics/EZ-Template)
 ### About
 This version needs to solve the pre-tuned PID values.  The obvious solution to the problem is to not ship EZ-Template with pre-tuned constants but leave everything else the same.  Teams will know to copy/paste old constants, and my problem isn't solved. 
 
@@ -114,12 +106,16 @@ This version of EZ-Template will solve this problem by using a base unit of inch
 </TabItem>
 </Tabs>
 
-3.x of EZ-Template will also include a complete redo of all function names.  Function names previously were made by what made the most sense to me.  Need to set the drive to move using PID?  `.set_drive_pid`.  This makes sense in English, but while I was working with [LVGL](https://lvgl.io/) I realized the benefit of naming in order of what you're looking for.  So now it'd be `.pid_drive_set`.  If you're looking to see everything you can do with PID on the drive, if you type `.pid_drive_` autocomplete will show you everything.  This makes autocomplete a more more useful tool when you don't know everything you can do in the library.
+3.x of EZ-Template will also include a complete redo of all function names.  Function names previously were made by what made the most sense to me.  Need to set the drive to move using PID?  `.set_drive_pid`.  This makes sense in English, but while I was working with [LVGL](https://lvgl.io/) I realized the benefit of naming in order of what you're looking for.  So now it'd be `.pid_drive_set`.  If you're looking to see everything you can do with PID on the drive, if you type `.pid_drive_` autocomplete will show you everything you can modify with the drive's PID.  This makes autocomplete a powerful tool when you don't know everything you can do in the library.
 
 ### Features
 - renamed functions
 - a relative turn function so it's not always absolute
 - a relative swing function so it's not always absolute
-- add piston and pistongroup class
+- slew for turns and swings
+- heading correction now uses vector scaling
+- swing turns can move in different diameters
+- add piston class
 - practice mode for driving
+- runtime pid tuner for ease of use
 - [okapi units](https://okapilib.github.io/OkapiLib/md_docs_api_units.html) (so you can now use cm, in, meters, tiles, etc.)

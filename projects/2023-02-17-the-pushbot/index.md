@@ -2,11 +2,10 @@
 slug: the-pushbot
 title: The Pushbot
 authors: [jess]
-image: banner.png
 tags: [vex, hardware, software, cad]
 ---
 
-The Pushbot is a simple robot I made to demonstrate how strategy can get baked into a robot's design for the VRC game Spin Up.
+The Pushbot is a simple robot to demonstrate how strategy can get baked into a robot's design for the VRC game Spin Up.
 
 ![](banner.png)
 

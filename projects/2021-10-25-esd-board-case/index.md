@@ -5,9 +5,7 @@ authors: [jess]
 tags: [vex, hardware, open source]
 ---
 
-[The exclusion of a TVS diode in the VEX V5 Brain](https://wiki.purduesigbots.com/vex-electronics/vex-electronics/vex-v5-brain/v5-electronics-observations) leads to ports frying when mechanisms on the robot are more prone to static.  I made a 3D printable case for custom PCBs to solve this problem.
-
-https://wiki.purduesigbots.com/vex-electronics/v5-esd-protection-board
+[The exclusion of a TVS diode in the VEX V5 Brain](https://wiki.purduesigbots.com/vex-electronics/vex-electronics/vex-v5-brain/v5-electronics-observations) leads to ports frying when mechanisms on the robot are more prone to static.  I made a [3D printable case](https://wiki.purduesigbots.com/vex-electronics/v5-esd-protection-board) for custom PCBs to solve this problem.
 
 ![](banner.jpg)
 

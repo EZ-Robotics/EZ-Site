@@ -5,9 +5,7 @@ authors: [jess]
 tags: [vex, mentoring, tutorials, cad, open source]
 ---
 
-In order to reach the demand of students wanting to learn CAD, I developed click-by-click tutorials on how to CAD using Autodesk Inventor.
-
-https://wiki.purduesigbots.com/vex-cad/making-a-chassis
+In order to reach the demand of students wanting to learn CAD, I developed [click-by-click tutorials](https://wiki.purduesigbots.com/vex-cad/making-a-chassis) on how to CAD using Autodesk Inventor.
 
 <!--truncate-->
 
