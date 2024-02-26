@@ -36,9 +36,14 @@ The first test of the slider is very promising.  We want the speed to be a bit f
 <iframe width="560" height="315" src="https://www.youtube.com/embed/m_KOmR3r13k?si=3pKvPldhBDf3KgX4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 The one-way gate needed to have tension in one direction keeping it open.  Lucas used a piece of 1/32" polycarbonate to act as the spring.  This is much smaller, simpler, and more reliable than using rubber bands or latex tubing.  
-![](poly_spring.jpg)
+<iframe width="560" height="315" src="https://www.youtube.com/embed/UBU99NCIDlM?si=X_vxHVuHrXRCciS6" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>  
+![](poly_spring.jpg)  
 
-I designed hubs for [30a 4" flex wheels](https://www.vexrobotics.com/vrc-flex-wheels.html).  For our prototype, we used the spacing that 13186A used as a starting point.  The space between the flex wheels matters for how much compression there is.  These caps take a [12t high strength pinion](https://www.vexrobotics.com/gears.html) in the center to make it compatible with a vex shaft.  Using a pinion here distributes the force across many points making it a much stronger mechanical connection.  The pinion is press fit using an arbor press.  
+For our prototype of the flywheel, we used the spacing that 13186A used as a starting point.  We care about the space between the flex wheels because it determines how much compression there is, which directly changes how the flywheel will perform.  
+
+I designed hubs for [30a 4" flex wheels](https://www.vexrobotics.com/vrc-flex-wheels.html).  These caps take a [12t high strength pinion](https://www.vexrobotics.com/gears.html) in the center to make it compatible with a vex shaft.  Using a pinion here distributes the force across many points making it a much stronger mechanical connection, and the pinion gets press fit in with an arbor press.  
+
+In previous seasons I've also tested that having a flat surface on the flywheel increases the maximum achievable rpm by improving aerodynamics, like how some newer electric cars have aero caps on their wheels.  
 ![](flexwheel_hubs.jpg)
 
 Lucas and I built the flywheel assembly using the same gear ratio as well, 7:3 with the motors using 600rpm cartridges.  The results were really good.  We tried moving the compression in more and it quickly became too much compression, and if they were any farther apart there would be none.  We kept this flywheel distance.  
@@ -101,8 +106,33 @@ Using various washers and wheels, I designed this piece of polycarbonate to hold
 A problem the slider has is friction while it's moving.  It changes speeds throughout the motion because the prints are wearing out due to contact with the polycarbonate.  
 ![](slider_degrading.jpg)
 
-I redesigned the slider to have rollers contact the polycarbonate instead and this improved friction and the speed of the slider immensely. 
+My first attempt at solving this was to just screw a piece of plastic over the 3D print, so the plastic was contacting instead of the print.  
+![](slider_with_poly.jpg)
+
+This had tons of friction and I tried graphite lubricant to help, but in the end, it still wore out the carriage.  
+![](slider_with_poly_bad.jpg)
+
+I redesigned the slider to have rollers contact the polycarbonate instead and this completely solved my problem.  I didn't realize how much the carriage would want to twist.  If I were to design this again, I would figure out how to power both sides to try to reduce twisting as much as possible.  
 ![](new_slider.jpg)
+<iframe width="315" height="560"
+src="https://www.youtube.com/embed/97OQWMcdllU"
+title="YouTube video player"
+frameborder="0"
+allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+allowfullscreen></iframe>
+<iframe width="315" height="560"
+src="https://www.youtube.com/embed/hzQufTWOjWc"
+title="YouTube video player"
+frameborder="0"
+allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+allowfullscreen></iframe>
+
+Another problem that came up every once and a while was inconsistency in discs making it past the one-way gate.  The slider assembly hardly held 3 discs, so if the disc was grabbed too quickly it would prematurely fire a disc.  But if the disc wasn't grabbed fast enough, it wouldn't make it past the one-way gate.  I ended up changing the location of this roller and allowing it to pivot and this mostly solved the problem.  
+<iframe width="560" height="315" src="https://www.youtube.com/embed/D9BcgBTMMW0?si=vd9ZVqz-92jrug1i" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+Later I had to add a hard stop that allowed me to have fine adjustment over where the roller would sit.  
+![](roller_hardstop.jpg)
+
 
 ## Software
 
@@ -169,12 +199,12 @@ void flywheel_control() {
       output = 0;
     }
 
-    // If the flywheel is slower than then target rpm, go max speed
+    // If the flywheel is slower than the target rpm, go max speed
     else if (getRPM() <= targetRPM - thresh) {
       output = 127;
     }
 
-    // When flywheel is faster than then target rpm, go 0
+    // When flywheel is faster than the target rpm, go 0
     else if (getRPM() >= targetRPM + thresh) {
       output = hold_power;
     }
@@ -283,6 +313,11 @@ void indexer_opcontrol() {
 }
 ```
 
+At one point, I wanted to see if there was a way to automatically detect how many discs were in the conveyor.  I ran some tests to see if I could detect a difference in the power draw from the slider depending on how many discs it's pushing. 
+
+I tested pushing no discs, one disc, and two discs, and I ran each test three times.  I think it'd be possible to retroactively figure out how many discs were in the slider, but I'd need to see a noticeable difference in power draw before the second disc reaches the flywheel, otherwise, it'll get shot.  I ended up not including this feature, but if I were to I would put some sensor on the one-way gate.  
+![](power-draw.png)
+
 ### Intake
 The intake uses some code I've been calling "anti-jam".  It uses the velocity of the motor to decide if the motor should be spinning or not, and if there's no motion out of the motor when there should be then we decide we're in a "jammed" state.  The intake will spin in the opposite direction for some amount of time to try to get whatever is in it out, then continue to intake.  
 
@@ -297,7 +332,7 @@ void intake_task() {
 
   while (true) {
     // Run intake full power in opposite direction for 250ms when jammed, then
-    // set intake back to normal
+    //Set intake back to normal
     if (is_jammed) {
       raw_set_intake(-127 * sgn(target_speed));
       jam_counter += DELAY_TIME;
