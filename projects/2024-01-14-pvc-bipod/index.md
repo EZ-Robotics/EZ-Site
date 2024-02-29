@@ -70,3 +70,4 @@ This is just a cool picture of me explaining the rules to competitors with my bi
 ![](me_with_tripod.jpg)
 
 Since the conclusion of our event, the bipods have moved to their final home in the robotics lab for The Science Academy and will be used to record scrimmages so students can review matches.  
+![](final_lab.jpg)

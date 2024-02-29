@@ -85,14 +85,15 @@ And with that, the CAD was done.
 Ultimately we found out it was illegal to use the windmill, so sadly that will not make it into the assembly.
 
 ## Assembly
-### Assembling Based on CAD
+### Manufacturing and Assembling Based on CAD
 The aluminum came in from Send Cut Send and looks great.
 ![](alu.jpg)
 
 The tank and motor mounts all fit in nicely.
 ![](with_tank.jpg)
 
-I used (too much) dykem blue to drill the holes in the angles and c-channel.  I used calipers (not my nice pair) to scribe lines into the metal, and center punched hole by hole and made new lines based on those holes.  This was my first time doing this and it all went really well, the accuracy on everything is more than enough for what this is. 
+I used (too much) Dykem blue to drill the holes in the angles and c-channel.  I used calipers (not my nice pair) to scribe lines into the metal, and center punched hole by hole and made new lines based on those holes.  This was my first time doing this and it all went really well, the accuracy on everything is more than enough for what this is.  This process was repeated for all of the metal on the robot.  
+![](dykem_scribed.jpg)
 ![](dykem.jpg)
 
 Everything is coming together very smoothly and as I planned.
