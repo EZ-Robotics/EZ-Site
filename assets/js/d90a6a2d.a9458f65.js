@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkmy_website=self.webpackChunkmy_website||[]).push([[1277],{63478:e=>{e.exports=JSON.parse('{"permalink":"/projects/tags/open-source/page/2","page":2,"postsPerPage":7,"totalPages":2,"totalCount":9,"previousPage":"/projects/tags/open-source","blogDescription":"Blog","blogTitle":"Blog"}')}}]);

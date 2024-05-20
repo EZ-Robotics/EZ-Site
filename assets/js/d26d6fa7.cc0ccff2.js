@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkmy_website=self.webpackChunkmy_website||[]).push([[4198],{89236:e=>{e.exports=JSON.parse('{"permalink":"/projects/tags/hardware/page/2","page":2,"postsPerPage":7,"totalPages":3,"totalCount":21,"previousPage":"/projects/tags/hardware","nextPage":"/projects/tags/hardware/page/3","blogDescription":"Blog","blogTitle":"Blog"}')}}]);

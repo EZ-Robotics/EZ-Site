@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkmy_website=self.webpackChunkmy_website||[]).push([[9547],{83379:e=>{e.exports=JSON.parse('{"label":"minecraft","permalink":"/projects/tags/minecraft","allTagsPath":"/projects/tags","count":1,"unlisted":false}')}}]);
