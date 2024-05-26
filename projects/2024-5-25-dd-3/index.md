@@ -681,5 +681,68 @@ And with that, the eyebrow mechanics (should be) all good for printing and testi
 ![](droidcon2024/full-eyebrow-cad.png)
 ![](droidcon2024/head-with-eyebrows.png)
 
+Now for the eye mount.  I started with another roughed-out version of how I want the exterior of it to look.  I'll work backward on this file and figure out how all of the mechanics will work.  
+![](droidcon2024/roughed_eye_mount.png)
+
+Hollowing out the center allowed me to add flanges to the bottom of this so I can screw it onto the head.  
+![](droidcon2024/eye_mount_hollowed.png)
+
+Looking at this on the head, I realized that the amount of material not seen is massive, and it takes up a ton of space inside the part.  I can cut out a huge portion of the part and it'll be visually identical.  
+![](droidcon2024/roughed_eye_mount_on_head.png)
+![](droidcon2024/cut_out_eye_mount.png)
+
+After some thinking, I decided that for now, the eye will be static.  I ordered some 40mm empty Christmas ornaments and later I can make it move around or add lights to the inside.  
+![](droidcon2024/eye_mount_with_eye_on_head.png)
+![](droidcon2024/eye_mount_with_eye_on_head_cut.png)
+
+The final part of the design is the integration between the head and the lazy susan.  This part is extremely simple because the hole pattern for this has already been tested with the previous head, so all I have to do is change the integration to the head.  
+![](droidcon2024/spin_to_head.png)
+
+This gets screwed onto the aluminum through the servo mount holes.  This should make everything easy to assemble, and the bowl will slide on top of this after everything is together.  
+![](droidcon2024/spin_to_head_on_alu.png)
+
+Nice picture of the (hopefully) completed CAD :D
+![](droidcon2024/rendered_head.png)
+
+I printed the dome, integration between the head and the lazy susan, and the eye mount.  Everything seems to fit together nicely!
+![](droidcon2024/first_printed_head.jpg)
+
+I cut, scribed, and drilled out all of the holes on the aluminum.  This is Dykem Blue, and to mark the holes I used a pair of calipers that are only for scribing things.  
+![](droidcon2024/dykem_on_alu.jpg)
+
+The linkage for the eyebrows all fits together and seems to work.  
+![](droidcon2024/assembled_linkage.jpg)
+
+When I went to assemble everything, it was impossible
+![](droidcon2024/attempted_assembly.jpg)
+
+I tried to salvage this dome by drilling more through holes, but I found it was impossible to fit in the screw between the floating linkage and the eyebrow mount.  
+![](droidcon2024/drill_jig.jpg)
+
+I modified the floating linkage to snap onto the eyebrow linkage.  
+![](droidcon2024/snap_on_floating_linkage.png)
+
+The CAD I got for the servo had some discrepancies to what I have because the floating linkage does not sit centered.  
+![](droidcon2024/servo_not_centered.jpg)
+![](droidcon2024/servo_not_centered_2.jpg)
+
+This is easily fixable by making the servo mounting plate thinner.  I also reprinted the floating linkages in black so they aren't obviously there.  
+![](droidcon2024/servo_centered.jpg)
+
+Both sides assembled!
+![](droidcon2024/linkages_work.jpg)
+
+But now, with the new snap-on joint, the eyebrow linkage doesn't fit inside the slit in the head...
+![](droidcon2024/eyebrow_doesnt_fit.jpg)
+
+Now that I need to reprint the dome anyway, I'm going to add an improvement to it while fixing the problem above.  To add a little more support between the two pieces that make up the head, I added these flanges to stop the head from being able to flex back and forward.  
+![](droidcon2024/dome_support.png)
+![](droidcon2024/dome_support_side_view.png)
+
+More through holes were added to make this possible to assemble, and the slits for the eyebrows were made larger.  Now to print again!  
+![](droidcon2024/new_dome.png)
+
+
+
 ### Delta Linkage Design
 ### New Motor Spin Mount
