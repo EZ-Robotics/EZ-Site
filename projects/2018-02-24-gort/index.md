@@ -7,7 +7,7 @@ tags: [vex, hardware, software, in the zone]
 
 Gort was my team's final competitive robot for the VRC season In the Zone. This robot is different from Geoffrey in that this robot would keep the mobile goal inside of the robot and stack cones internally.
 
-![](banner.jpg)
+![](banner.JPG)
 
 <!--truncate-->
 
