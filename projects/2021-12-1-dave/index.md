@@ -12,11 +12,11 @@ Dave was a little robot that I made quickly for testing software.  Everything on
 
 I started out with a double roller omni-wheel assembly that had a gear baked into the print.
 <img
-  src={require("./wheel1.JPG").default}
+  src={require("./wheel1.jpg").default}
   alt="Example banner"
   style={{ width: "43%", height: "auto" }}
 /><img
-  src={require("./wheel3.JPG").default}
+  src={require("./wheel3.jpg").default}
   alt="Example banner"
   style={{ width: "45%", height: "auto" }}
 />
