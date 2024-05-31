@@ -36,3 +36,15 @@ My next steps are to:
 - add cardboard walls
 - add an on/off switch for the exhaust
 - wire the light and exhaust to a single cable
+
+While searching for large cardboard sheets, I discovered corrugated plastic which looks way nicer.  It wasn't very expensive so I bought two 6'x3' sheets of it to cover the box with.  
+![](corrugated_plastic.jpg)
+
+Covering this in plastic is significantly easier.  With a little bit of painters tape everything was up in a couple minutes.  
+![](plastic_film.jpg)!
+
+With painting I wanted something that lets me hang the parts off of so I get access to all sides of the part.  I made these little mounts to hold some 1/4" tube stock I've had lying around for years.    
+![](rod_mount.jpg)
+
+This lets me tie some fishing line between the part and this rod.
+![](floating_part.jpg)

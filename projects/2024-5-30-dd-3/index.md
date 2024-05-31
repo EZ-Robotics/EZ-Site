@@ -742,7 +742,34 @@ Now that I need to reprint the dome anyway, I'm going to add an improvement to i
 More through holes were added to make this possible to assemble, and the slits for the eyebrows were made larger.  Now to print again!  
 ![](droidcon2024/new_dome.png)
 
-
-
 ### Delta Linkage Design
+As a refresher, the goal of this is to replace the head tilt with the linkage in [this video](https://www.youtube.com/aXTe7icWDPM?si=si2PP7KV2IxK4Gou).  This needs 3 servos all mounted at 60 degrees to each other, but each servo needs to be offset from the centerline of the robot by some amount, the same amount that the servos for the eyebrows are shifted by.  To make this part more clear to me I started with this (gross) rough draft of the part.  The way I made this part didn't let me easily change parameters but I know how to go into remaking it.  
+![](droidcon2024/very_rough_motor_mount.png)
+
+I remade the part and I can now adjust every dimension of the motor mount relative to the center of the robot (and the center of this part).  
+![](droidcon2024/final_motor_mount.png)
+
+This servo mount will screw into the top of the "T" structure in the droid.  
+![](droidcon2024/test_fit_motor_mount.jpg)
+![](droidcon2024/servos_on_mount.jpg)
+
+The lazy susan now needs matching holes at 60-degree angles to each other, I printed this jig to screw into existing holes before center punching and drilling the new holes out.  
+![](droidcon2024/lazy_susan_jig.jpg)
+
+For the ball joints, I'll be using RC tie rods, and these are the little mounts I designed that will go on the lazy susan.  
+![](droidcon2024/tie_rod_and_mount.jpg)
+
+The geometry all looks good and it moves as I expect it to, sadly this doesn't come down far enough due to interference between the crankshaft and the bottom of the motor plate, there is only 0.875" of travel.  But what I think is worse then that, is the lower the head goes the more obvious it'll be that it's moving away from the body.  I'd like to get that 1/2" down a bit.  
+![](droidcon2024/delta_assembled.jpg)
+![](droidcon2024/head_down.jpg)
+![](droidcon2024/head_up.jpg)
+
+I marked off and cut out some of the motor plate on the scroll saw.  
+![](droidcon2024/motor_plate_tape.jpg)
+![](droidcon2024/scroll_saw.jpg)
+
+Hard to capture this image because now the crankshafts go below the motor mount, but there is ~1/4" of space now between the head and the body.  I'll leave it at that for now and I can find places to squeeze out some more distance if I feel it's needed later.  
+![](droidcon2024/new_head_down.jpg)
+
+
 ### New Motor Spin Mount
