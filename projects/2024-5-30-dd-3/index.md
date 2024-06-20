@@ -618,8 +618,8 @@ I brought DD-3 to my great grandma, who told DD-3 that he "needs a better name t
 ![](jersey2024/nanny.jpg)
 
 ---
-## Next Con?
-Goal: ?
+## R2LA
+Goal: July 29, 2024
 
 ### Plans
 I'd like to completely redesign the head entirely.  As I mentioned previously, indexing anything on a bowl has proven challenging.  I can design it all to be 3D printed and have some hole pattern on the inside so I can design mounts for servos, speakers, etc.  I can make the actual shell that you look at as independent panels, and that will help add detail and break up the perfectly smooth surface that the bowl has currently.  
@@ -787,15 +787,45 @@ Hard to capture this image because now the crankshafts go below the motor mount,
 
 
 ### New Motor Spin Mount
-This ended up being much simpler then I anticipated.  I was able to take the existing motor mount and shift the motor closer to the metal.  
-# picture
+This ended up being much simpler then I anticipated.  I was able to take the existing motor mount and shift the motor closer to the metal.  Below is the old motor mount vs the new motor mount, where the new motor mount shifts the motor closer to the lazy susan.  
+![](r2la2024/old_motor_mount.png)  
+![](r2la2024/new_motor_mount.png)  
 
-Now I needed a new gear for this, I ended up replacing the 29t gear with a 23t gear.  This brings my ratio from 0.40 to 0.32, but the motor has increased from 100rpm to 200rpm.  The head will now spin at 64rpm instead of 40.  
-# new gear
+Now I needed a new gear for this, I ended up replacing the 29t gear with a 23t gear.  This brings my ratio from 0.40 to 0.32, but the motor has increased from 100rpm to 200rpm.  The head will now spin at 64rpm instead of 40rpm.  
+![](r2la2024/new_old_gear.png)
 
 With everything being smaller it doesn't seem like I have to mount the motor on a pivot.  As soon as this shows any sign of failing I'll be modifying the motor mount to pivot, which I might be able to do just by cutting into the existing part and having it hit one of the mounting screws.  
 
 ### Sanding and Painting
+I'm trying out ASA for most of the parts on the head.  I've used it before briefly and I remember it melts in acetone.  I asked in the Droid Builders Discord server if anyone had tried acetone smoothing ASA, and someone told me how they smoothed their ABS prints:  
+- sand the part
+- do not wipe the abs dust off
+- wipe the part in an acetone soaked paper towel
+This causes the particles to fill in gaps and smooth out the print further.  
+
+My first attempt on this, I instinctively wiped the particles off before hitting it with the acetone paper towel.  The results were not great.  
+![](r2la2024/first_asa.jpg)
+
+I tried again on another section of this part and leaving the particles on gave much better results.  
+![](r2la2024/second_asa.jpg)
+
+I also tried a random orbital sander and the results of that are very easy to get and took very little effort from me.  This is the path I'll be taking for all of the parts on the head.  
+![](r2la2024/sanded_asa.jpg)
+
+I went on to fully sand the ASA.  
+![](r2la2024/fully_sanded_asa.jpg)
+
+After sanding I wiped the particles off and put a very thin layer of Bondo spot putty over the entire head.  This filled in all the gaps sanding missed and makes everything smooth.  
+![](r2la2024/bondo_sanded_bowl.jpg)
+
+After bondo is applied and sanded, a layer of filler primer gets sprayed on.  This fills gaps even further and gives a smooth surface to put color on.  
+![](r2la2024/bondo_vs_filler.jpg)
+
+But, it was suggested to me to try hitting the filler primer with scotchbrite before putting color on.  I tried and the results were better and very easy to achieve.  This is primer without smoothing.  
+![](r2la2024/primer_without_smoothing.jpg)
+
+This is primer with smoothing.  Minimal difference, very obvious when feeling them back to back, and very easy to achieve.  I'll be doing this for everything going forward!
+![](r2la2024/primer_with_smoothing.jpg)
 
 ### Software
 Controlling the tripple servo setup seems a little dauting to me, but I started to think about it servo by servo and the solutions became a lot more clear to me.  
@@ -806,47 +836,46 @@ I want 3 inputs for this: height, forward tilt, sideways tilt.  Height is the si
 
 I'll be controlling this with a joystick and I don't really care what angles the head ends up going to.  I don't want the servos to overextend themselves and I want the directions to all mix correctly. With that, I ended up with this code for testing.  
 ```cpp
-  double height = joystick_channel(RIGHT_SLIDER) - 127.0;  // This joystick channel outputs 0-255, so this brings it to -127 to 127
-  double forward = joystick_channel(RIGHT_Y); 
-  double tilt = joystick_channel(RIGHT_X);
+double height = joystick_channel(RIGHT_SLIDER) - 127.0;  // This joystick channel outputs 0-255, so this brings it to -127 to 127
+double forward = joystick_channel(RIGHT_Y); 
+double tilt = joystick_channel(RIGHT_X);
 
-  double servo_center = height + forward;
-  double servo_right = height - (0.666 * tilt) - (0.333 * forward);
-  double servo_left = height + (0.666 * tilt) - (0.333 * forward);
-  ```
+double servo_center = height + forward;
+double servo_right = height - (0.666 * tilt) - (0.333 * forward);
+double servo_left = height + (0.666 * tilt) - (0.333 * forward);
+```
 
 I have wrappers for my servos to take inputs of -127 to 127, so I'll need to take my servo values and normalize them to this.  Using this, I ran this code to see what all of the new outputs were, and the center servo was being heavily modified based on what the left and right servos were doing.  I ran this code on the servos just to see what it was actually doing (because the numbers all looked safe), and found that I accidentally fixed a bug I didn't realize I had!  When height is maxed, tilting sideways can be assisted by the center servo coming down.  This code handles this for me.  
 ```cpp
-  double largest_servo = fmax(fabs(servo_left), fabs(servo_right));
-  largest_servo = fmax(largest_servo, fabs(servo_center));
-  if (largest_servo > 127.0) {
-    float scale = 127.0 / largest_servo;
-    servo_center = servo_center * scale;
-    servo_right = servo_right * scale;
-    servo_left = servo_left * scale;
-  }
-  ```
+double largest_servo = fmax(fabs(servo_left), fabs(servo_right));
+largest_servo = fmax(largest_servo, fabs(servo_center));
+if (largest_servo > 127.0) {
+  float scale = 127.0 / largest_servo;
+  servo_center = servo_center * scale;
+  servo_right = servo_right * scale;
+  servo_left = servo_left * scale;
+}
+```
 
 Here's a video of this code in action.  I have control over height, sideways tilt, and forwards tilt.  I will (hopefully soon) be adding a sensor so I know the rotation of the head.  This should be relativelty simple to implement where I'll just translate `forward` and `tilt` by whatever the head is facing.  
 
 For the eyebrows, I don't think I want direct control over them.  Maybe this will change over time but right now I'm very happy with them being controlled by what everything above is doing.  Using global values for the height and tilt, 
 ```cpp
-  double left = HEAD_HEIGHT_CURRENT + HEAD_TILT_CURRENT;
-  double right = HEAD_HEIGHT_CURRENT - HEAD_TILT_CURRENT;
-  ```
+double left = HEAD_HEIGHT_CURRENT + HEAD_TILT_CURRENT;
+double right = HEAD_HEIGHT_CURRENT - HEAD_TILT_CURRENT;
+```
 
 These values get normalized and then I can set the positions of the servos.  If I'm unhappy with the motion, I can change scale down either height or tilt to change the amount of effect they have on the eyebrows. 
 ```cpp
-  double largest_servo = fmax(fabs(left), fabs(right));
-  if (largest_servo > 127.0) {
-    float scale = 127.0 / largest_servo;
-    left = left * scale;
-    right = right * scale;
-  }
+double largest_servo = fmax(fabs(left), fabs(right));
+if (largest_servo > 127.0) {
+  float scale = 127.0 / largest_servo;
+  left = left * scale;
+  right = right * scale;
+}
 
-  eyebrow_left_set(left);
-  eyebrow_right_set(right);
+eyebrow_left_set(left);
+eyebrow_right_set(right);
 ```
 
 ### At R2LA 2024
-...
