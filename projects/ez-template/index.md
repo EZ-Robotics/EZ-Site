@@ -1,13 +1,14 @@
 ---
 slug: about-ez-template
 title: EZ-Template
+date: 2024-06-10T10:00
 authors: [jess]
 tags: [vex, mentoring, tutorials, software, open source, wip]
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-[EZ-Template](https://ez-robotics.github.io/EZ-Template/) is a simple plug-and-play PROS template that handles drive-base functions for VEX robots.  
+[EZ-Template](https://ez-robotics.github.io/EZ-Template/) is a simple plug-and-play PROS template that handles drive-base functions for VEX robots with over 8000 downloads.  
 
 ![](banner.jpg)
 

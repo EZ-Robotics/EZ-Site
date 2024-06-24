@@ -1,6 +1,7 @@
 ---
 slug: dd-3
 title: DD-3
+date: 2024-06-11T10:00
 authors: [jess]
 tags: [hardware, software, cad, electrical, star wars, wip]
 ---
@@ -727,10 +728,10 @@ I cut, scribed, and drilled out all of the holes on the aluminum.  This is Dyke
 The linkage for the eyebrows all fits together and seems to work.  
 ![](r2la2024/assembled_linkage.jpg)
 
-When I went to assemble everything, it was impossible
+When I went to assemble everything, it was impossible to access some screws.  
 ![](r2la2024/attempted_assembly.jpg)
 
-I tried to salvage this dome by drilling more through holes, but I found it was impossible to fit in the screw between the floating linkage and the eyebrow mount.  
+I tried to salvage this dome by drilling more through holes, but even after this, I found it was impossible to fit in the screw between the floating linkage and the eyebrow mount.   
 ![](r2la2024/drill_jig.jpg)
 
 I modified the floating linkage to snap onto the eyebrow linkage.  
