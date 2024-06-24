@@ -2,6 +2,7 @@
 slug: pure-pursuit
 title: Pure Pursuit
 authors: [jess]
+date: 2024-03-29T10:00
 tags: [vex, software, open-source]
 ---
 import Tabs from '@theme/Tabs';

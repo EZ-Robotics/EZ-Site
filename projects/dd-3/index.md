@@ -1,18 +1,33 @@
 ---
 slug: dd-3
 title: DD-3
+date: 2024-06-11T10:00
 authors: [jess]
 tags: [hardware, software, cad, electrical, star wars, wip]
 ---
 
 DD-3 is a Star Wars inspired fully functional droid. Built with personality in mind, DD-3 uses automation to give servos life and make DD-3 into a convincing character. 
 
-Build log, from the start.  Click `Read More`!
-
 ![](./banner.jpg)
 
 <!--truncate-->
+
+## DD-3 tldr;
+Originally this was going to be a D-O inspired droid, this is about as far as I got with that.  
+![](d-o/head_linkage.png)
+
+After finding an inspiring imaeg from [Steve Cormann](https://www.instagram.com/stevencormannvfx), I switched directions and started in this direction.  
+![](opensauce2023/dd3_sketch.png)
+
+The chassis is built around a 3D printed half circle, with aluminum angle coming up for everything non-wheel related to get mounted to.  
+![](summary/dd3_base_structure.jpg)
+
+That's DD-3!
+![](ocmakerfair2023/dd_walter.jpg)
+
+
 ---
+
 ## D-O 
 After rewatching Star Wars, I thought D-O was adorable and wanted to make my own.  I've seen the community people who make Star Wars robots before and I've considered building an R2-D2 previously so this isn't a new idea.  
 
@@ -604,8 +619,8 @@ I brought DD-3 to my great grandma, who told DD-3 that he "needs a better name t
 ![](jersey2024/nanny.jpg)
 
 ---
-## Next Con?
-Goal: ?
+## R2LA
+Goal: July 29, 2024
 
 ### Plans
 I'd like to completely redesign the head entirely.  As I mentioned previously, indexing anything on a bowl has proven challenging.  I can design it all to be 3D printed and have some hole pattern on the inside so I can design mounts for servos, speakers, etc.  I can make the actual shell that you look at as independent panels, and that will help add detail and break up the perfectly smooth surface that the bowl has currently.  
@@ -627,149 +642,241 @@ My priorities for the next event are:
 
 ### New Head Design
 Looking through my photos I found this image from when I initially transitioned the robot from D-O to DD-3, and the head is SO CUTE!  The square extrusion gives so much, and the curvature of the head being less bowl-like is nice.  This is my inspiration for the new head.  
-![](droidcon2024/funnylittleblue.png)
+![](r2la2024/funnylittleblue.png)
 
 Because this is so aesthetically driven, I started with super rough extrusions without any functionality/assembly/manufacturability in mind.  In my first attempt at the new head, I made the square the same size as the old eye and this made the proportions feel insane.  
-![](droidcon2024/bad_proportions.png)
+![](r2la2024/bad_proportions.png)
 
 Dialing it back a lot, we got there eventually. 
-![](droidcon2024/nicer_proportions.png)
+![](r2la2024/nicer_proportions.png)
 
 Roughing out the eye and eyebrows put me here.  I like the way this looks, 
-![](droidcon2024/full-mockup.png)
-![](droidcon2024/full-mockup-back.png)
-![](droidcon2024/full-mockup-top.png)
+![](r2la2024/full-mockup.png)
+![](r2la2024/full-mockup-back.png)
+![](r2la2024/full-mockup-top.png)
 
 A big problem I was fighting with the old head was space.  Not space for stuff to go in the head, but space for my hands and tools to go in to assemble it all.  Now that I'm designing everything from scratch I can fix this.  
 
 For the eyebrow mounts, I want it assemble it all outside of the head, place it all in, and just secure the assembly down.  I decided to do this with an aluminum U-channel that runs across the width of the head.  This allows me to assemble everything outside of the head and lets me change stuff without reprinting the dome.  
-![](droidcon2024/alu-brace-bottom.png)
-![](droidcon2024/alu-brace-gusset.png)
+![](r2la2024/alu-brace-bottom.png)
+![](r2la2024/alu-brace-gusset.png)
 
 I don't want the pivot arm for the eyebrow permanently attached to the eyebrow.  I want the ability to change it later without reprinting and painting parts.
-![](droidcon2024/eyebrow-mockup.png)
+![](r2la2024/eyebrow-mockup.png)
 
 These will be held together with magnets.  Grub screws will sit in the linkage to align the eyebrow with the linkage.  This also protects the robot from curious kids pulling on things.  
-![](droidcon2024/eyebrow_linkage.png)
-![](droidcon2024/eyebrow_magnets.png)
+![](r2la2024/eyebrow_linkage.png)
+![](r2la2024/eyebrow_magnets.png)
 
 A little gusset will go inside the U-channel to mount the servo and eyebrow pivot.  This mount had upper and lower hardstops for the eyebrow so it can't overextend and damage any of the paint on the dome.  
-![](droidcon2024/eyebrow-up-stop.png)
-![](droidcon2024/eyebrow-down-stop.png)
+![](r2la2024/eyebrow-up-stop.png)
+![](r2la2024/eyebrow-down-stop.png)
 
 The servo will attach right next to this and get screwed in through the aluminum channel as well.  
-![](droidcon2024/servo-mount-on-u-chan.png)
-![](droidcon2024/servo-mount.png)
+![](r2la2024/servo-mount-on-u-chan.png)
+![](r2la2024/servo-mount.png)
 
 I printed this part and broke it while removing the support material...  I had to print it in a less than ideal orientation and it made this part very weak.  
-![](droidcon2024/snapped-mount.jpg)
+![](r2la2024/snapped-mount.jpg)
 
 Luckily the solution was just separating the servo mount from the eyebrow linkage mount, and when it gets screwed together it'll all be together like normal.  
-![](droidcon2024/new-servo-mounts.png)
+![](r2la2024/new-servo-mounts.png)
 
 After making cutouts in the dome for the linkage to move, I realized that this entire thing isn't assemblable outside of the head.  The magnet plate cannot fit through the slot.  
-![](droidcon2024/cutout-for-eyebrow-linkage.png)
-![](droidcon2024/magnet-plate-too-big.png)
+![](r2la2024/cutout-for-eyebrow-linkage.png)
+![](r2la2024/magnet-plate-too-big.png)
 
 I spent about 2 hours trying a couple of solutions; different magnets, splines, making everything smaller, making these 3 pieces.  Ultimately I figured out that all I need is a through hole in the dome so I can screw this on easily.  The real goal is easy assembly, not assembly outside of the head.  
-![](droidcon2024/through-hole.png)
+![](r2la2024/through-hole.png)
 
 To make my life easier later, I made the center position of the servo the center position of the eyebrow.  The ridges in the floating link give space for the servo horn.  
-![](droidcon2024/full-eyebrow-linkage.png)
+![](r2la2024/full-eyebrow-linkage.png)
 
 And with that, the eyebrow mechanics (should be) all good for printing and testing!  
-![](droidcon2024/full-eyebrow-cad.png)
-![](droidcon2024/head-with-eyebrows.png)
+![](r2la2024/full-eyebrow-cad.png)
+![](r2la2024/head-with-eyebrows.png)
 
 Now for the eye mount.  I started with another roughed-out version of how I want the exterior of it to look.  I'll work backward on this file and figure out how all of the mechanics will work.  
-![](droidcon2024/roughed_eye_mount.png)
+![](r2la2024/roughed_eye_mount.png)
 
 Hollowing out the center allowed me to add flanges to the bottom of this so I can screw it onto the head.  
-![](droidcon2024/eye_mount_hollowed.png)
+![](r2la2024/eye_mount_hollowed.png)
 
 Looking at this on the head, I realized that the amount of material not seen is massive, and it takes up a ton of space inside the part.  I can cut out a huge portion of the part and it'll be visually identical.  
-![](droidcon2024/roughed_eye_mount_on_head.png)
-![](droidcon2024/cut_out_eye_mount.png)
+![](r2la2024/roughed_eye_mount_on_head.png)
+![](r2la2024/cut_out_eye_mount.png)
 
 After some thinking, I decided that for now, the eye will be static.  I ordered some 40mm empty Christmas ornaments and later I can make it move around or add lights to the inside.  
-![](droidcon2024/eye_mount_with_eye_on_head.png)
-![](droidcon2024/eye_mount_with_eye_on_head_cut.png)
+![](r2la2024/eye_mount_with_eye_on_head.png)
+![](r2la2024/eye_mount_with_eye_on_head_cut.png)
 
 The final part of the design is the integration between the head and the lazy susan.  This part is extremely simple because the hole pattern for this has already been tested with the previous head, so all I have to do is change the integration to the head.  
-![](droidcon2024/spin_to_head.png)
+![](r2la2024/spin_to_head.png)
 
 This gets screwed onto the aluminum through the servo mount holes.  This should make everything easy to assemble, and the bowl will slide on top of this after everything is together.  
-![](droidcon2024/spin_to_head_on_alu.png)
+![](r2la2024/spin_to_head_on_alu.png)
 
 Nice picture of the (hopefully) completed CAD :D
-![](droidcon2024/rendered_head.png)
+![](r2la2024/rendered_head.png)
 
 I printed the dome, integration between the head and the lazy susan, and the eye mount.  Everything seems to fit together nicely!
-![](droidcon2024/first_printed_head.jpg)
+![](r2la2024/first_printed_head.jpg)
 
 I cut, scribed, and drilled out all of the holes on the aluminum.  This is Dykem Blue, and to mark the holes I used a pair of calipers that are only for scribing things.  
-![](droidcon2024/dykem_on_alu.jpg)
+![](r2la2024/dykem_on_alu.jpg)
 
 The linkage for the eyebrows all fits together and seems to work.  
-![](droidcon2024/assembled_linkage.jpg)
+![](r2la2024/assembled_linkage.jpg)
 
-When I went to assemble everything, it was impossible
-![](droidcon2024/attempted_assembly.jpg)
+When I went to assemble everything, it was impossible to access some screws.  
+![](r2la2024/attempted_assembly.jpg)
 
-I tried to salvage this dome by drilling more through holes, but I found it was impossible to fit in the screw between the floating linkage and the eyebrow mount.  
-![](droidcon2024/drill_jig.jpg)
+I tried to salvage this dome by drilling more through holes, but even after this, I found it was impossible to fit in the screw between the floating linkage and the eyebrow mount.   
+![](r2la2024/drill_jig.jpg)
 
 I modified the floating linkage to snap onto the eyebrow linkage.  
-![](droidcon2024/snap_on_floating_linkage.png)
+![](r2la2024/snap_on_floating_linkage.png)
 
 The CAD I got for the servo had some discrepancies to what I have because the floating linkage does not sit centered.  
-![](droidcon2024/servo_not_centered.jpg)
-![](droidcon2024/servo_not_centered_2.jpg)
+![](r2la2024/servo_not_centered.jpg)
+![](r2la2024/servo_not_centered_2.jpg)
 
 This is easily fixable by making the servo mounting plate thinner.  I also reprinted the floating linkages in black so they aren't obviously there.  
-![](droidcon2024/servo_centered.jpg)
+![](r2la2024/servo_centered.jpg)
 
 Both sides assembled!
-![](droidcon2024/linkages_work.jpg)
+![](r2la2024/linkages_work.jpg)
 
 But now, with the new snap-on joint, the eyebrow linkage doesn't fit inside the slit in the head...
-![](droidcon2024/eyebrow_doesnt_fit.jpg)
+![](r2la2024/eyebrow_doesnt_fit.jpg)
 
 Now that I need to reprint the dome anyway, I'm going to add an improvement to it while fixing the problem above.  To add a little more support between the two pieces that make up the head, I added these flanges to stop the head from being able to flex back and forward.  
-![](droidcon2024/dome_support.png)
-![](droidcon2024/dome_support_side_view.png)
+![](r2la2024/dome_support.png)
+![](r2la2024/dome_support_side_view.png)
 
 More through holes were added to make this possible to assemble, and the slits for the eyebrows were made larger.  Now to print again!  
-![](droidcon2024/new_dome.png)
+![](r2la2024/new_dome.png)
 
 ### Delta Linkage Design
 As a refresher, the goal of this is to replace the head tilt with the linkage in [this video](https://www.youtube.com/aXTe7icWDPM?si=si2PP7KV2IxK4Gou).  This needs 3 servos all mounted at 60 degrees to each other, but each servo needs to be offset from the centerline of the robot by some amount, the same amount that the servos for the eyebrows are shifted by.  To make this part more clear to me I started with this (gross) rough draft of the part.  The way I made this part didn't let me easily change parameters but I know how to go into remaking it.  
-![](droidcon2024/very_rough_motor_mount.png)
+![](r2la2024/very_rough_motor_mount.png)
 
 I remade the part and I can now adjust every dimension of the motor mount relative to the center of the robot (and the center of this part).  
-![](droidcon2024/final_motor_mount.png)
+![](r2la2024/final_motor_mount.png)
 
 This servo mount will screw into the top of the "T" structure in the droid.  
-![](droidcon2024/test_fit_motor_mount.jpg)
-![](droidcon2024/servos_on_mount.jpg)
+![](r2la2024/test_fit_motor_mount.jpg)
+![](r2la2024/servos_on_mount.jpg)
 
 The lazy susan now needs matching holes at 60-degree angles to each other, I printed this jig to screw into existing holes before center punching and drilling the new holes out.  
-![](droidcon2024/lazy_susan_jig.jpg)
+![](r2la2024/lazy_susan_jig.jpg)
 
 For the ball joints, I'll be using RC tie rods, and these are the little mounts I designed that will go on the lazy susan.  
-![](droidcon2024/tie_rod_and_mount.jpg)
+![](r2la2024/tie_rod_and_mount.jpg)
 
 The geometry all looks good and it moves as I expect it to, sadly this doesn't come down far enough due to interference between the crankshaft and the bottom of the motor plate, there is only 0.875" of travel.  But what I think is worse then that, is the lower the head goes the more obvious it'll be that it's moving away from the body.  I'd like to get that 1/2" down a bit.  
-![](droidcon2024/delta_assembled.jpg)
-![](droidcon2024/head_down.jpg)
-![](droidcon2024/head_up.jpg)
+![](r2la2024/delta_assembled.jpg)
+![](r2la2024/head_down.jpg)
+![](r2la2024/head_up.jpg)
 
 I marked off and cut out some of the motor plate on the scroll saw.  
-![](droidcon2024/motor_plate_tape.jpg)
-![](droidcon2024/scroll_saw.jpg)
+![](r2la2024/motor_plate_tape.jpg)
+![](r2la2024/scroll_saw.jpg)
 
 Hard to capture this image because now the crankshafts go below the motor mount, but there is ~1/4" of space now between the head and the body.  I'll leave it at that for now and I can find places to squeeze out some more distance if I feel it's needed later.  
-![](droidcon2024/new_head_down.jpg)
+![](r2la2024/new_head_down.jpg)
 
 
 ### New Motor Spin Mount
+This ended up being much simpler then I anticipated.  I was able to take the existing motor mount and shift the motor closer to the metal.  Below is the old motor mount vs the new motor mount, where the new motor mount shifts the motor closer to the lazy susan.  
+![](r2la2024/old_motor_mount.png)  
+![](r2la2024/new_motor_mount.png)  
+
+Now I needed a new gear for this, I ended up replacing the 29t gear with a 23t gear.  This brings my ratio from 0.40 to 0.32, but the motor has increased from 100rpm to 200rpm.  The head will now spin at 64rpm instead of 40rpm.  
+![](r2la2024/new_old_gear.png)
+
+With everything being smaller it doesn't seem like I have to mount the motor on a pivot.  As soon as this shows any sign of failing I'll be modifying the motor mount to pivot, which I might be able to do just by cutting into the existing part and having it hit one of the mounting screws.  
+
+### Sanding and Painting
+I'm trying out ASA for most of the parts on the head.  I've used it before briefly and I remember it melts in acetone.  I asked in the Droid Builders Discord server if anyone had tried acetone smoothing ASA, and someone told me how they smoothed their ABS prints:  
+- sand the part
+- do not wipe the abs dust off
+- wipe the part in an acetone soaked paper towel
+This causes the particles to fill in gaps and smooth out the print further.  
+
+My first attempt on this, I instinctively wiped the particles off before hitting it with the acetone paper towel.  The results were not great.  
+![](r2la2024/first_asa.jpg)
+
+I tried again on another section of this part and leaving the particles on gave much better results.  
+![](r2la2024/second_asa.jpg)
+
+I also tried a random orbital sander and the results of that are very easy to get and took very little effort from me.  This is the path I'll be taking for all of the parts on the head.  
+![](r2la2024/sanded_asa.jpg)
+
+I went on to fully sand the ASA.  
+![](r2la2024/fully_sanded_asa.jpg)
+
+After sanding I wiped the particles off and put a very thin layer of Bondo spot putty over the entire head.  This filled in all the gaps sanding missed and makes everything smooth.  
+![](r2la2024/bondo_sanded_bowl.jpg)
+
+After bondo is applied and sanded, a layer of filler primer gets sprayed on.  This fills gaps even further and gives a smooth surface to put color on.  
+![](r2la2024/bondo_vs_filler.jpg)
+
+But, it was suggested to me to try hitting the filler primer with scotchbrite before putting color on.  I tried and the results were better and very easy to achieve.  This is primer without smoothing.  
+![](r2la2024/primer_without_smoothing.jpg)
+
+This is primer with smoothing.  Minimal difference, very obvious when feeling them back to back, and very easy to achieve.  I'll be doing this for everything going forward!
+![](r2la2024/primer_with_smoothing.jpg)
+
+### Software
+Controlling the tripple servo setup seems a little dauting to me, but I started to think about it servo by servo and the solutions became a lot more clear to me.  
+
+I have 2 problems to solve.  There are 3 servos, one is inline with forward/backwards, and the other two are symetrically 120 degrees off of the center one.  The code for the left and right servo will end up being very similar.  
+
+I want 3 inputs for this: height, forward tilt, sideways tilt.  Height is the simple one, I'll have some value that gets set to all of the servos.  Forward and sideways tilt will get added/subtracted to the current height.  I'll need to normalize whatever this output is so the servos can actually interpret it, and motions will change when height is at either limit.  
+
+I'll be controlling this with a joystick and I don't really care what angles the head ends up going to.  I don't want the servos to overextend themselves and I want the directions to all mix correctly. With that, I ended up with this code for testing.  
+```cpp
+double height = joystick_channel(RIGHT_SLIDER) - 127.0;  // This joystick channel outputs 0-255, so this brings it to -127 to 127
+double forward = joystick_channel(RIGHT_Y); 
+double tilt = joystick_channel(RIGHT_X);
+
+double servo_center = height + forward;
+double servo_right = height - (0.666 * tilt) - (0.333 * forward);
+double servo_left = height + (0.666 * tilt) - (0.333 * forward);
+```
+
+I have wrappers for my servos to take inputs of -127 to 127, so I'll need to take my servo values and normalize them to this.  Using this, I ran this code to see what all of the new outputs were, and the center servo was being heavily modified based on what the left and right servos were doing.  I ran this code on the servos just to see what it was actually doing (because the numbers all looked safe), and found that I accidentally fixed a bug I didn't realize I had!  When height is maxed, tilting sideways can be assisted by the center servo coming down.  This code handles this for me.  
+```cpp
+double largest_servo = fmax(fabs(servo_left), fabs(servo_right));
+largest_servo = fmax(largest_servo, fabs(servo_center));
+if (largest_servo > 127.0) {
+  float scale = 127.0 / largest_servo;
+  servo_center = servo_center * scale;
+  servo_right = servo_right * scale;
+  servo_left = servo_left * scale;
+}
+```
+
+Here's a video of this code in action.  I have control over height, sideways tilt, and forwards tilt.  I will (hopefully soon) be adding a sensor so I know the rotation of the head.  This should be relativelty simple to implement where I'll just translate `forward` and `tilt` by whatever the head is facing.  
+
+For the eyebrows, I don't think I want direct control over them.  Maybe this will change over time but right now I'm very happy with them being controlled by what everything above is doing.  Using global values for the height and tilt, 
+```cpp
+double left = HEAD_HEIGHT_CURRENT + HEAD_TILT_CURRENT;
+double right = HEAD_HEIGHT_CURRENT - HEAD_TILT_CURRENT;
+```
+
+These values get normalized and then I can set the positions of the servos.  If I'm unhappy with the motion, I can change scale down either height or tilt to change the amount of effect they have on the eyebrows. 
+```cpp
+double largest_servo = fmax(fabs(left), fabs(right));
+if (largest_servo > 127.0) {
+  float scale = 127.0 / largest_servo;
+  left = left * scale;
+  right = right * scale;
+}
+
+eyebrow_left_set(left);
+eyebrow_right_set(right);
+```
+
+### At R2LA 2024
