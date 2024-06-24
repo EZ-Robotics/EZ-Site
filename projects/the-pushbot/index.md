@@ -2,6 +2,7 @@
 slug: the-pushbot
 title: The Pushbot
 authors: [jess]
+date: 2023-02-17T10:00
 tags: [vex, hardware, software, cad]
 ---
 

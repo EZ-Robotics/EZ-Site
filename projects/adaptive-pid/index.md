@@ -2,6 +2,7 @@
 slug: adaptive-pid
 title: Adaptive PID
 authors: [jess]
+date: 2023-11-22T10:00
 tags: [software, vex, wip]
 ---
 
