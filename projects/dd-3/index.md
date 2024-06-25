@@ -12,11 +12,13 @@ DD-3 is a Star Wars inspired fully functional droid. Built with personality in m
 
 <!--truncate-->
 
+---
+
 ## DD-3 tldr;
 Originally this was going to be a D-O inspired droid, this is about as far as I got with that.  
 ![](d-o/head_linkage.png)
 
-After finding an inspiring imaeg from [Steve Cormann](https://www.instagram.com/stevencormannvfx), I switched directions and started in this direction.  
+After finding an inspiring image from [Steve Cormann](https://www.instagram.com/stevencormannvfx), I switched directions and started in this direction.  
 ![](opensauce2023/dd3_sketch.png)
 
 The chassis is built around a 3D printed half circle, with aluminum angle coming up for everything non-wheel related to get mounted to.  

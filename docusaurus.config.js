@@ -79,7 +79,7 @@ const config = {
       navbar: {
         title: 'robotics is ez',
         items: [
-          { to: '/about', label: 'About', position: 'right' },
+          { to: '/about', label: 'About Me', position: 'right' },
           { to: '/projects', label: 'Projects', position: 'left' },
           { to: 'https://ez-robotics.github.io/EZ-Template/', label: 'EZ-Template Docs', position: 'left' },
           // { to: 'https://ez-robotics.github.io/EZ-GUI/', label: 'EZ-GUI Docs', position: 'left' },
@@ -110,18 +110,18 @@ const config = {
           {
             title: 'Community',
             items: [
-              /*{
-                label: 'Discord',
-                href: 'https://discordapp.com/invite/docusaurus',
-              },*/
               {
                 label: 'Instagram',
                 href: 'https://www.instagram.com/roboticsisez',
               },
-              /*{
-                label: 'Help',
-                href: '/support',
-              },*/
+              {
+                label: 'YouTube',
+                href: 'https://www.youtube.com/@roboticsisez',
+              },
+              {
+                label: 'EZ-Template Discord',
+                href: 'https://discord.gg/EHjXBcK2Gy',
+              },
             ],
           },
           {
@@ -138,7 +138,7 @@ const config = {
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} robotics is ez - built with docusaurus`,
+        copyright: `jess@roboticsisez.com   -   (818) 568 0184   -   Copyright © ${new Date().getFullYear()} robotics is ez - built with docusaurus`,
       },
       prism: {
         theme: lightCode,
