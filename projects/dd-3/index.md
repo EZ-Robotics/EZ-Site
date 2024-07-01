@@ -24,6 +24,8 @@ After finding an inspiring image from [Steve Cormann](https://www.instagram.com/
 The chassis is built around a 3D printed half circle, with aluminum angle coming up for everything non-wheel related to get mounted to.  
 ![](summary/dd3_base_structure.jpg)
 
+DD-3's code is open source and can be found [here](https://github.com/EZ-Robotics/DD-3).  
+
 That's DD-3!
 ![](ocmakerfair2023/dd_walter.jpg)
 
