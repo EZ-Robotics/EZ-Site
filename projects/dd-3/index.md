@@ -1,7 +1,7 @@
 ---
 slug: dd-3
 title: DD-3
-date: 2024-06-11T10:00
+date: 2024-06-29T10:00
 authors: [jess]
 tags: [hardware, software, cad, electrical, star wars, wip]
 ---
@@ -23,6 +23,8 @@ After finding an inspiring image from [Steve Cormann](https://www.instagram.com/
 
 The chassis is built around a 3D printed half circle, with aluminum angle coming up for everything non-wheel related to get mounted to.  
 ![](summary/dd3_base_structure.jpg)
+
+DD-3's code is open source and can be found [here](https://github.com/EZ-Robotics/DD-3).  
 
 That's DD-3!
 ![](ocmakerfair2023/dd_walter.jpg)
@@ -608,7 +610,7 @@ Then it's just wiring everything together and labeling all the wires.
 ## DD-3 to the English Channel Islands!
 Goal: May 3-13, 2024 
 
-## The Trip
+### The Trip
 I'm going to see some family in ~~not new~~ [Jersey](https://en.wikipedia.org/wiki/Jersey) and I'd like to bring DD-3 to show some family members and little cousins.  This past couple of months have been my busiest at work so I'll be bringing him as-is from LACC.  
 
 DD-3 all packed up in Heathrow :D
@@ -799,6 +801,20 @@ Now I needed a new gear for this, I ended up replacing the 29t gear with a 23t g
 
 With everything being smaller it doesn't seem like I have to mount the motor on a pivot.  As soon as this shows any sign of failing I'll be modifying the motor mount to pivot, which I might be able to do just by cutting into the existing part and having it hit one of the mounting screws.  
 
+### Adding a Potentiometer
+To mount a potentiometer, the sensor will need to be in the center of the lazy susan.  An arm will mount from the moving part of the lazy susan to the potentiometer, and then as the head spins the potentiometer will spin too. 
+
+There aren't many mounting points on the moving part of the lazy susan.  I can attach it by 1 screw but then it needs a way to index so it doesn't pivot.  I did this by extruding teeth into this arm so it indexes with the gears.  
+![](r2la2024/pot_arm_cad.png)  
+![](r2la2024/pot_arm_irl.jpg)    
+
+Mounting the potentiometer was super simple.  A bar goes across the fixed part of the lazy susan and the potentiometer gets screwed to that.  I was slightly worried about flexing in this piece, so I added some "flanges" to help counteract this.  
+![](r2la2024/pot_mount.png)
+
+To connect the two of these parts, I used a low strength VEX shaft that I cut 8-32 threads onto.  This lets me mount the shaft securely while still allowing it to enter into and spin the potentiometer easily.  
+![](r2la2024/threaded_shaft.jpg)
+<iframe width="315" height="560" src="https://www.youtube.com/embed/_A34ENbm0eU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>  
+
 ### Sanding and Painting
 I'm trying out ASA for most of the parts on the head.  I've used it before briefly and I remember it melts in acetone.  I asked in the Droid Builders Discord server if anyone had tried acetone smoothing ASA, and someone told me how they smoothed their ABS prints:  
 - sand the part
@@ -831,15 +847,15 @@ This is primer with smoothing.  Minimal difference, very obvious when feeling th
 ![](r2la2024/primer_with_smoothing.jpg)
 
 ### Software
-Controlling the tripple servo setup seems a little dauting to me, but I started to think about it servo by servo and the solutions became a lot more clear to me.  
+Controlling the triple servo setup seems a little daunting to me, but I started to think about it servo by servo and the solutions became a lot more clear to me.  
 
-I have 2 problems to solve.  There are 3 servos, one is inline with forward/backwards, and the other two are symetrically 120 degrees off of the center one.  The code for the left and right servo will end up being very similar.  
+I have 2 problems to solve.  There are 3 servos, one is inline with forward/backward, and the other two are symmetrically 120 degrees off of the center one.  The code for the left and right servo will be very similar.  
 
-I want 3 inputs for this: height, forward tilt, sideways tilt.  Height is the simple one, I'll have some value that gets set to all of the servos.  Forward and sideways tilt will get added/subtracted to the current height.  I'll need to normalize whatever this output is so the servos can actually interpret it, and motions will change when height is at either limit.  
+I want 3 inputs: height, forward tilt, sideways tilt.  Height is the simple one, I'll have some value that gets set to all of the servos.  Forward and sideways tilt will get added/subtracted to the current height.  I'll need to normalize whatever this output is so the servos can interpret it, and motions will change when height is at either limit.  
 
-I'll be controlling this with a joystick and I don't really care what angles the head ends up going to.  I don't want the servos to overextend themselves and I want the directions to all mix correctly. With that, I ended up with this code for testing.  
+I'll be controlling this with a joystick and I don't care what angles the head ends up going to.  I don't want the servos to overextend themselves and I want the directions to all mix correctly. With that, I ended up with this code for testing.  
 ```cpp
-double height = joystick_channel(RIGHT_SLIDER) - 127.0;  // This joystick channel outputs 0-255, so this brings it to -127 to 127
+double height = joystick_channel(RIGHT_SLIDER) - 127.0;  // This joystick channel outputs 0-255, so this brings it to -127 to 127
 double forward = joystick_channel(RIGHT_Y); 
 double tilt = joystick_channel(RIGHT_X);
 
@@ -848,37 +864,147 @@ double servo_right = height - (0.666 * tilt) - (0.333 * forward);
 double servo_left = height + (0.666 * tilt) - (0.333 * forward);
 ```
 
-I have wrappers for my servos to take inputs of -127 to 127, so I'll need to take my servo values and normalize them to this.  Using this, I ran this code to see what all of the new outputs were, and the center servo was being heavily modified based on what the left and right servos were doing.  I ran this code on the servos just to see what it was actually doing (because the numbers all looked safe), and found that I accidentally fixed a bug I didn't realize I had!  When height is maxed, tilting sideways can be assisted by the center servo coming down.  This code handles this for me.  
+I have wrappers for my servos to take inputs of -127 to 127, so I'll need to take my servo values and normalize them to this.  Using this, I ran this code to see what all of the new outputs were, and the center servo was being heavily modified based on what the left and right servos were doing.  I ran this code on the servos to see what it was actually doing (because the numbers all looked safe), and found that I accidentally fixed a bug I didn't realize I had!  When height is maxed, tilting sideways can be assisted by the center servo coming down.  This code handles this for me.  
 ```cpp
 double largest_servo = fmax(fabs(servo_left), fabs(servo_right));
 largest_servo = fmax(largest_servo, fabs(servo_center));
 if (largest_servo > 127.0) {
-  float scale = 127.0 / largest_servo;
+  float scale = 127.0 / largest_servo;
   servo_center = servo_center * scale;
   servo_right = servo_right * scale;
   servo_left = servo_left * scale;
 }
 ```
 
-Here's a video of this code in action.  I have control over height, sideways tilt, and forwards tilt.  I will (hopefully soon) be adding a sensor so I know the rotation of the head.  This should be relativelty simple to implement where I'll just translate `forward` and `tilt` by whatever the head is facing.  
+Here's a video of this code in action.  I have control over height, sideways tilt, and forward tilt.  
+<iframe width="315" height="560" src="https://www.youtube.com/embed/UMw_BcVYo2c" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>  
 
-For the eyebrows, I don't think I want direct control over them.  Maybe this will change over time but right now I'm very happy with them being controlled by what everything above is doing.  Using global values for the height and tilt, 
+I want to control the head spin as if it were a servo, but it's a motor and a potentiometer.  I'll use PID to control this like a servo.  PID is something I'm very comfortable with from working on EZ-Template and other VEX related projects, so I just took the PID I already wrote for EZ-Template and implemented it here.  I can toggle if `i` resets when the sign of error flips, and I use a different way of solving derivative to fix a "derivative kick" problem t hat occurs when target gets changed.  I tuned this a bit and found the constants that worked well was a kp of 1, ki of 0, and kd of 2.  
 ```cpp
-double left = HEAD_HEIGHT_CURRENT + HEAD_TILT_CURRENT;
-double right = HEAD_HEIGHT_CURRENT - HEAD_TILT_CURRENT;
-```
+double prev_current = 0, pid_target = 0, integral = 0, prev_error = 0, output = 0, derivative = 0, SPIN_VELOCITY = 0, HEAD_POSITION = 0;
+bool reset_i_sgn = true;
+double kp = 1;
+double ki = 0;
+double kd = 2;
+double start_i = 0;
+double iterate_pid(double current) {
+  double error = pid_target - current;
 
-These values get normalized and then I can set the positions of the servos.  If I'm unhappy with the motion, I can change scale down either height or tilt to change the amount of effect they have on the eyebrows. 
-```cpp
-double largest_servo = fmax(fabs(left), fabs(right));
-if (largest_servo > 127.0) {
-  float scale = 127.0 / largest_servo;
-  left = left * scale;
-  right = right * scale;
+  // calculate derivative on measurement instead of error to avoid "derivative kick"
+  // https://www.isa.org/intech-home/2023/june-2023/features/fundamentals-pid-control
+  derivative = current - prev_current;
+
+  if (ki != 0) {
+    // Only compute i when within a threshold of target
+    if (fabs(error) < start_i)
+      integral += error;
+
+    // Reset i when the sign of error flips
+    if (sgn(error) != sgn(prev_current) && reset_i_sgn)
+      integral = 0;
+  }
+
+  output = (error * kp) + (integral * ki) - (derivative * kd);
+
+  prev_current = current;
+  prev_error = error;
+
+  return output;
 }
-
-eyebrow_left_set(left);
-eyebrow_right_set(right);
 ```
+
+Now to use this I just update the PID target and have this constantly iterate.  
+```cpp
+void head_spin_runtime() {
+  set_pid_target(joystick_channel(RIGHT_SLIDER) - 127.0);
+  head_spin_set(iterate_pid(get_pot()));
+}
+```
+<iframe width="315" height="560" src="https://www.youtube.com/embed/zEIlTqvoaFQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>   
+
+Using the potentiometer in the head, I can translate controller inputs based on where the head is facing.  Tilting the head left should always tilt it left relative to where the head is facing.  I figured out the equations for this by writing out what I wanted and splitting the problem up into chunks.  
+
+When the head is facing directly forwards, `HEAD_POSITION` will be equal to 0.  When `HEAD_POSITION` is equal to 127 or -127, it will be looking directly left or right respectively.  Which means I need to figure out an equation that outputs this:
+```
+HEAD_POSIITON = 0;
+forward = forward;
+tilt = 0;
+```
+
+If I divide `HEAD_POSITION` by `127.0`, this would output 0.  I can't multipy this by `forward` otherwise the head won't tilt forwards when facing forwards.  So I need to subtract this ratio number from `1`.  That makes my translated forward look like `(1 - (HEAD_POSITION / 127.0)) * forward`.  After testing this I found that for head nodding, I don't care about the sign of HEAD_POSITION.  So for everything nod related, I'll be using the `fabs()` of `HEAD_POSITION`.  
+```cpp
+forward = (1 - ratio) * forward;
+```
+
+Then for translating the forward to tilt, when `HEAD_POSITION` is `127.0`, I want it to tilt instead.  I can do this by multiplying `HEAD_POSITION / 127.0` by `forward`.  That leaves me with this code.  
+```cpp
+float ratio = fabs(HEAD_POSITION) / 127.0;
+tilt = (HEAD_POSITION / 127.0) * forward;
+forward = (1 - ratio) * forward;
+```
+
+Tilting is exactly the same but everything gets mirrored.  
+```cpp
+float ratio = fabs(HEAD_POSITION) / 127.0;
+tilt = ((1 - ratio) * tilt);
+forward = ((HEAD_POSITION / -127.0) * tilt);
+```
+
+Which makes this the final translation code.  
+```cpp
+float forward = joystick_channel(RIGHT_Y);
+float tilt = joystick_channel(RIGHT_X);
+
+float ratio = fabs(HEAD_POSITION) / 127.0;
+tilt = ((1 - ratio) * tilt) + ((HEAD_POSITION / 127.0) * forward);
+forward = ((HEAD_POSITION / -127.0) * tilt) + ((1 - ratio) * forward);
+```
+
+With all of this I can add some more animation to the head.  I want the head to lean into spins.  If the head is going quickly it should lean a lot, and it shouldn't lean at all when the head is as low as it goes.  This was incredibly simple to implement.  I multiply the velocity of the head by the height of the head, and the height of the head is multiplied by a scaler so I can tune how much it leans into motions.  
+```cpp
+tilt = SPIN_VELOCITY * (0.3125 * (height / 256));
+forward = -fabs(SPIN_VELOCITY) * (0.25 * (height / 256));
+```
+
+I tested `SPIN_VELOCITY` being the true velocity of the head, and I tested it being the error of PID.  Being the velocity looked strange because it took time for the head to accelerate, then it took time for the head to tilt into position.  This combination of delays made it look very unnatural.  Using the error in PID gave much cleaner looking motions.  
+
+Now there's two ways to control `tilt` and `forward`, with my joysticks and automatically.  DD-3 will pick the larger of the two, making this the final code.  
+```cpp
+void head_tilt_runtime() {
+  // height, forward, tilt values from the controller
+  float height = joystick_channel(LEFT_SLIDER);
+  float controller_forward = joystick_channel(RIGHT_Y);
+  float controller_tilt = joystick_channel(RIGHT_X);
+
+  // tilt and forward values computed off of head spin velocity
+  float spin_tilt = SPIN_VELOCITY * (0.3125 * (height / 256));
+  float spin_forward = -fabs(SPIN_VELOCITY) * (0.25 * (height / 256));
+
+  // use the larger of the 2 computed values
+  float computed_tilt = fabs(spin_tilt) > fabs(controller_tilt) ? spin_tilt : controller_tilt;
+  float computed_forward = fabs(spin_forward) > fabs(controller_forward) ? spin_forward : controller_forward;
+
+  // scale everything to be relative to where the head is facing
+  float ratio = fabs(HEAD_POSITION) / 127.0;
+  float tilt = ((1 - ratio) * computed_tilt) + ((HEAD_POSITION / 127.0) * computed_forward);
+  float forward = ((HEAD_POSITION / -127.0) * computed_tilt) + ((1 - ratio) * computed_forward);
+
+  // bring this back down to -127 to 127 instead of 0 to 256
+  height -= 127;
+
+  // make the head move
+  head_tilt_set((int)height, (int)forward, (int)tilt);
+}
+```
+<iframe width="315" height="560" src="https://www.youtube.com/embed/6BrZ4NbC_8g" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>   
+
+As for the eyebrows, I ran into some electrical problems where my servo board wasn't allowing me to move both of these servos at the same time.  This will require some more debugging, but with the amount of life I've brought to DD-3 with all of these changes I think this is ok.  
 
 ### At R2LA 2024
+![](r2la2024/group.jpg)
+![](r2la2024/parade1.jpg)
+![](r2la2024/parade2.jpg)
+![](r2la2024/friend.jpg)
+![](r2la2024/on_table_again.jpg)
+![](r2la2024/on_table.jpg)
+![](r2la2024/strapped.jpg)
