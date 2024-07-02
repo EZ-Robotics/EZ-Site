@@ -959,6 +959,7 @@ float ratio = fabs(HEAD_POSITION) / 127.0;
 tilt = ((1 - ratio) * tilt) + ((HEAD_POSITION / 127.0) * forward);
 forward = ((HEAD_POSITION / -127.0) * tilt) + ((1 - ratio) * forward);
 ```
+<iframe width="315" height="560" src="https://www.youtube.com/embed/ZCtLnKYPGdE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>   
 
 With all of this I can add some more animation to the head.  I want the head to lean into spins.  If the head is going quickly it should lean a lot, and it shouldn't lean at all when the head is as low as it goes.  This was incredibly simple to implement.  I multiply the velocity of the head by the height of the head, and the height of the head is multiplied by a scaler so I can tune how much it leans into motions.  
 ```cpp
@@ -996,6 +997,7 @@ void head_tilt_runtime() {
   head_tilt_set((int)height, (int)forward, (int)tilt);
 }
 ```
+<iframe width="315" height="560" src="https://www.youtube.com/embed/K00LlBRRzew" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>   
 <iframe width="315" height="560" src="https://www.youtube.com/embed/6BrZ4NbC_8g" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>   
 
 As for the eyebrows, I ran into some electrical problems where my servo board wasn't allowing me to move both of these servos at the same time.  This will require some more debugging, but with the amount of life I've brought to DD-3 with all of these changes I think this is ok.  
