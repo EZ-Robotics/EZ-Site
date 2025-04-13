@@ -11,11 +11,11 @@ import lightCode from './src/utils/codeLight.ts';
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'robotics is ez',
+  title: 'ssejrog',
   tagline: '',
   favicon: 'img/favicon.ico',
 
-  url: 'https://www.roboticsisez.com',
+  url: 'https://www.ssejrog.com',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/',
